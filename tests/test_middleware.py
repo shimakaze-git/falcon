@@ -56,12 +56,12 @@ class ExecutedFirstMiddleware(object):
     def process_request(self, req, resp):
         global context
         context['executed_methods'].append(
-            '{0}.{1}'.format(self.__class__.__name__, 'process_request'))
+            '{}.{}'.format(self.__class__.__name__, 'process_request'))
 
     def process_resource(self, req, resp, resource, params):
         global context
         context['executed_methods'].append(
-            '{0}.{1}'.format(self.__class__.__name__, 'process_resource'))
+            '{}.{}'.format(self.__class__.__name__, 'process_resource'))
 
     # NOTE(kgriffs): This also tests that the framework can continue to
     # call process_response() methods that do not have a 'req_succeeded'
@@ -69,7 +69,7 @@ class ExecutedFirstMiddleware(object):
     def process_response(self, req, resp, resource):
         global context
         context['executed_methods'].append(
-            '{0}.{1}'.format(self.__class__.__name__, 'process_response'))
+            '{}.{}'.format(self.__class__.__name__, 'process_response'))
 
         context['req'] = req
         context['resp'] = resp
@@ -102,6 +102,15 @@ class MiddlewareClassResource(object):
 
     def on_post(self, req, resp):
         raise falcon.HTTPForbidden(falcon.HTTP_403, 'Setec Astronomy')
+
+
+class EmptySignatureMiddleware(object):
+
+    def process_request(self):
+        pass
+
+    def process_response(self):
+        pass
 
 
 class TestMiddleware(object):
@@ -351,7 +360,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RequestTimeMiddleware(),
                                      RaiseErrorMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             context['error_handler'] = True
 
         app.add_error_handler(Exception, handler)
@@ -381,7 +390,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      RequestTimeMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             context['error_handler'] = True
 
         app.add_error_handler(Exception, handler)
@@ -411,7 +420,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -446,7 +455,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -480,7 +489,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -511,7 +520,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -542,7 +551,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -576,7 +585,7 @@ class TestSeveralMiddlewares(TestMiddleware):
                                      RaiseErrorMiddleware(),
                                      ExecutedLastMiddleware()])
 
-        def handler(ex, req, resp, params):
+        def handler(req, resp, ex, params):
             pass
 
         app.add_error_handler(Exception, handler)
@@ -631,6 +640,18 @@ class TestResourceMiddleware(TestMiddleware):
         assert context['params']
         assert context['params']['id'] == '22'
         assert response.json == {'added': True, 'id': '22'}
+
+
+class TestEmptySignatureMiddleware(TestMiddleware):
+    def test_dont_need_params_in_signature(self):
+        """
+        Verify that we don't need parameters in the process_* signatures (for
+        side-effect-only middlewares, mostly). Makes no difference on py27
+        but does affect py36.
+
+        https://github.com/falconry/falcon/issues/1254
+        """
+        falcon.API(middleware=EmptySignatureMiddleware())
 
 
 class TestErrorHandling(TestMiddleware):

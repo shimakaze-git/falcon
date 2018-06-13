@@ -128,12 +128,12 @@ class API(object):
 
     # PERF(kgriffs): Reference via self since that is faster than
     # module global...
-    _BODILESS_STATUS_CODES = set([
+    _BODILESS_STATUS_CODES = {
         status.HTTP_100,
         status.HTTP_101,
         status.HTTP_204,
         status.HTTP_304
-    ])
+    }
 
     _STREAM_BLOCK_SIZE = 8 * 1024  # 8 KiB
 
@@ -228,7 +228,7 @@ class API(object):
                 # HTTP exception signalling the problem, e.g. a 404.
                 responder, params, resource, req.uri_template = self._get_responder(req)
             except Exception as ex:
-                if not self._handle_exception(ex, req, resp, params):
+                if not self._handle_exception(req, resp, ex, params):
                     raise
             else:
                 try:
@@ -244,7 +244,7 @@ class API(object):
                     responder(req, resp, **params)
                     req_succeeded = True
                 except Exception as ex:
-                    if not self._handle_exception(ex, req, resp, params):
+                    if not self._handle_exception(req, resp, ex, params):
                         raise
         finally:
             # NOTE(kgriffs): It may not be useful to still execute
@@ -259,7 +259,7 @@ class API(object):
                 try:
                     process_response(req, resp, resource, req_succeeded)
                 except Exception as ex:
-                    if not self._handle_exception(ex, req, resp, params):
+                    if not self._handle_exception(req, resp, ex, params):
                         raise
 
                     req_succeeded = False
@@ -277,8 +277,10 @@ class API(object):
             body = []
         else:
             body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
-            if length is not None:
+            if resp.content_length is None and length is not None:
                 resp._headers['content-length'] = str(length)
+            elif resp.content_length is not None:
+                resp._headers['content-length'] = str(resp.content_length)
 
         # NOTE(kgriffs): Based on wsgiref.validate's interpretation of
         # RFC 2616, as commented in that module's source code. The
@@ -299,7 +301,7 @@ class API(object):
     def router_options(self):
         return self._router.options
 
-    def add_route(self, uri_template, resource, *args, **kwargs):
+    def add_route(self, uri_template, resource, suffix=None, **kwargs):
         """Associate a templatized URI path with a resource.
 
         Falcon routes incoming requests to resources based on a set of
@@ -321,19 +323,32 @@ class API(object):
                 (See also: :meth:`~.add_sink`)
 
             resource (instance): Object which represents a REST
-                resource. Falcon will pass "GET" requests to on_get,
-                "PUT" requests to on_put, etc. If any HTTP methods are not
+                resource. Falcon will pass GET requests to ``on_get()``,
+                PUT requests to ``on_put()``, etc. If any HTTP methods are not
                 supported by your resource, simply don't define the
                 corresponding request handlers, and Falcon will do the right
                 thing.
 
-        Note:
-            Any additional args and kwargs not defined above are passed
-            through to the underlying router's ``add_route()`` method. The
-            default router does not expect any additional arguments, but
-            custom routers may take advantage of this feature to receive
-            additional options when setting up routes.
+        Keyword Args:
+            suffix (str): Optional responder name suffix for this route. If
+                a suffix is provided, Falcon will map GET requests to
+                ``on_get_{suffix}()``, POST requests to ``on_post_{suffix}()``,
+                etc. In this way, multiple closely-related routes can be
+                mapped to the same resource. For example, a single resource
+                class can use suffixed responders to distinguish requests
+                for a single item vs. a collection of those same items.
+                Another class might use a suffixed responder to handle
+                a shortlink route in addition to the regular route for the
+                resource.
 
+        Note:
+            Any additional keyword arguments not defined above are passed
+            through to the underlying router's ``add_route()`` method. The
+            default router ignores any additional keyword arguments, but
+            custom routers may take advantage of this feature to receive
+            additional options when setting up routes. Custom routers MUST
+            accept such arguments using the variadic pattern (``**kwargs``), and
+            ignore any keyword arguments that they don't support.
         """
 
         # NOTE(richardolsson): Doing the validation here means it doesn't have
@@ -347,12 +362,11 @@ class API(object):
         if '//' in uri_template:
             raise ValueError("uri_template may not contain '//'")
 
-        method_map = routing.map_http_methods(resource)
+        method_map = routing.map_http_methods(resource, suffix=suffix)
         routing.set_default_responders(method_map)
-        self._router.add_route(uri_template, method_map, resource, *args,
-                               **kwargs)
+        self._router.add_route(uri_template, method_map, resource, **kwargs)
 
-    def add_static_route(self, prefix, directory, downloadable=False):
+    def add_static_route(self, prefix, directory, downloadable=False, fallback_filename=None):
         """Add a route to a directory of static files.
 
         Static routes provide a way to serve files directly. This
@@ -364,6 +378,8 @@ class API(object):
             Serving files directly from the web server,
             rather than through the Python app, will always be more efficient,
             and therefore should be preferred in production deployments.
+            For security reasons, the directory and the fallback_filename (if provided)
+            should be read only for the account running the application.
 
         Static routes are matched in LIFO order. Therefore, if the same
         prefix is used for two routes, the second one will override the
@@ -391,12 +407,16 @@ class API(object):
             downloadable (bool): Set to ``True`` to include a
                 Content-Disposition header in the response. The "filename"
                 directive is simply set to the name of the requested file.
+            fallback_filename (str): Fallback filename used when the requested file
+                is not found. Can be a relative path inside the prefix folder or any valid
+                absolute path.
 
         """
 
         self._static_routes.insert(
             0,
-            routing.StaticRoute(prefix, directory, downloadable=downloadable)
+            routing.StaticRoute(prefix, directory, downloadable=downloadable,
+                                fallback_filename=fallback_filename)
         )
 
     def add_sink(self, sink, prefix=r'/'):
@@ -467,7 +487,7 @@ class API(object):
                 that is an instance of this exception class, the associated
                 handler will be called.
             handler (callable): A function or callable object taking the form
-                ``func(ex, req, resp, params)``.
+                ``func(req, resp, ex, params)``.
 
                 If not specified explicitly, the handler will default to
                 ``exception.handle``, where ``exception`` is the error
@@ -478,7 +498,7 @@ class API(object):
                     class CustomException(CustomBaseException):
 
                         @staticmethod
-                        def handle(ex, req, resp, params):
+                        def handle(req, resp, ex, params):
                             # TODO: Log the error
                             # Convert to an instance of falcon.HTTPError
                             raise falcon.HTTPError(falcon.HTTP_792)
@@ -648,13 +668,13 @@ class API(object):
         if error.has_representation:
             self._serialize_error(req, resp, error)
 
-    def _http_status_handler(self, status, req, resp, params):
+    def _http_status_handler(self, req, resp, status, params):
         self._compose_status_response(req, resp, status)
 
-    def _http_error_handler(self, error, req, resp, params):
+    def _http_error_handler(self, req, resp, error, params):
         self._compose_error_response(req, resp, error)
 
-    def _handle_exception(self, ex, req, resp, params):
+    def _handle_exception(self, req, resp, ex, params):
         """Handle an exception raised from mw or a responder.
 
         Args:
@@ -674,7 +694,7 @@ class API(object):
         for err_type, err_handler in self._error_handlers:
             if isinstance(ex, err_type):
                 try:
-                    err_handler(ex, req, resp, params)
+                    err_handler(req, resp, ex, params)
                 except HTTPStatus as status:
                     self._compose_status_response(req, resp, status)
                 except HTTPError as error:
@@ -714,12 +734,10 @@ class API(object):
                 * Otherwise, returns []
 
         """
-
         body = resp.body
         if body is not None:
             if not isinstance(body, bytes):
                 body = body.encode('utf-8')
-
             return [body], len(body)
 
         data = resp.data
@@ -744,9 +762,9 @@ class API(object):
             else:
                 iterable = stream
 
-            # NOTE(kgriffs): If resp.stream_len is None, content_length
-            # will be as well; the caller of _get_body must handle this
-            # case by not setting the Content-Length header.
+            # NOTE(pshello): resp.stream_len is deprecated in favor of
+            # resp.content_length. The caller of _get_body should give
+            # preference to resp.content_length if it has been set.
             return iterable, resp.stream_len
 
         return [], 0

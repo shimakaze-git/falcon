@@ -71,6 +71,12 @@ Falcon's middleware interface is defined as follows:
     a route to a resource. To take action when a route is not found, a
     :py:meth:`sink <falcon.API.add_sink>` may be used instead.
 
+.. Tip::
+    In order to pass data from a middleware function to a resource function
+    use the ``req.context`` and ``resp.context`` dictionaries. These context
+    dictionaries are intended to hold request and response data specific to
+    your app as it passes through the framework.
+
 Each component's *process_request*, *process_resource*, and
 *process_response* methods are executed hierarchically, as a stack, following
 the ordering of the list passed via the `middleware` kwarg of
@@ -113,6 +119,7 @@ be invoked and then the framework will begin to unwind the
 stack, skipping any lower layers. The error handler may itself
 raise an instance of HTTPError, in which case the framework
 will use the latter exception to update the *resp* object.
+
 Regardless, the framework will continue unwinding the middleware
 stack. For example, if *mob2.process_request* were to raise an
 error, the framework would execute the stack as follows::
@@ -123,8 +130,13 @@ error, the framework would execute the stack as follows::
         mob2.process_response
     mob1.process_response
 
+By default, all *process_response* methods will be executed, even
+when a *process_request*, *process_resource*, or resource
+responder raises an error. This behavior is controlled by the
+:ref:`API class's <api>` `independent_middleware` keyword argument.
+
 Finally, if one of the *process_response* methods raises an error,
-or the routed on_* responder method itself raises an error, the
+or the routed ``on_*`` responder method itself raises an error, the
 exception will be handled in a similar manner as above. Then,
 the framework will execute any remaining middleware on the
 stack.

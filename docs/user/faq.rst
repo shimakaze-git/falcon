@@ -24,10 +24,11 @@ Why doesn't Falcon create a new Resource instance for every request?
 --------------------------------------------------------------------
 Falcon generally tries to minimize the number of objects that it
 instantiates. It does this for two reasons: first, to avoid the expense of
-creating the object, and second to reduce memory usage. Therefore, when
-adding a route, Falcon requires an *instance* of your resource class, rather
-than the class type. That same instance will be used to serve all requests
-coming in on that route.
+creating the object, and second to reduce memory usage by reducing the
+total number of objects required under highly concurrent workloads. Therefore,
+when adding a route, Falcon requires an *instance* of your resource class,
+rather than the class type. That same instance will be used to serve all
+requests coming in on that route.
 
 Why does raising an error inside a resource crash my app?
 ---------------------------------------------------------
@@ -84,18 +85,20 @@ layer.
 Is Falcon thread-safe?
 ----------------------
 
-New :class:`~falcon.Request` and :class:`~falcon.Response` objects are created
+The Falcon framework is, itself, thread-safe. For example, new
+:class:`~falcon.Request` and :class:`~falcon.Response` objects are created
 for each incoming HTTP request. However, a single instance of each resource
-class attached to a route is shared among all requests. Therefore, as long as
-you are careful about the way responders access class member variables to avoid
-conflicts, your WSGI app should be thread-safe.
+class attached to a route is shared among all requests. Middleware objects and
+other types of hooks, such as custom error handlers, are likewise shared.
+Therefore, as long as you implement these classes and callables in a
+thread-safe manner, and ensure that any third-party libraries used by your
+app are also thread-safe, your WSGI app as a whole will be thread-safe.
 
-That being said, IO-bound Falcon APIs are usually scaled via green
-threads (courtesy of the `gevent <http://www.gevent.org/>`_ library or similar)
-which aren't truly running concurrently, so there may be some edge cases where
-Falcon is not thread-safe that haven't been discovered yet.
-
-*Caveat emptor!*
+That being said, IO-bound Falcon APIs are usually scaled via multiple
+processes and green threads (courtesy of the `gevent <http://www.gevent.org/>`_
+library or similar) which aren't truly running concurrently, so there may be
+some edge cases where Falcon is not thread-safe that we aren't aware of. If you
+run into any issues, please let us know.
 
 Does Falcon support asyncio?
 ------------------------------
@@ -105,8 +108,14 @@ time. However, we are exploring alternatives to WSGI (such
 as `ASGI <https://github.com/django/asgiref/blob/master/specs/asgi.rst>`_)
 that will allow us to support asyncio natively in the future.
 
-In the meantime, we recommend using `gevent <http://www.gevent.org/>`_ via
-Gunicorn or uWSGI in order to scale IO-bound services.
+In the meantime, we recommend using the battle-tested
+`gevent <http://www.gevent.org/>`_ library via
+Gunicorn or uWSGI to scale IO-bound services.
+`meinheld <https://pypi.org/project/meinheld/>`_ has also been used
+successfully by the community to power high-throughput, low-latency services.
+Note that if you use Gunicorn, you can combine gevent and PyPy to achieve an
+impressive level of performance. (Unfortunately, uWSGI does not yet support
+using gevent and PyPy together.)
 
 Does Falcon support WebSocket?
 ------------------------------
@@ -181,13 +190,50 @@ Note, however, that it is more efficient to handle permanent redirects
 directly with your web server, if possible, rather than placing additional load
 on your app for such requests.
 
+How do I split requests between my original app and the part I migrated to Falcon?
+----------------------------------------------------------------------------------
+
+It is common to carve out a portion of an app and reimplement it in
+Falcon to boost performance where it is most needed.
+
+If you have access to your load balancer or reverse proxy configuration,
+we recommend setting up path or subdomain-based rules to split requests
+between your original implementation and the parts that have been
+migrated to Falcon (e.g., by adding an additional ``location`` directive
+to your NGINX config).
+
+If the above approach isn't an option for your deployment, you can
+implement a simple WSGI wrapper that does the same thing:
+
+.. code:: python
+
+    def application(environ, start_response):
+        try:
+            # NOTE(kgriffs): Prefer the host header; the web server
+            # isn't supposed to mess with it, so it should be what
+            # the client actually sent.
+            host = environ['HTTP_HOST']
+        except KeyError:
+            # NOTE(kgriffs): According to PEP-3333, this header
+            # will always be present.
+            host = environ['SERVER_NAME']
+
+        if host.startswith('api.'):
+            return falcon_app(environ, startswith)
+        elif:
+            return webapp2_app(environ, startswith)
+
+See also `PEP 3333 <https://www.python.org/dev/peps/pep-3333/#environ-variables>`_
+for a complete list of the variables that are provided via ``environ``.
+
 How do I implement both POSTing and GETing items for the same resource?
 -----------------------------------------------------------------------
+
 Suppose you have the following routes::
 
     # Resource Collection
-    POST /resources
     GET /resources{?marker, limit}
+    POST /resources
 
     # Resource Item
     GET /resources/{id}
@@ -196,13 +242,37 @@ Suppose you have the following routes::
 
 You can implement this sort of API by simply using two Python classes, one
 to represent a single resource, and another to represent the collection of
-said resources. It is common to place both classes in the same module.
+said resources. It is common to place both classes in the same module
+(see also :ref:`this section of the tutorial <tutorial-serving-images>`.)
 
-A proposal has been made to add a new routing feature that will afford
-mapping related routes to a single resource class, if so desired. To learn
-more, see `#584 on GitHub <https://github.com/falconry/falcon/issues/584>`_.
+Alternatively, you can use suffixed responders to map both routes to the
+same resource class:
 
-(See also :ref:`this section of the tutorial <tutorial-serving-images>`.)
+.. code:: python
+
+    class MyResource(object):
+        def on_get(self, req, resp, id):
+            pass
+
+        def on_patch(self, req, resp, id):
+            pass
+
+        def on_delete(self, req, resp, id):
+            pass
+
+        def on_get_collection(self, req, resp):
+            pass
+
+        def on_post_collection(self, req, resp):
+            pass
+
+
+    # ...
+
+
+    resource = MyResource()
+    api.add_route('/resources/{id}', resource)
+    api.add_route('/resources', resource, suffix='collection')
 
 What is the recommended way to map related routes to resource classes?
 ----------------------------------------------------------------------
@@ -248,8 +318,8 @@ classes:
 
     class Game(object):
 
-        def __init__(self, dal):
-            self._dal = dal
+        def __init__(self, dao):
+            self._dao = dao
 
         def on_get(self, req, resp, game_id):
             pass
@@ -260,8 +330,8 @@ classes:
 
     class GameState(object):
 
-        def __init__(self, dal):
-            self._dal = dal
+        def __init__(self, dao):
+            self._dao = dao
 
         def on_get(self, req, resp, game_id):
             pass
@@ -282,25 +352,21 @@ classes:
     # app more flexible since the data layer can
     # evolve somewhat independently from the presentation
     # layer.
-    game_dal = myapp.DAL.Game(myconfig)
+    game_dao = myapp.DAL.Game(myconfig)
 
     api.add_route('/game/ping', Ping())
-    api.add_route('/game/{game_id}', Game(game_dal))
-    api.add_route('/game/{game_id}/state', GameState(game_dal))
+    api.add_route('/game/{game_id}', Game(game_dao))
+    api.add_route('/game/{game_id}/state', GameState(game_dao))
 
-In the future, we hope to support an alternative approach, using the proposal
-from `#584 on GitHub <https://github.com/falconry/falcon/issues/584>`_,
-that will afford combining all of these resources into a single class like so:
+Alternatively, a single resource class could implement suffixed responders in
+order to handle all three routes:
 
 .. code:: python
 
-    class Ping(object):
-
-
     class Game(object):
 
-        def __init__(self, dal):
-            self._dal = dal
+        def __init__(self, dao):
+            self._dao = dao
 
         def on_get(self, req, resp, game_id):
             pass
@@ -308,23 +374,26 @@ that will afford combining all of these resources into a single class like so:
         def on_post(self, req, resp, game_id):
             pass
 
-        def on_get_ping(self, req, resp):
-            resp.body = '{"message": "pong"}'
-
         def on_get_state(self, req, resp, game_id):
             pass
 
         def on_post_state(self, req, resp, game_id):
             pass
 
+        def on_get_ping(self, req, resp):
+            resp.data = b'{"message": "pong"}'
+
+
+    # ...
+
 
     api = falcon.API()
 
     game = Game(myapp.DAL.Game(myconfig))
 
-    api.add_route('/game/ping', game, 'ping')
     api.add_route('/game/{game_id}', game)
-    api.add_route('/game/{game_id}/state', game, 'state')
+    api.add_route('/game/{game_id}/state', game, suffix='state')
+    api.add_route('/game/ping', game, suffix='ping')
 
 Extensibility
 ~~~~~~~~~~~~~
