@@ -153,7 +153,7 @@ div.admonition .last.highlight-default {
 }
 
 pre {
-    background-color: #212529;
+    /*background-color: #212529;*/
     padding: 1.25em 30px;
 }
 
@@ -212,4 +212,10 @@ div input[type="submit"]:focus {
 
 input[type=text]:focus {
     outline: 1px solid #999;
+}
+
+#sidebarSupportFalcon a:hover, #sidebarSupportFalcon a:focus {
+    text-decoration: none;
+    border: none;
+    outline: none;
 }

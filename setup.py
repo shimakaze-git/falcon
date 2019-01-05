@@ -78,7 +78,7 @@ def load_description():
         if readme_line.startswith('.. raw::'):
             in_raw = True
         elif in_raw:
-            if readme_line and not re.match('\s', readme_line):
+            if readme_line and not re.match(r'\s', readme_line):
                 in_raw = False
 
         if not in_raw:
@@ -117,7 +117,7 @@ setup(
     keywords='wsgi web api framework rest http cloud',
     author='Kurt Griffiths',
     author_email='mail@kgriffs.com',
-    url='http://falconframework.org',
+    url='https://falconframework.org',
     license='Apache 2.0',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,

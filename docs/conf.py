@@ -121,7 +121,7 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'monokai'
+pygments_style = 'github'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -161,6 +161,7 @@ html_theme_options = {
     'extra_nav_links': OrderedDict([
       ('Falcon Home', 'https://falconframework.org/'),
       ('Falcon Wiki', 'https://github.com/falconry/falcon/wiki'),
+      ('GitHub Project', 'https://github.com/falconry/falcon'),
       ('Get Help', '/community/help.html'),
       ('Support Falcon', 'https://falconframework.org/#sectionSupportFalconDevelopment'),
     ]),
