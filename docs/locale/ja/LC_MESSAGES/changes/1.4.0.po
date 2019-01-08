@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../changes/1.4.0.rst:2
+msgid "Changelog for Falcon 1.4.0"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:5
+msgid "Breaking Changes"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:7
+msgid ""
+":attr:`falcon.testing.Result.json` now returns None when the response "
+"body is empty, rather than raising an error."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:11
+msgid "Changes to Supported Platforms"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:13
+msgid "Python 3 is now supported on PyPy as of PyPy3.5 v5.10."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:14
+msgid ""
+"Support for CPython 3.3 is now deprecated and will be removed in Falcon "
+"2.0."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:16
+msgid ""
+"As with the previous release, Python 2.6 and Jython 2.7 remain deprecated"
+" and will no longer be supported in Falcon 2.0."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:20
+msgid "New & Improved"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:22
+msgid ""
+"We added a new method, :meth:`~.API.add_static_route`, that makes it easy"
+" to serve files from a local directory. This feature provides an "
+"alternative to serving files from the web server when you don't have that"
+" option, when authorization is required, or for testing purposes."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:26
+msgid "Arguments can now be passed to hooks (see :ref:`Hooks <hooks>`)."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:27
+msgid ""
+"The default JSON media type handler will now use `ujson "
+"<https://pypi.python.org/pypi/ujson>`_, if available, to speed up JSON "
+"(de)serialization under CPython."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:30
+msgid ""
+"Semantic validation via the *format* keyword is now enabled for the "
+":meth:`~falcon.media.validators.jsonschema.validate` JSON Schema "
+"decorator."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:32
+msgid ""
+"We added a new helper, :meth:`~falcon.Request.get_param_as_uuid`, to the "
+":class:`~.Request` class."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:34
+msgid ""
+"Falcon now supports WebDAV methods (`RFC 3253 "
+"<https://www.ietf.org/rfc/rfc3253.txt>`_), such as UPDATE and REPORT."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:37
+msgid ""
+"We added a new property, :attr:`~falcon.Response.downloadable_as`, to the"
+" :class:`~.Response` class for setting the Content-Disposition header."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:39
+msgid ""
+":meth:`~falcon.routing.create_http_method_map` has been refactored into "
+"two new methods, :meth:`~falcon.routing.map_http_methods` and "
+":meth:`~falcon.routing.set_default_responders`, so that custom routers "
+"can better pick and choose the functionality they need. The original "
+"method is still available for backwards-compatibility, but will be "
+"removed in a future release."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:44
+msgid ""
+"We added a new `json` param to :meth:`~falcon.testing.simulate_request` "
+"et al. to automatically serialize the request body from a JSON "
+"serializable object or type (for a complete list of serializable types, "
+"see `json.JSONEncoder "
+"<https://docs.python.org/3.6/library/json.html#json.JSONEncoder>`_)."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:48
+msgid ""
+":class:`~.TestClient`'s ``simulate_*()`` methods now call "
+":meth:`~.TestClient.simulate_request` to make it easier for subclasses to"
+" override :class:`~.TestClient`'s behavior."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:51
+msgid ""
+":class:`~.TestClient` can now be configured with a default set of headers"
+" to send with every request."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:53
+msgid "The :ref:`FAQ <faq>` has been reorganized and greatly expanded."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:54
+msgid "We restyled the docs to match https://falconframework.org"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:57
+msgid "Fixed"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:59
+msgid ""
+"Forwarded headers containing quoted strings with commas were not being "
+"parsed correctly. This has been fixed, and the parser generally made more"
+" robust."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:61
+msgid ""
+":class:`~falcon.media.JSONHandler` was raising an error under Python 2.x "
+"when serializing strings containing Unicode code points. This issue has "
+"been fixed."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:64
+msgid ""
+"Overriding a resource class and calling its responders via ``super()`` "
+"did not work when passing URI template params as positional arguments. "
+"This has now been fixed."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:67
+msgid ""
+"Python 3.6 was generating warnings for strings containing ``'\\s'`` "
+"within Falcon. These strings have been converted to raw strings to "
+"mitigate the warning."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:70
+msgid ""
+"Several syntax errors were found and fixed in the code examples used in "
+"the docs."
+msgstr ""
+
+#: ../../changes/1.4.0.rst:74
+msgid "Contributors to this Release"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:76
+msgid ""
+"Many thanks to all of our talented and stylish contributors for this "
+"release!"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:78
+msgid "GriffGeorge"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:79
+msgid "hynek"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:80
+msgid "kgriffs"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:81
+msgid "rhemz"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:82
+msgid "santeyio"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:83
+msgid "timc13"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:84
+msgid "tyronegroves"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:85
+msgid "vytas7"
+msgstr ""
+
+#: ../../changes/1.4.0.rst:86
+msgid "zhanghanyun"
+msgstr ""
+

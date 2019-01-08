@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../changes/1.2.0.rst:2
+msgid "Changelog for Falcon 1.2.0"
+msgstr ""
+
+#: ../../changes/1.2.0.rst:5
+msgid "Breaking Changes"
+msgstr ""
+
+#: ../../changes/1.2.0.rst:7
+msgid "(None)"
+msgstr ""
+
+#: ../../changes/1.2.0.rst:10
+msgid "New & Improved"
+msgstr ""
+
+#: ../../changes/1.2.0.rst:12
+msgid "A new `default` kwarg was added to :meth:`~falcon.Request.get_header`."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:13
+msgid ""
+"A :meth:`~falcon.Response.delete_header` method was added to "
+":class:`falcon.Response`."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:15
+msgid ""
+"Several new HTTP status codes and error classes were added, such as "
+":class:`falcon.HTTPFailedDependency`."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:17
+msgid ""
+"If `ujson` is installed it will be used in lieu of `json` to speed up "
+"error serialization and query string parsing under CPython. PyPy users "
+"should continue to use `json`."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:20
+msgid ""
+"The `independent_middleware` kwarg was added to :class:`falcon.API` to "
+"enable the execution of `process_response()` middleware methods, even "
+"when `process_request()` raises an error."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:23
+msgid ""
+"Single-character field names are now allowed in URL templates when "
+"specifying a route."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:25
+msgid ""
+"A detailed error message is now returned when an attempt is made to add a"
+" route that conflicts with one that has already been added."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:27
+msgid ""
+"The HTTP protocol version can now be specified when simulating requests "
+"with the testing framework."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:29
+msgid ""
+"The :class:`falcon.ResponseOptions` class was added, along with a "
+"`secure_cookies_by_default` option to control the default value of the "
+"\"secure\" attribute when setting cookies. This can make testing easier "
+"by providing a way to toggle whether or not HTTPS is required."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:33
+msgid ""
+"`port`, `netloc` and `scheme` properties were added to the "
+":class:`falcon.Request` class. The `protocol` property is now deprecated "
+"and will be removed in a future release."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:36
+msgid ""
+"The `strip_url_path_trailing_slash` was added to "
+":class:`falcon.RequestOptions` to control whether or not to retain the "
+"trailing slash in the URL path, if one is present. When this option is "
+"enabled (the default), the URL path is normalized by stripping the "
+"trailing slash character. This lets the application define a single route"
+" to a resource for a path that may or may not end in a forward slash. "
+"However, this behavior can be problematic in certain cases, such as when "
+"working with authentication schemes that employ URL-based signatures. "
+"Therefore, the `strip_url_path_trailing_slash` option was introduced to "
+"make this behavior configurable."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:47
+msgid ""
+"Improved the documentation for :class:`falcon.HTTPError`, particularly "
+"around customizing error serialization."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:49
+msgid "Misc. improvements to the look and feel of Falcon's documentation."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:50
+msgid ""
+"The tutorial in the docs was revamped, and now includes guidance on "
+"testing Falcon applications."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:54
+msgid "Fixed"
+msgstr ""
+
+#: ../../changes/1.2.0.rst:56
+msgid ""
+"Certain non-alphanumeric characters, such as parenthesis, are not handled"
+" properly in complex URI template path segments that are comprised of "
+"both literal text and field definitions."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:59
+msgid ""
+"When the WSGI server does not provide a `wsgi.file_wrapper` object, "
+"Falcon wraps :attr:`Response.stream` in a simple iterator object that "
+"does not implement `close()`. The iterator should be modified to "
+"implement a `close()` method that calls the underlying stream's `close()`"
+" to free system resources."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:64
+msgid "The testing framework does not correctly parse cookies under Jython."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:65
+msgid "Whitespace is not stripped when parsing cookies in the testing framework."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:67
+msgid "The Vary header is not always set by the default error serializer."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:68
+msgid ""
+"While not specified in PEP-3333 that the status returned to the WSGI "
+"server must be of type `str`, setting the status on the response to a "
+"`unicode` string under Python 2.6 or 2.7 can cause WSGI servers to raise "
+"an error. Therefore, the status string must first be converted if it is "
+"of the wrong type."
+msgstr ""
+
+#: ../../changes/1.2.0.rst:73
+msgid ""
+"The default OPTIONS responder returns 204, when it should return 200. RFC"
+" 7231 specifically states that Content-Length should be zero in the "
+"response to an OPTIONS request, which implies a status code of 200 since "
+"RFC 7230 states that Content-Length must not be set in any response with "
+"a status code of 204."
+msgstr ""
+

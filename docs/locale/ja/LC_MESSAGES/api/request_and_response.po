@@ -1,0 +1,1778 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../api/request_and_response.rst:4
+msgid "Request & Response"
+msgstr ""
+
+#: ../../api/request_and_response.rst:6
+msgid ""
+"Instances of the Request and Response classes are passed into responders "
+"as the second and third arguments, respectively."
+msgstr ""
+
+#: ../../api/request_and_response.rst:21
+msgid "Request"
+msgstr ""
+
+#: falcon.Request:1 of
+msgid "Represents a client's HTTP request."
+msgstr ""
+
+#: falcon.Request:3 of
+msgid "`Request` is not meant to be instantiated directly by responders."
+msgstr ""
+
+#: falcon.Request falcon.Request.client_accepts falcon.Request.client_prefers
+#: falcon.Request.get_header falcon.Request.get_header_as_datetime
+#: falcon.Request.get_param falcon.Request.get_param_as_bool
+#: falcon.Request.get_param_as_date falcon.Request.get_param_as_datetime
+#: falcon.Request.get_param_as_int falcon.Request.get_param_as_json
+#: falcon.Request.get_param_as_list falcon.Request.get_param_as_uuid
+#: falcon.Request.log_error falcon.Response.add_link
+#: falcon.Response.append_header falcon.Response.delete_header
+#: falcon.Response.get_header falcon.Response.set_cookie
+#: falcon.Response.set_header falcon.Response.set_headers of
+msgid "Parameters"
+msgstr ""
+
+#: falcon.Request:5 of
+msgid "A WSGI environment dict passed in from the server. See also PEP-3333."
+msgstr ""
+
+#: falcon.Request falcon.Request.get_header
+#: falcon.Request.get_header_as_datetime falcon.Request.get_param
+#: falcon.Request.get_param_as_bool falcon.Request.get_param_as_date
+#: falcon.Request.get_param_as_datetime falcon.Request.get_param_as_int
+#: falcon.Request.get_param_as_json falcon.Request.get_param_as_list
+#: falcon.Request.get_param_as_uuid falcon.Response falcon.Response.add_link
+#: falcon.Response.set_cookie of
+msgid "Keyword Arguments"
+msgstr ""
+
+#: falcon.Request:9 falcon.Response:5 of
+msgid "Set of global options passed from the API handler."
+msgstr ""
+
+#: falcon.Request:14 of
+msgid ""
+"*dict* -- Reference to the WSGI environ ``dict`` passed in from the "
+"server. (See also PEP-3333.)"
+msgstr ""
+
+#: falcon.Request:19 of
+msgid ""
+"*dict* -- Dictionary to hold any data about the request which is specific"
+" to your app (e.g. session object). Falcon itself will not interact with "
+"this attribute after it has been initialized."
+msgstr ""
+
+#: falcon.Request:25 of
+msgid ""
+"*class* -- Class variable that determines the factory or type to use for "
+"initializing the `context` attribute. By default, the framework will "
+"instantiate standard ``dict`` objects. However, you may override this "
+"behavior by creating a custom child class of ``falcon.Request``, and then"
+" passing that new class to `falcon.API()` by way of the latter's "
+"`request_type` parameter."
+msgstr ""
+
+#: falcon.Request:34 of
+msgid ""
+"When overriding `context_type` with a factory function (as opposed to a "
+"class), the function is called like a method of the current Request "
+"instance. Therefore the first argument is the Request instance itself "
+"(self)."
+msgstr ""
+
+#: falcon.Request:41 of
+msgid "*str* -- URL scheme used for the request. Either 'http' or 'https'."
+msgstr ""
+
+#: falcon.Request:46 of
+msgid ""
+"If the request was proxied, the scheme may not match what was originally "
+"requested by the client. :py:attr:`forwarded_scheme` can be used, "
+"instead, to handle such cases."
+msgstr ""
+
+#: falcon.Request:53 of
+msgid ""
+"*str* -- Original URL scheme requested by the user agent, if the request "
+"was proxied. Typical values are 'http' or 'https'."
+msgstr ""
+
+#: falcon.Request:57 falcon.Request:88 of
+msgid ""
+"The following request headers are checked, in order of preference, to "
+"determine the forwarded scheme:"
+msgstr ""
+
+#: falcon.Request:60 falcon.Request:91 falcon.Request:222 of
+msgid "``Forwarded``"
+msgstr ""
+
+#: falcon.Request:61 falcon.Request:223 of
+msgid "``X-Forwarded-For``"
+msgstr ""
+
+#: falcon.Request:63 of
+msgid ""
+"If none of these headers are available, or if the Forwarded header is "
+"available but does not contain a \"proto\" parameter in the first hop, "
+"the value of :attr:`scheme` is returned instead."
+msgstr ""
+
+#: falcon.Request:68 of
+msgid ""
+"(See also: `RFC 7239, Section 1 "
+"<https://tools.ietf.org/html/rfc7239#section-1>`_)"
+msgstr ""
+
+#: falcon.Request:72 of
+msgid ""
+"*str* -- Deprecated alias for `scheme`. Will be removed in a future "
+"release."
+msgstr ""
+
+#: falcon.Request:77 of
+msgid "*str* -- HTTP method requested (e.g., 'GET', 'POST', etc.)"
+msgstr ""
+
+#: falcon.Request:81 of
+msgid "*str* -- Host request header field"
+msgstr ""
+
+#: falcon.Request:85 of
+msgid ""
+"*str* -- Original host request header as received by the first proxy in "
+"front of the application server."
+msgstr ""
+
+#: falcon.Request:92 of
+msgid "``X-Forwarded-Host``"
+msgstr ""
+
+#: falcon.Request:94 of
+msgid ""
+"If none of the above headers are available, or if the Forwarded header is"
+" available but the \"host\" parameter is not included in the first hop, "
+"the value of :attr:`host` is returned instead."
+msgstr ""
+
+#: falcon.Request:101 of
+msgid ""
+"Reverse proxies are often configured to set the Host header directly to "
+"the one that was originally requested by the user agent; in that case, "
+"using :attr:`host` is sufficient."
+msgstr ""
+
+#: falcon.Forwarded:3 falcon.Request:106 falcon.Request:251 of
+msgid ""
+"(See also: `RFC 7239, Section 4 "
+"<https://tools.ietf.org/html/rfc7239#section-4>`_)"
+msgstr ""
+
+#: falcon.Request:110 of
+msgid ""
+"*int* -- Port used for the request. If the request URI does not specify a"
+" port, the default one for the given schema is returned (80 for HTTP and "
+"443 for HTTPS)."
+msgstr ""
+
+#: falcon.Request:116 of
+msgid ""
+"*str* -- Returns the 'host:port' portion of the request URL. The port may"
+" be ommitted if it is the default one for the URL's schema (80 for HTTP "
+"and 443 for HTTPS)."
+msgstr ""
+
+#: falcon.Request:122 of
+msgid ""
+"*str* -- Leftmost (i.e., most specific) subdomain from the hostname. If "
+"only a single domain name is given, `subdomain` will be ``None``."
+msgstr ""
+
+#: falcon.Request:128 of
+msgid ""
+"If the hostname in the request is an IP address, the value for "
+"`subdomain` is undefined."
+msgstr ""
+
+#: falcon.Request:133 of
+msgid ""
+"*str* -- The initial portion of the request URI's path that corresponds "
+"to the application object, so that the application knows its virtual "
+"\"location\". This may be an empty string, if the application corresponds"
+" to the \"root\" of the server."
+msgstr ""
+
+#: falcon.Request:139 of
+msgid "(Corresponds to the \"SCRIPT_NAME\" environ variable defined by PEP-3333.)"
+msgstr ""
+
+#: falcon.Request:144 of
+msgid "*str* -- The fully-qualified URI for the request."
+msgstr ""
+
+#: falcon.Request:148 of
+msgid "*str* -- Alias for `uri`."
+msgstr ""
+
+#: falcon.Request:152 of
+msgid ""
+"*str* -- Original URI for proxied requests. Uses :attr:`forwarded_scheme`"
+" and :attr:`forwarded_host` in order to reconstruct the original URI "
+"requested by the user agent."
+msgstr ""
+
+#: falcon.Request:159 of
+msgid ""
+"*str* -- The path and query string portion of the request URI, omitting "
+"the scheme and host."
+msgstr ""
+
+#: falcon.Request:164 of
+msgid ""
+"*str* -- The prefix of the request URI, including scheme, host, and WSGI "
+"app (if any)."
+msgstr ""
+
+#: falcon.Request:169 of
+msgid ""
+"*str* -- The prefix of the original URI for proxied requests. Uses "
+":attr:`forwarded_scheme` and :attr:`forwarded_host` in order to "
+"reconstruct the original URI."
+msgstr ""
+
+#: falcon.Request:176 of
+msgid "*str* -- Path portion of the request URI (not including query string)."
+msgstr ""
+
+#: falcon.Request:181 of
+msgid ""
+"`req.path` may be set to a new value by a `process_request()` middleware "
+"method in order to influence routing."
+msgstr ""
+
+#: falcon.Request:186 of
+msgid ""
+"*str* -- Query string portion of the request URI, without the preceding "
+"'?' character."
+msgstr ""
+
+#: falcon.Request:191 of
+msgid ""
+"*str* -- The template for the route that was matched for this request. "
+"May be ``None`` if the request has not yet been routed, as would be the "
+"case for `process_request()` middleware methods. May also be ``None`` if "
+"your app uses a custom routing engine and the engine does not provide the"
+" URI template when resolving a route."
+msgstr ""
+
+#: falcon.Request:200 of
+msgid "*str* -- IP address of the closest client or proxy to the WSGI server."
+msgstr ""
+
+#: falcon.Request:203 of
+msgid ""
+"This property is determined by the value of ``REMOTE_ADDR`` in the WSGI "
+"environment dict. Since this address is not derived from an HTTP header, "
+"clients and proxies can not forge it."
+msgstr ""
+
+#: falcon.Request:210 of
+msgid ""
+"If your application is behind one or more reverse proxies, you can use "
+":py:attr:`~.access_route` to retrieve the real IP address of the client."
+msgstr ""
+
+#: falcon.Request:216 of
+msgid ""
+"*list* -- IP address of the original client, as well as any known "
+"addresses of proxies fronting the WSGI server."
+msgstr ""
+
+#: falcon.Request:219 of
+msgid ""
+"The following request headers are checked, in order of preference, to "
+"determine the addresses:"
+msgstr ""
+
+#: falcon.Request:224 of
+msgid "``X-Real-IP``"
+msgstr ""
+
+#: falcon.Request:226 of
+msgid ""
+"If none of these headers are available, the value of "
+":py:attr:`~.remote_addr` is used instead."
+msgstr ""
+
+#: falcon.Request:231 of
+msgid ""
+"Per `RFC 7239`_, the access route may contain \"unknown\" and obfuscated "
+"identifiers, in addition to IPv4 and IPv6 addresses"
+msgstr ""
+
+#: falcon.Request:239 of
+msgid ""
+"Headers can be forged by any client or proxy. Use this property with "
+"caution and validate all values before using them. Do not rely on the "
+"access route to authorize requests."
+msgstr ""
+
+#: falcon.Request:246 of
+msgid ""
+"*list* -- Value of the Forwarded header, as a parsed list of "
+":class:`falcon.Forwarded` objects, or ``None`` if the header is missing. "
+"If the header value is malformed, Falcon will make a best effort to parse"
+" what it can."
+msgstr ""
+
+#: falcon.Request:255 of
+msgid ""
+"*datetime* -- Value of the Date header, converted to a ``datetime`` "
+"instance. The header value is assumed to conform to RFC 1123."
+msgstr ""
+
+#: falcon.Request:261 of
+msgid ""
+"*str* -- Value of the Authorization header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:266 of
+msgid ""
+"*str* -- Value of the User-Agent header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:271 of
+msgid ""
+"*str* -- Value of the Referer header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:276 of
+msgid "*str* -- Value of the Accept header, or '*/*' if the header is missing."
+msgstr ""
+
+#: falcon.Request:281 of
+msgid ""
+"*bool* -- ``True`` if the Accept header indicates that the client is "
+"willing to receive JSON, otherwise ``False``."
+msgstr ""
+
+#: falcon.Request:286 of
+msgid ""
+"*bool* -- ``True`` if the Accept header indicates that the client is "
+"willing to receive MessagePack, otherwise ``False``."
+msgstr ""
+
+#: falcon.Request:292 of
+msgid ""
+"*bool* -- ``True`` if the Accept header indicates that the client is "
+"willing to receive XML, otherwise ``False``."
+msgstr ""
+
+#: falcon.Request:297 of
+msgid ""
+"*dict* -- A dict of name/value cookie pairs. (See also: :ref:`Getting "
+"Cookies <getting-cookies>`)"
+msgstr ""
+
+#: falcon.Request:302 of
+msgid ""
+"*str* -- Value of the Content-Type header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:307 of
+msgid ""
+"*int* -- Value of the Content-Length header converted to an ``int``, or "
+"``None`` if the header is missing."
+msgstr ""
+
+#: falcon.Request:312 of
+msgid ""
+"File-like input object for reading the body of the request, if any. This "
+"object provides direct access to the server's data stream and is non-"
+"seekable. In order to avoid unintended side effects, and to provide "
+"maximum flexibility to the application, Falcon itself does not buffer or "
+"spool the data in any way."
+msgstr ""
+
+#: falcon.Request:319 of
+msgid ""
+"Since this object is provided by the WSGI server itself, rather than by "
+"Falcon, it may behave differently depending on how you host your app. For"
+" example, attempting to read more bytes than are expected (as determined "
+"by the Content-Length header) may or may not block indefinitely. It's a "
+"good idea to test your WSGI server to find out how it behaves."
+msgstr ""
+
+#: falcon.Request:327 of
+msgid ""
+"This can be particulary problematic when a request body is expected, but "
+"none is given. In this case, the following call blocks under certain WSGI"
+" servers::"
+msgstr ""
+
+#: falcon.Request:334 of
+msgid "The workaround is fairly straightforward, if verbose::"
+msgstr ""
+
+#: falcon.Request:340 of
+msgid ""
+"Alternatively, when passing the stream directly to a consumer, it may be "
+"necessary to branch off the value of the Content-Length header::"
+msgstr ""
+
+#: falcon.Request:347 of
+msgid ""
+"For a slight performance cost, you may instead wish to use "
+":py:attr:`bounded_stream`, which wraps the native WSGI input object to "
+"normalize its behavior."
+msgstr ""
+
+#: falcon.Request:353 of
+msgid ""
+"If an HTML form is POSTed to the API using the *application/x-www-form-"
+"urlencoded* media type, and the "
+":py:attr:`~.RequestOptions.auto_parse_form_urlencoded` option is set, the"
+" framework will consume `stream` in order to parse the parameters and "
+"merge them into the query string parameters. In this case, the stream "
+"will be left at EOF."
+msgstr ""
+
+#: falcon.Request:363 of
+msgid ""
+"File-like wrapper around `stream` to normalize certain differences "
+"between the native input objects employed by different WSGI servers. In "
+"particular, `bounded_stream` is aware of the expected Content-Length of "
+"the body, and will never block on out-of-bounds reads, assuming the "
+"client does not stall while transmitting the data to the server."
+msgstr ""
+
+#: falcon.Request:371 of
+msgid ""
+"For example, the following will not block when Content-Length is 0 or the"
+" header is missing altogether::"
+msgstr ""
+
+#: falcon.Request:376 of
+msgid "This is also safe::"
+msgstr ""
+
+#: falcon.Request:382 of
+msgid "*str* -- Value of the Expect header, or ``None`` if the header is missing."
+msgstr ""
+
+#: falcon.Request:387 of
+msgid ""
+"*object* -- Returns a deserialized form of the request stream. When "
+"called, it will attempt to deserialize the request stream using the "
+"Content-Type header as well as the media-type handlers configured via "
+":class:`falcon.RequestOptions`."
+msgstr ""
+
+#: falcon.Request:392 falcon.Response:29 of
+msgid "See :ref:`media` for more information regarding media handling."
+msgstr ""
+
+#: falcon.Request:396 of
+msgid ""
+"This operation will consume the request stream the first time it's called"
+" and cache the results. Follow-up calls will just retrieve a cached "
+"version of the object."
+msgstr ""
+
+#: falcon.Request:402 of
+msgid ""
+"*tuple of int* -- A 2-member ``tuple`` parsed from the value of the Range"
+" header."
+msgstr ""
+
+#: falcon.Request:405 of
+msgid ""
+"The two members correspond to the first and last byte positions of the "
+"requested resource, inclusive. Negative indices indicate offset from the "
+"end of the resource, where -1 is the last byte, -2 is the second-to-last "
+"byte, and so forth."
+msgstr ""
+
+#: falcon.Request:411 of
+msgid ""
+"Only continous ranges are supported (e.g., \"bytes=0-0,-1\" would result "
+"in an HTTPBadRequest exception when the attribute is accessed.)"
+msgstr ""
+
+#: falcon.Request:417 of
+msgid ""
+"*str* -- Unit of the range parsed from the value of the Range header, or "
+"``None`` if the header is missing"
+msgstr ""
+
+#: falcon.Request:422 of
+msgid ""
+"*str* -- Value of the If-Match header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:427 of
+msgid ""
+"*str* -- Value of the If-None-Match header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:432 of
+msgid ""
+"*datetime* -- Value of the If-Modified-Since header, or ``None`` if the "
+"header is missing."
+msgstr ""
+
+#: falcon.Request:437 of
+msgid ""
+"*datetime* -- Value of the If-Unmodified-Since header, or ``None`` if the"
+" header is missing."
+msgstr ""
+
+#: falcon.Request:442 of
+msgid ""
+"*str* -- Value of the If-Range header, or ``None`` if the header is "
+"missing."
+msgstr ""
+
+#: falcon.Request:447 of
+msgid ""
+"*dict* -- Raw HTTP headers from the request with canonical dash-separated"
+" names. Parsing all the headers to create this dict is done the first "
+"time this attribute is accessed. This parsing can be costly, so unless "
+"you need all the headers in this format, you should use the `get_header` "
+"method or one of the convenience attributes instead, to get a value for a"
+" specific header."
+msgstr ""
+
+#: falcon.Request:457 of
+msgid ""
+"*dict* -- The mapping of request query parameter names to their values.  "
+"Where the parameter appears multiple times in the query string, the value"
+" mapped to that parameter key will be a list of all the values in the "
+"order seen."
+msgstr ""
+
+#: falcon.Request:464 falcon.Response:105 of
+msgid "*dict* -- Set of global options passed from the API handler."
+msgstr ""
+
+#: falcon.Request.client_accepts:1 of
+msgid "Determine whether or not the client accepts a given media type."
+msgstr ""
+
+#: falcon.Request.client_accepts:3 of
+msgid "An Internet media type to check."
+msgstr ""
+
+#: falcon.Request.client_accepts falcon.Request.client_prefers
+#: falcon.Request.get_header falcon.Request.get_header_as_datetime
+#: falcon.Request.get_param falcon.Request.get_param_as_bool
+#: falcon.Request.get_param_as_date falcon.Request.get_param_as_datetime
+#: falcon.Request.get_param_as_int falcon.Request.get_param_as_json
+#: falcon.Request.get_param_as_list falcon.Request.get_param_as_uuid
+#: falcon.Response.get_header of
+msgid "Returns"
+msgstr ""
+
+#: falcon.Request.client_accepts:6 of
+msgid ""
+"``True`` if the client has indicated in the Accept header that it accepts"
+" the specified media type. Otherwise, returns ``False``."
+msgstr ""
+
+#: falcon.Request.client_accepts falcon.Request.client_prefers
+#: falcon.Request.get_header falcon.Request.get_header_as_datetime
+#: falcon.Request.get_param falcon.Request.get_param_as_bool
+#: falcon.Request.get_param_as_date falcon.Request.get_param_as_datetime
+#: falcon.Request.get_param_as_int falcon.Request.get_param_as_json
+#: falcon.Request.get_param_as_list falcon.Request.get_param_as_uuid
+#: falcon.Response.get_header of
+msgid "Return type"
+msgstr ""
+
+#: falcon.Request.client_prefers:1 of
+msgid "Return the client's preferred media type, given several choices."
+msgstr ""
+
+#: falcon.Request.client_prefers:3 of
+msgid ""
+"One or more Internet media types from which to choose the client's "
+"preferred type. This value **must** be an iterable collection of strings."
+msgstr ""
+
+#: falcon.Request.client_prefers:8 of
+msgid ""
+"The client's preferred media type, based on the Accept header. Returns "
+"``None`` if the client does not accept any of the given types."
+msgstr ""
+
+#: falcon.Request.get_header:1 falcon.Response.get_header:1 of
+msgid "Retrieve the raw string value for the given header."
+msgstr ""
+
+#: falcon.Request.get_header:3 of
+msgid "Header name, case-insensitive (e.g., 'Content-Type')"
+msgstr ""
+
+#: falcon.Request.get_header:6 falcon.Request.get_header_as_datetime:6 of
+msgid ""
+"Set to ``True`` to raise ``HTTPBadRequest`` instead of returning "
+"gracefully when the header is not found (default ``False``)."
+msgstr ""
+
+#: falcon.Request.get_header:10 of
+msgid "Value to return if the header is not found (default ``None``)."
+msgstr ""
+
+#: falcon.Request.get_header:14 of
+msgid ""
+"The value of the specified header if it exists, or the default value if "
+"the header is not found and is not required."
+msgstr ""
+
+#: falcon.Request.get_header falcon.Request.get_header_as_datetime
+#: falcon.Request.get_param falcon.Request.get_param_as_bool
+#: falcon.Request.get_param_as_date falcon.Request.get_param_as_datetime
+#: falcon.Request.get_param_as_json falcon.Request.get_param_as_list
+#: falcon.Response.set_cookie falcon.Response.set_headers of
+msgid "raises"
+msgstr ""
+
+#: falcon.Request.get_header:19 falcon.Request.get_header_as_datetime:19 of
+msgid ""
+":exc:`HTTPBadRequest` -- The header was not found in the request, but it "
+"was required."
+msgstr ""
+
+#: falcon.Request.get_header_as_datetime:1 of
+msgid "Return an HTTP header with HTTP-Date values as a datetime."
+msgstr ""
+
+#: falcon.Request.get_header_as_datetime:3 of
+msgid "Header name, case-insensitive (e.g., 'Date')"
+msgstr ""
+
+#: falcon.Request.get_header_as_datetime:10 of
+msgid ""
+"Support obs-date formats according to RFC 7231, e.g.: \"Sunday, 06-Nov-94"
+" 08:49:37 GMT\" (default ``False``)."
+msgstr ""
+
+#: falcon.Request.get_header_as_datetime:15 of
+msgid ""
+"The value of the specified header if it exists, or ``None`` if the header"
+" is not found and is not required."
+msgstr ""
+
+#: falcon.Request.get_header_as_datetime:21 of
+msgid ""
+":exc:`HttpInvalidHeader` -- The header contained a malformed/invalid "
+"value."
+msgstr ""
+
+#: falcon.Request.get_param:1 of
+msgid "Return the raw value of a query string parameter as a string."
+msgstr ""
+
+#: falcon.Request.get_param:5 of
+msgid ""
+"If an HTML form is POSTed to the API using the *application/x-www-form-"
+"urlencoded* media type, Falcon can automatically parse the parameters "
+"from the request body and merge them into the query string parameters. To"
+" enable this functionality, set "
+":py:attr:`~.RequestOptions.auto_parse_form_urlencoded` to ``True`` via "
+":any:`API.req_options`."
+msgstr ""
+
+#: falcon.Request.get_param:15 of
+msgid ""
+"Similar to the way multiple keys in form data is handled, if a query "
+"parameter is assigned a comma-separated list of values (e.g., "
+"``foo=a,b,c``), only one of those values will be returned, and it is "
+"undefined which one. Use :meth:`~.get_param_as_list` to retrieve all the "
+"values."
+msgstr ""
+
+#: falcon.Request.get_param:21 of
+msgid "Parameter name, case-sensitive (e.g., 'sort')."
+msgstr ""
+
+#: falcon.Request.get_param:24 falcon.Request.get_param_as_date:10
+#: falcon.Request.get_param_as_datetime:10 falcon.Request.get_param_as_json:9
+#: falcon.Request.get_param_as_list:16 of
+msgid ""
+"Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None``"
+" when the parameter is not found (default ``False``)."
+msgstr ""
+
+#: falcon.Request.get_param:28 of
+msgid ""
+"A ``dict``-like object in which to place the value of the param, but only"
+" if the param is present."
+msgstr ""
+
+#: falcon.Request.get_param:31 of
+msgid "If the param is not found returns the given value instead of None"
+msgstr ""
+
+#: falcon.Request.get_param:35 of
+msgid ""
+"The value of the param as a string, or ``None`` if param is not found and"
+" is not required."
+msgstr ""
+
+#: falcon.Request.get_param:39 of
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:1 of
+msgid "Return the value of a query string parameter as a boolean"
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:3 of
+msgid "The following boolean strings are supported::"
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:8 of
+msgid "Parameter name, case-sensitive (e.g., 'detailed')."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:11 of
+msgid ""
+"Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None``"
+" when the parameter is not found or is not a recognized boolean string "
+"(default ``False``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:16 falcon.Request.get_param_as_date:14
+#: falcon.Request.get_param_as_datetime:14 falcon.Request.get_param_as_int:19
+#: falcon.Request.get_param_as_json:13 falcon.Request.get_param_as_list:20
+#: falcon.Request.get_param_as_uuid:24 of
+msgid ""
+"A ``dict``-like object in which to place the value of the param, but only"
+" if the param is found (default ``None``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:20 of
+msgid ""
+"If ``True``, an empty string value will be treated as ``True`` (default "
+"``False``). Normally empty strings are ignored; if you would like to "
+"recognize such parameters, you must set the `keep_blank_qs_values` "
+"request option to ``True``. Request options are set globally for each "
+"instance of ``falcon.API`` through the `req_options` attribute."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:28 of
+msgid ""
+"The value of the param if it is found and can be converted to a ``bool``."
+" If the param is not found, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_bool:33 of
+msgid ""
+":exc:`HTTPBadRequest` -- A required param is missing from the request, or"
+" can not be converted to a ``bool``."
+msgstr ""
+
+#: falcon.Request.get_param_as_date:1 of
+msgid "Return the value of a query string parameter as a date."
+msgstr ""
+
+#: falcon.Request.get_param_as_date:3 falcon.Request.get_param_as_datetime:3
+#: falcon.Request.get_param_as_list:7 of
+msgid "Parameter name, case-sensitive (e.g., 'ids')."
+msgstr ""
+
+#: falcon.Request.get_param_as_date:6 of
+#, python-format
+msgid ""
+"String used to parse the param value into a date. Any format recognized "
+"by strptime() is supported (default ``\"%Y-%m-%d\"``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_date:19 of
+msgid ""
+"The value of the param if it is found and can be converted to a ``date`` "
+"according to the supplied format string. If the param is not found, "
+"returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_date:25 of
+msgid ""
+":exc:`HTTPBadRequest` -- A required param is missing from the request, or"
+" the value could not be converted to a ``date``."
+msgstr ""
+
+#: falcon.Request.get_param_as_datetime:1 of
+msgid "Return the value of a query string parameter as a datetime."
+msgstr ""
+
+#: falcon.Request.get_param_as_datetime:6 of
+#, python-format
+msgid ""
+"String used to parse the param value into a ``datetime``. Any format "
+"recognized by strptime() is supported (default ``'%Y-%m-%dT%H:%M:%SZ'``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_datetime:19 of
+msgid ""
+"The value of the param if it is found and can be converted to a "
+"``datetime`` according to the supplied format string. If the param is not"
+" found, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_datetime:25 of
+msgid ""
+":exc:`HTTPBadRequest` -- A required param is missing from the request, or"
+" the value could not be converted to a ``datetime``."
+msgstr ""
+
+#: falcon.Request.get_param_as_dict:1 of
+msgid "Deprecated alias of :meth:`~get_param_as_json`."
+msgstr ""
+
+#: falcon.Request.get_param_as_dict:3 of
+msgid "This method has been deprecated and will be removed in a future release."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:1 of
+msgid "Return the value of a query string parameter as an int."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:3 of
+msgid "Parameter name, case-sensitive (e.g., 'limit')."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:6 of
+msgid ""
+"Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None``"
+" when the parameter is not found or is not an integer (default "
+"``False``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:11 of
+msgid ""
+"Set to the minimum value allowed for this param. If the param is found "
+"and it is less than min, an ``HTTPError`` is raised."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:15 of
+msgid ""
+"Set to the maximum value allowed for this param. If the param is found "
+"and its value is greater than max, an ``HTTPError`` is raised."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:24 of
+msgid ""
+"The value of the param if it is found and can be converted to an ``int``."
+" If the param is not found, returns ``None``, unless `required` is "
+"``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_int:33 falcon.Request.get_param_as_uuid:36 of
+msgid "Raises"
+msgstr ""
+
+#: falcon.Request.get_param_as_int:33 falcon.Request.get_param_as_uuid:36 of
+msgid "HTTPBadRequest: The param was not found in the request, even though"
+msgstr ""
+
+#: falcon.Request.get_param_as_int:31 of
+msgid ""
+"it was required to be there, or it was found but could not be converted "
+"to an ``int``. Also raised if the param's value falls outside the given "
+"interval, i.e., the value must be in the interval: min <= value <= max to"
+" avoid triggering an error."
+msgstr ""
+
+#: falcon.Request.get_param_as_json:1 of
+msgid "Return the decoded JSON value of a query string parameter."
+msgstr ""
+
+#: falcon.Request.get_param_as_json:3 of
+msgid ""
+"Given a JSON value, decode it to an appropriate Python type, (e.g., "
+"``dict``, ``list``, ``str``, ``int``, ``bool``, etc.)"
+msgstr ""
+
+#: falcon.Request.get_param_as_json:6 of
+msgid "Parameter name, case-sensitive (e.g., 'payload')."
+msgstr ""
+
+#: falcon.Request.get_param_as_json:18 of
+msgid ""
+"The value of the param if it is found. Otherwise, returns ``None`` unless"
+" required is ``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_json:22 of
+msgid ""
+":exc:`HTTPBadRequest` -- A required param is missing from the request, or"
+" the value could not be parsed as JSON."
+msgstr ""
+
+#: falcon.Request.get_param_as_list:1 of
+msgid "Return the value of a query string parameter as a list."
+msgstr ""
+
+#: falcon.Request.get_param_as_list:3 of
+msgid ""
+"List items must be comma-separated or must be provided as multiple "
+"instances of the same param in the query string ala *application/x-www-"
+"form-urlencoded*."
+msgstr ""
+
+#: falcon.Request.get_param_as_list:10 of
+msgid ""
+"An optional transform function that takes as input each element in the "
+"list as a ``str`` and outputs a transformed element for inclusion in the "
+"list that will be returned. For example, passing ``int`` will transform "
+"list items into numbers."
+msgstr ""
+
+#: falcon.Request.get_param_as_list:25 of
+msgid ""
+"The value of the param if it is found. Otherwise, returns ``None`` unless"
+" required is True. Empty list elements will be discarded. For example, "
+"the following query strings would both result in `['1', '3']`::      "
+"things=1,,3     things=1&things=&things=3"
+msgstr ""
+
+#: falcon.Request.get_param_as_list:25 of
+msgid ""
+"The value of the param if it is found. Otherwise, returns ``None`` unless"
+" required is True. Empty list elements will be discarded. For example, "
+"the following query strings would both result in `['1', '3']`::"
+msgstr ""
+
+#: falcon.Request.get_param_as_list:34 of
+msgid ""
+":exc:`HTTPBadRequest` -- A required param is missing from the request, or"
+" a transform function raised an instance of ``ValueError``."
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:1 of
+msgid "Return the value of a query string parameter as an UUID."
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:3 of
+msgid ""
+"The value to convert must conform to the standard UUID string "
+"representation per RFC 4122. For example, the following strings are all "
+"valid::"
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:16 of
+msgid "Parameter name, case-sensitive (e.g., 'id')."
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:19 of
+msgid ""
+"Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None``"
+" when the parameter is not found or is not a UUID (default ``False``)."
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:29 of
+msgid ""
+"The value of the param if it is found and can be converted to a ``UUID``."
+" If the param is not found, returns ``None``, unless `required` is "
+"``True``."
+msgstr ""
+
+#: falcon.Request.get_param_as_uuid:36 of
+msgid ""
+"it was required to be there, or it was found but could not be converted "
+"to a ``UUID``."
+msgstr ""
+
+#: falcon.Request.log_error:1 of
+msgid "Write an error message to the server's log."
+msgstr ""
+
+#: falcon.Request.log_error:3 of
+msgid ""
+"Prepends timestamp and request info to message, and writes the result out"
+" to the WSGI server's error stream (`wsgi.error`)."
+msgstr ""
+
+#: falcon.Request.log_error:6 of
+msgid ""
+"Description of the problem. On Python 2, instances of ``unicode`` will be"
+" converted to UTF-8."
+msgstr ""
+
+#: falcon.Forwarded:1 of
+msgid "Represents a parsed Forwarded header."
+msgstr ""
+
+#: falcon.Forwarded:7 of
+msgid ""
+"*str* -- The value of the \"for\" parameter, or ``None`` if the parameter"
+" is absent. Identifies the node making the request to the proxy."
+msgstr ""
+
+#: falcon.Forwarded:13 of
+msgid ""
+"*str* -- The value of the \"by\" parameter, or ``None`` if the parameter "
+"is absent. Identifies the client-facing interface of the proxy."
+msgstr ""
+
+#: falcon.Forwarded:19 of
+msgid ""
+"*str* -- The value of the \"host\" parameter, or ``None`` if the "
+"parameter is absent. Provides the host request header field as received "
+"by the proxy."
+msgstr ""
+
+#: falcon.Forwarded:25 of
+msgid ""
+"*str* -- The value of the \"proto\" parameter, or ``None`` if the "
+"parameter is absent. Indicates the protocol that was used to make the "
+"request to the proxy."
+msgstr ""
+
+#: ../../api/request_and_response.rst:30
+msgid "Response"
+msgstr ""
+
+#: falcon.Response:1 of
+msgid "Represents an HTTP response to a client request."
+msgstr ""
+
+#: falcon.Response:3 of
+msgid "`Response` is not meant to be instantiated directly by responders."
+msgstr ""
+
+#: falcon.Response:10 of
+msgid ""
+"*str* -- HTTP status line (e.g., '200 OK'). Falcon requires the full "
+"status line, not just the code (e.g., 200). This design makes the "
+"framework more efficient because it does not have to do any kind of "
+"conversion or lookup when composing the WSGI response."
+msgstr ""
+
+#: falcon.Response:16 of
+msgid "If not set explicitly, the status defaults to '200 OK'."
+msgstr ""
+
+#: falcon.Response:20 of
+msgid ""
+"Falcon provides a number of constants for common status codes. They all "
+"start with the ``HTTP_`` prefix, as in: ``falcon.HTTP_204``."
+msgstr ""
+
+#: falcon.Response:26 of
+msgid ""
+"*object* -- A serializable object supported by the media handlers "
+"configured via :class:`falcon.RequestOptions`."
+msgstr ""
+
+#: falcon.Response:33 of
+msgid "*str or unicode* -- String representing response content."
+msgstr ""
+
+#: falcon.Response:35 of
+msgid ""
+"If set to a Unicode type (``unicode`` in Python 2, or ``str`` in Python "
+"3), Falcon will encode the text as UTF-8 in the response. If the content "
+"is already a byte string, use the :attr:`data` attribute instead (it's "
+"faster)."
+msgstr ""
+
+#: falcon.Response:42 of
+msgid "*bytes* -- Byte string representing response content."
+msgstr ""
+
+#: falcon.Response:44 of
+msgid ""
+"Use this attribute in lieu of `body` when your content is already a byte "
+"string (``str`` or ``bytes`` in Python 2, or simply ``bytes`` in Python "
+"3). See also the note below."
+msgstr ""
+
+#: falcon.Response:50 of
+msgid ""
+"Under Python 2.x, if your content is of type ``str``, using the `data` "
+"attribute instead of `body` is the most efficient approach. However, if "
+"your text is of type ``unicode``, you will need to use the `body` "
+"attribute instead."
+msgstr ""
+
+#: falcon.Response:56 of
+msgid ""
+"Under Python 3.x, on the other hand, the 2.x ``str`` type can be thought "
+"of as having been replaced by what was once the ``unicode`` type, and so "
+"you will need to always use the `body` attribute for strings to ensure "
+"Unicode characters are properly encoded in the HTTP response."
+msgstr ""
+
+#: falcon.Response:66 of
+msgid ""
+"Either a file-like object with a `read()` method that takes an optional "
+"size argument and returns a block of bytes, or an iterable object, "
+"representing response content, and yielding blocks as byte strings. "
+"Falcon will use *wsgi.file_wrapper*, if provided by the WSGI server, in "
+"order to efficiently serve file-like objects."
+msgstr ""
+
+#: falcon.Response:75 of
+msgid ""
+"*int* -- Expected length of `stream`. If `stream` is set, but "
+"`stream_len` is not, Falcon will not supply a Content-Length header to "
+"the WSGI server. Consequently, the server may choose to use chunked "
+"encoding or one of the other strategies suggested by PEP-3333."
+msgstr ""
+
+#: falcon.Response:83 of
+msgid ""
+"*dict* -- Dictionary to hold any data about the response which is "
+"specific to your app. Falcon itself will not interact with this attribute"
+" after it has been initialized."
+msgstr ""
+
+#: falcon.Response:89 of
+msgid ""
+"*class* -- Class variable that determines the factory or type to use for "
+"initializing the `context` attribute. By default, the framework will "
+"instantiate standard ``dict`` objects. However, you may override this "
+"behavior by creating a custom child class of ``falcon.Response``, and "
+"then passing that new class to `falcon.API()` by way of the latter's "
+"`response_type` parameter."
+msgstr ""
+
+#: falcon.Response:98 of
+msgid ""
+"When overriding `context_type` with a factory function (as opposed to a "
+"class), the function is called like a method of the current Response "
+"instance. Therefore the first argument is the Response instance itself "
+"(self)."
+msgstr ""
+
+#: falcon.Response.accept_ranges:1 of
+msgid "Set the Accept-Ranges header."
+msgstr ""
+
+#: falcon.Response.accept_ranges:3 of
+msgid ""
+"The Accept-Ranges header field indicates to the client which range units "
+"are supported (e.g. \"bytes\") for the target resource."
+msgstr ""
+
+#: falcon.Response.accept_ranges:7 of
+msgid ""
+"If range requests are not supported for the target resource, the header "
+"may be set to \"none\" to advise the client not to attempt any such "
+"requests."
+msgstr ""
+
+#: falcon.Response.accept_ranges:13 of
+msgid "\"none\" is the literal string, not Python's built-in ``None`` type."
+msgstr ""
+
+#: falcon.Response.add_link:1 of
+msgid "Add a link header to the response."
+msgstr ""
+
+#: falcon.Response.add_link:3 of
+msgid ""
+"(See also: `RFC 5988, Section 1 "
+"<https://tools.ietf.org/html/rfc5988#section-1>`_)"
+msgstr ""
+
+#: falcon.Response.add_link:7 of
+msgid ""
+"Calling this method repeatedly will cause each link to be appended to the"
+" Link header value, separated by commas."
+msgstr ""
+
+#: falcon.Response.add_link:12 of
+msgid ""
+"So-called \"link-extension\" elements, as defined by RFC 5988, are not "
+"yet supported. See also Issue #288."
+msgstr ""
+
+#: falcon.Response.add_link:15 of
+msgid ""
+"Target IRI for the resource identified by the link. Will be converted to "
+"a URI, if necessary, per `RFC 3987, Section 3.1. "
+"<https://tools.ietf.org/html/rfc3987#section-3.1.>`_"
+msgstr ""
+
+#: falcon.Response.add_link:19 of
+msgid ""
+"Relation type of the link, such as \"next\" or \"bookmark\".  (See also: "
+"http://www.iana.org/assignments/link-relations/link-relations.xhtml)"
+msgstr ""
+
+#: falcon.Response.add_link:19 of
+msgid "Relation type of the link, such as \"next\" or \"bookmark\"."
+msgstr ""
+
+#: falcon.Response.add_link:22 of
+msgid ""
+"(See also: http://www.iana.org/assignments/link-relations/link-"
+"relations.xhtml)"
+msgstr ""
+
+#: falcon.Response.add_link:25 of
+msgid ""
+"Human-readable label for the destination of the link (default ``None``). "
+"If the title includes non-ASCII characters, you will need to use "
+"`title_star` instead, or provide both a US-ASCII version using `title` "
+"and a Unicode version using `title_star`."
+msgstr ""
+
+#: falcon.Response.add_link:31 of
+msgid ""
+"Localized title describing the destination of the link (default "
+"``None``). The value must be a two-member tuple in the form of "
+"(*language-tag*, *text*), where *language-tag* is a standard language "
+"identifier as defined in `RFC 5646, Section 2.1 "
+"<https://tools.ietf.org/html/rfc5646#section-2.1>`_, and *text* is a "
+"Unicode string.  .. note::     *language-tag* may be an empty string, in "
+"which case the    client will assume the language from the general "
+"context    of the current request.  .. note::     *text* will always be "
+"encoded as UTF-8. If the string    contains non-ASCII characters, it "
+"should be passed as    a ``unicode`` type string (requires the 'u' prefix"
+" in    Python 2)."
+msgstr ""
+
+#: falcon.Response.add_link:31 of
+msgid ""
+"Localized title describing the destination of the link (default "
+"``None``). The value must be a two-member tuple in the form of "
+"(*language-tag*, *text*), where *language-tag* is a standard language "
+"identifier as defined in `RFC 5646, Section 2.1 "
+"<https://tools.ietf.org/html/rfc5646#section-2.1>`_, and *text* is a "
+"Unicode string."
+msgstr ""
+
+#: falcon.Response.add_link:40 of
+msgid ""
+"*language-tag* may be an empty string, in which case the client will "
+"assume the language from the general context of the current request."
+msgstr ""
+
+#: falcon.Response.add_link:46 of
+msgid ""
+"*text* will always be encoded as UTF-8. If the string contains non-ASCII "
+"characters, it should be passed as a ``unicode`` type string (requires "
+"the 'u' prefix in Python 2)."
+msgstr ""
+
+#: falcon.Response.add_link:51 of
+msgid ""
+"Override the context IRI with a different URI (default None). By default,"
+" the context IRI for the link is simply the IRI of the requested "
+"resource. The value provided may be a relative URI."
+msgstr ""
+
+#: falcon.Response.add_link:56 of
+msgid ""
+"Either a single *language-tag*, or a ``list`` or ``tuple`` of such tags "
+"to provide a hint to the client as to the language of the result of "
+"following the link. A list of tags may be given in order to indicate to "
+"the client that the target resource is available in multiple languages."
+msgstr ""
+
+#: falcon.Response.add_link:63 of
+msgid ""
+"Provides a hint as to the media type of the result of dereferencing the "
+"link (default ``None``). As noted in RFC 5988, this is only a hint and "
+"does not override the Content-Type header returned when the link is "
+"followed."
+msgstr ""
+
+#: falcon.Response.append_header:1 of
+msgid "Set or append a header for this response."
+msgstr ""
+
+#: falcon.Response.append_header:5 of
+msgid ""
+"If the header already exists, the new value will be appended to it, "
+"delimited by a comma. Most header specifications support this format, "
+"Set-Cookie being the notable exceptions."
+msgstr ""
+
+#: falcon.Response.append_header:9 of
+msgid "For setting cookies, see :py:meth:`~.set_cookie`"
+msgstr ""
+
+#: falcon.Response.append_header:11 falcon.Response.set_header:7 of
+msgid ""
+"Header name (case-insensitive). The restrictions noted below for the "
+"header's value also apply here."
+msgstr ""
+
+#: falcon.Response.append_header:14 falcon.Response.set_header:10 of
+msgid ""
+"Value for the header. Must be convertable to ``str`` or be of type "
+"``str`` or ``StringType``. Strings must contain only US-ASCII characters."
+" Under Python 2.x, the ``unicode`` type is also accepted, although such "
+"strings are also limited to US-ASCII."
+msgstr ""
+
+#: falcon.Response.cache_control:1 of
+msgid "Set the Cache-Control header."
+msgstr ""
+
+#: falcon.Response.cache_control:3 of
+msgid ""
+"Used to set a list of cache directives to use as the value of the Cache-"
+"Control header. The list will be joined with \", \" to produce the value "
+"for the header."
+msgstr ""
+
+#: falcon.Response.content_location:1 of
+msgid "Set the Content-Location header."
+msgstr ""
+
+#: falcon.Response.content_location:3 falcon.Response.location:3 of
+msgid ""
+"This value will be URI encoded per RFC 3986. If the value that is being "
+"set is already URI encoded it should be decoded first or the header "
+"should be set manually using the set_header method."
+msgstr ""
+
+#: falcon.Response.content_range:1 of
+msgid "A tuple to use in constructing a value for the Content-Range header."
+msgstr ""
+
+#: falcon.Response.content_range:3 of
+msgid ""
+"The tuple has the form (*start*, *end*, *length*, [*unit*]), where "
+"*start* and *end* designate the range (inclusive), and *length* is the "
+"total length, or '\\*' if unknown. You may pass ``int``'s for these "
+"numbers (no need to convert to ``str`` beforehand). The optional value "
+"*unit* describes the range unit and defaults to 'bytes'"
+msgstr ""
+
+#: falcon.Response.content_range:11 of
+msgid ""
+"You only need to use the alternate form, 'bytes \\*/1234', for responses "
+"that use the status '416 Range Not Satisfiable'. In this case, raising "
+"``falcon.HTTPRangeNotSatisfiable`` will do the right thing."
+msgstr ""
+
+#: falcon.Response.content_range:16 of
+msgid ""
+"(See also: `RFC 7233, Section 4.2 "
+"<https://tools.ietf.org/html/rfc7233#section-4.2>`_)"
+msgstr ""
+
+#: falcon.Response.content_type:1 of
+msgid "Sets the Content-Type header."
+msgstr ""
+
+#: falcon.Response.content_type:3 of
+msgid ""
+"The ``falcon`` module provides a number of constants for common media "
+"types, including ``falcon.MEDIA_JSON``, ``falcon.MEDIA_MSGPACK``, "
+"``falcon.MEDIA_YAML``, ``falcon.MEDIA_XML``, ``falcon.MEDIA_HTML``, "
+"``falcon.MEDIA_JS``, ``falcon.MEDIA_TEXT``, ``falcon.MEDIA_JPEG``, "
+"``falcon.MEDIA_PNG``, and ``falcon.MEDIA_GIF``."
+msgstr ""
+
+#: falcon.Response.delete_header:1 of
+msgid "Delete a header that was previously set for this response."
+msgstr ""
+
+#: falcon.Response.delete_header:3 of
+msgid ""
+"If the header was not previously set, nothing is done (no error is "
+"raised)."
+msgstr ""
+
+#: falcon.Response.delete_header:6 of
+msgid ""
+"Note that calling this method is equivalent to setting the corresponding "
+"header property (when said property is available) to ``None``. For "
+"example::"
+msgstr ""
+
+#: falcon.Response.delete_header:12 of
+msgid ""
+"Header name (case-insensitive).  Must be of type ``str`` or "
+"``StringType`` and contain only US-ASCII characters. Under Python 2.x, "
+"the ``unicode`` type is also accepted, although such strings are also "
+"limited to US-ASCII."
+msgstr ""
+
+#: falcon.Response.downloadable_as:1 of
+msgid "Set the Content-Disposition header using the given filename."
+msgstr ""
+
+#: falcon.Response.downloadable_as:3 of
+msgid ""
+"The value will be used for the *filename* directive. For example, given "
+"``'report.pdf'``, the Content-Disposition header would be set to: "
+"``'attachment; filename=\"report.pdf\"'``."
+msgstr ""
+
+#: falcon.Response.etag:1 of
+msgid "Set the ETag header."
+msgstr ""
+
+#: falcon.Response.get_header:3 of
+msgid ""
+"Header name, case-insensitive. Must be of type ``str`` or ``StringType``,"
+" and only character values 0x00 through 0xFF may be used on platforms "
+"that use wide characters."
+msgstr ""
+
+#: falcon.Response.get_header:8 of
+msgid "The header's value if set, otherwise ``None``."
+msgstr ""
+
+#: falcon.Response.last_modified:1 of
+msgid "Set the Last-Modified header. Set to a ``datetime`` (UTC) instance."
+msgstr ""
+
+#: falcon.Response.last_modified:3 of
+msgid "Falcon will format the ``datetime`` as an HTTP date string."
+msgstr ""
+
+#: falcon.Response.location:1 of
+msgid "Set the Location header."
+msgstr ""
+
+#: falcon.Response.retry_after:1 of
+msgid "Set the Retry-After header."
+msgstr ""
+
+#: falcon.Response.retry_after:3 of
+msgid ""
+"The expected value is an integral number of seconds to use as the value "
+"for the header. The HTTP-date syntax is not supported."
+msgstr ""
+
+#: falcon.Response.set_cookie:1 of
+msgid "Set a response cookie."
+msgstr ""
+
+#: falcon.Response.set_cookie:5 of
+msgid ""
+"This method can be called multiple times to add one or more cookies to "
+"the response."
+msgstr ""
+
+#: falcon.Response.set_cookie:10 of
+msgid ""
+"To learn more about setting cookies, see :ref:`Setting Cookies <setting-"
+"cookies>`. The parameters listed below correspond to those defined in "
+"`RFC 6265`_."
+msgstr ""
+
+#: falcon.Response.set_cookie:14 of
+msgid "Cookie name"
+msgstr ""
+
+#: falcon.Response.set_cookie:16 of
+msgid "Cookie value"
+msgstr ""
+
+#: falcon.Response.set_cookie:19 of
+msgid ""
+"Specifies when the cookie should expire. By default, cookies expire when "
+"the user agent exits.  (See also: `RFC 6265, Section 4.1.2.1 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.1>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:19 of
+msgid ""
+"Specifies when the cookie should expire. By default, cookies expire when "
+"the user agent exits."
+msgstr ""
+
+#: falcon.Response.set_cookie:22 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.1 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.1>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:24 of
+msgid ""
+"Defines the lifetime of the cookie in seconds. By default, cookies expire"
+" when the user agent exits. If both `max_age` and `expires` are set, the "
+"latter is ignored by the user agent.  .. note::     Coercion to ``int`` "
+"is attempted if provided with    ``float`` or ``str``.  (See also: `RFC "
+"6265, Section 4.1.2.2 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.2>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:24 of
+msgid ""
+"Defines the lifetime of the cookie in seconds. By default, cookies expire"
+" when the user agent exits. If both `max_age` and `expires` are set, the "
+"latter is ignored by the user agent."
+msgstr ""
+
+#: falcon.Response.set_cookie:31 of
+msgid "Coercion to ``int`` is attempted if provided with ``float`` or ``str``."
+msgstr ""
+
+#: falcon.Response.set_cookie:34 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.2 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.2>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:36 of
+msgid ""
+"Restricts the cookie to a specific domain and any subdomains of that "
+"domain. By default, the user agent will return the cookie only to the "
+"origin server. When overriding this default behavior, the specified "
+"domain must include the origin server. Otherwise, the user agent will "
+"reject the cookie.  (See also: `RFC 6265, Section 4.1.2.3 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.3>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:36 of
+msgid ""
+"Restricts the cookie to a specific domain and any subdomains of that "
+"domain. By default, the user agent will return the cookie only to the "
+"origin server. When overriding this default behavior, the specified "
+"domain must include the origin server. Otherwise, the user agent will "
+"reject the cookie."
+msgstr ""
+
+#: falcon.Response.set_cookie:43 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.3 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.3>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:45 of
+msgid ""
+"Scopes the cookie to the given path plus any subdirectories under that "
+"path (the \"/\" character is interpreted as a directory separator). If "
+"the cookie does not specify a path, the user agent defaults to the path "
+"component of the requested URI.  .. warning::     User agent interfaces "
+"do not always isolate    cookies by path, and so this should not be    "
+"considered an effective security measure.  (See also: `RFC 6265, Section "
+"4.1.2.4 <https://tools.ietf.org/html/rfc6265#section-4.1.2.4>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:45 of
+msgid ""
+"Scopes the cookie to the given path plus any subdirectories under that "
+"path (the \"/\" character is interpreted as a directory separator). If "
+"the cookie does not specify a path, the user agent defaults to the path "
+"component of the requested URI."
+msgstr ""
+
+#: falcon.Response.set_cookie:53 of
+msgid ""
+"User agent interfaces do not always isolate cookies by path, and so this "
+"should not be considered an effective security measure."
+msgstr ""
+
+#: falcon.Response.set_cookie:57 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.4 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.4>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:59 of
+msgid ""
+"Direct the client to only return the cookie in subsequent requests if "
+"they are made over HTTPS (default: ``True``). This prevents attackers "
+"from reading sensitive cookie data.  .. note::     The default value for "
+"this argument is normally    ``True``, but can be modified by setting    "
+":py:attr:`~.ResponseOptions.secure_cookies_by_default`    via "
+":any:`API.resp_options`.  .. warning::     For the `secure` cookie "
+"attribute to be effective,    your application will need to enforce "
+"HTTPS.  (See also: `RFC 6265, Section 4.1.2.5 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.5>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:59 of
+msgid ""
+"Direct the client to only return the cookie in subsequent requests if "
+"they are made over HTTPS (default: ``True``). This prevents attackers "
+"from reading sensitive cookie data."
+msgstr ""
+
+#: falcon.Response.set_cookie:66 of
+msgid ""
+"The default value for this argument is normally ``True``, but can be "
+"modified by setting "
+":py:attr:`~.ResponseOptions.secure_cookies_by_default` via "
+":any:`API.resp_options`."
+msgstr ""
+
+#: falcon.Response.set_cookie:73 of
+msgid ""
+"For the `secure` cookie attribute to be effective, your application will "
+"need to enforce HTTPS."
+msgstr ""
+
+#: falcon.Response.set_cookie:76 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.5 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.5>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:78 of
+msgid ""
+"Direct the client to only transfer the cookie with unscripted HTTP "
+"requests (default: ``True``). This is intended to mitigate some forms of "
+"cross-site scripting.  (See also: `RFC 6265, Section 4.1.2.6 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.6>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:78 of
+msgid ""
+"Direct the client to only transfer the cookie with unscripted HTTP "
+"requests (default: ``True``). This is intended to mitigate some forms of "
+"cross-site scripting."
+msgstr ""
+
+#: falcon.Response.set_cookie:83 of
+msgid ""
+"(See also: `RFC 6265, Section 4.1.2.6 "
+"<https://tools.ietf.org/html/rfc6265#section-4.1.2.6>`_)"
+msgstr ""
+
+#: falcon.Response.set_cookie:86 of
+msgid ":exc:`KeyError` -- `name` is not a valid cookie name."
+msgstr ""
+
+#: falcon.Response.set_cookie:87 of
+msgid ":exc:`ValueError` -- `value` is not a valid cookie value."
+msgstr ""
+
+#: falcon.Response.set_header:1 of
+msgid "Set a header for this response to a given value."
+msgstr ""
+
+#: falcon.Response.set_header:3 of
+msgid "Calling this method overwrites the existing value, if any."
+msgstr ""
+
+#: falcon.Response.set_header:5 of
+msgid "For setting cookies, see instead :meth:`~.set_cookie`"
+msgstr ""
+
+#: falcon.Response.set_headers:1 of
+msgid "Set several headers at once."
+msgstr ""
+
+#: falcon.Response.set_headers:3 of
+msgid "Calling this method overwrites existing values, if any."
+msgstr ""
+
+#: falcon.Response.set_headers:5 of
+msgid ""
+"A dictionary of header names and values to set, or a ``list`` of (*name*,"
+" *value*) tuples. Both *name* and *value* must be of type ``str`` or "
+"``StringType`` and contain only US-ASCII characters. Under Python 2.x, "
+"the ``unicode`` type is also accepted, although such strings are also "
+"limited to US-ASCII.  .. note::     Falcon can process a list of tuples "
+"slightly faster    than a dict."
+msgstr ""
+
+#: falcon.Response.set_headers:5 of
+msgid ""
+"A dictionary of header names and values to set, or a ``list`` of (*name*,"
+" *value*) tuples. Both *name* and *value* must be of type ``str`` or "
+"``StringType`` and contain only US-ASCII characters. Under Python 2.x, "
+"the ``unicode`` type is also accepted, although such strings are also "
+"limited to US-ASCII."
+msgstr ""
+
+#: falcon.Response.set_headers:14 of
+msgid "Falcon can process a list of tuples slightly faster than a dict."
+msgstr ""
+
+#: falcon.Response.set_headers:18 of
+msgid ""
+":exc:`ValueError` -- `headers` was not a ``dict`` or ``list`` of "
+"``tuple``."
+msgstr ""
+
+#: falcon.Response.set_stream:1 of
+msgid "Convenience method for setting both `stream` and `stream_len`."
+msgstr ""
+
+#: falcon.Response.set_stream:3 of
+msgid ""
+"Although the `stream` and `stream_len` properties may be set directly, "
+"using this method ensures `stream_len` is not accidentally neglected when"
+" the length of the stream is known in advance."
+msgstr ""
+
+#: falcon.Response.set_stream:10 of
+msgid ""
+"If the stream length is unknown, you can set `stream` directly, and "
+"ignore `stream_len`. In this case, the WSGI server may choose to use "
+"chunked encoding or one of the other strategies suggested by PEP-3333."
+msgstr ""
+
+#: falcon.Response.unset_cookie:1 of
+msgid "Unset a cookie in the response"
+msgstr ""
+
+#: falcon.Response.unset_cookie:3 of
+msgid ""
+"Clears the contents of the cookie, and instructs the user agent to "
+"immediately expire its own copy of the cookie."
+msgstr ""
+
+#: falcon.Response.unset_cookie:8 of
+msgid ""
+"In order to successfully remove a cookie, both the path and the domain "
+"must match the values that were used when the cookie was created."
+msgstr ""
+
+#: falcon.Response.vary:1 of
+msgid "Value to use for the Vary header."
+msgstr ""
+
+#: falcon.Response.vary:3 of
+msgid ""
+"Set this property to an iterable of header names. For a single asterisk "
+"or field value, simply pass a single-element ``list`` or ``tuple``."
+msgstr ""
+
+#: falcon.Response.vary:7 of
+msgid ""
+"The \"Vary\" header field in a response describes what parts of a request"
+" message, aside from the method, Host header field, and request target, "
+"might influence the origin server's process for selecting and "
+"representing this response.  The value consists of either a single "
+"asterisk (\"*\") or a list of header field names (case-insensitive)."
+msgstr ""
+
+#: falcon.Response.vary:14 of
+msgid ""
+"(See also: `RFC 7231, Section 7.1.4 "
+"<https://tools.ietf.org/html/rfc7231#section-7.1.4>`_)"
+msgstr ""
+

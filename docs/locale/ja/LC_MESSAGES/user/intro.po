@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../user/intro.rst:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../user/intro.rst:6
+msgid ""
+"Perfection is finally attained not when there is no longer anything to "
+"add, but when there is no longer anything to take away."
+msgstr ""
+
+#: ../../user/intro.rst:9
+msgid "*- Antoine de Saint-Exupéry*"
+msgstr ""
+
+#: ../../user/intro.rst:11
+msgid ""
+"`Falcon <https://falconframework.org>`__ is a reliable, high-performance "
+"Python web framework for building large-scale app backends and "
+"microservices. It encourages the REST architectural style, and tries to "
+"do as little as possible while remaining highly effective."
+msgstr ""
+
+#: ../../user/intro.rst:17
+msgid ""
+"Falcon apps work with any WSGI server, and run like a champ under CPython"
+" 2.7/3.4+ and PyPy."
+msgstr ""
+
+#: ../../user/intro.rst:21
+msgid "How is Falcon different?"
+msgstr ""
+
+#: ../../user/intro.rst:23
+msgid ""
+"We designed Falcon to support the demanding needs of large-scale "
+"microservices and responsive app backends. Falcon complements more "
+"general Python web frameworks by providing bare-metal performance, "
+"reliability, and flexibility wherever you need it."
+msgstr ""
+
+#: ../../user/intro.rst:28
+msgid ""
+"**Fast.** Same hardware, more requests. Falcon turns around requests "
+"several times faster than most other Python frameworks. For an extra "
+"speed boost, Falcon compiles itself with Cython when available, and also "
+"works well with `PyPy <https://pypy.org>`__. Considering a move to "
+"another programming language? Benchmark with Falcon + PyPy first."
+msgstr ""
+
+#: ../../user/intro.rst:35
+#, python-format
+msgid ""
+"**Reliable.** We go to great lengths to avoid introducing breaking "
+"changes, and when we do they are fully documented and only introduced (in"
+" the spirit of `SemVer <http://semver.org/>`__) with a major version "
+"increment. The code is rigorously tested with numerous inputs and we "
+"require 100% coverage at all times. Six and mimeparse are the only third-"
+"party dependencies."
+msgstr ""
+
+#: ../../user/intro.rst:43
+msgid ""
+"**Flexible.** Falcon leaves a lot of decisions and implementation details"
+" to you, the API developer. This gives you a lot of freedom to customize "
+"and tune your implementation. Due to Falcon's minimalist design, Python "
+"community members are free to independently innovate on `Falcon add-ons "
+"and complementary packages <https://github.com/falconry/falcon/wiki>`__."
+msgstr ""
+
+#: ../../user/intro.rst:49
+msgid ""
+"**Debuggable.** Falcon eschews magic. It's easy to tell which inputs lead"
+" to which outputs. Unhandled exceptions are never encapsulated or masked."
+" Potentially surprising behaviors, such as automatic request body "
+"parsing, are well-documented and disabled by default. Finally, when it "
+"comes to the framework itself, we take care to keep logic paths simple "
+"and understandable. All this makes it easier to reason about the code and"
+" to debug edge cases in large-scale deployments."
+msgstr ""
+
+#: ../../user/intro.rst:58
+msgid "Features"
+msgstr ""
+
+#: ../../user/intro.rst:60
+msgid "Highly-optimized, extensible code base"
+msgstr ""
+
+#: ../../user/intro.rst:61
+msgid "Intuitive routing via URI templates and REST-inspired resource classes"
+msgstr ""
+
+#: ../../user/intro.rst:63
+msgid "Easy access to headers and bodies through request and response classes"
+msgstr ""
+
+#: ../../user/intro.rst:65
+msgid "DRY request processing via middleware components and hooks"
+msgstr ""
+
+#: ../../user/intro.rst:66
+msgid "Idiomatic HTTP error responses"
+msgstr ""
+
+#: ../../user/intro.rst:67
+msgid "Straightforward exception handling"
+msgstr ""
+
+#: ../../user/intro.rst:68
+msgid "Snappy unit testing through WSGI helpers and mocks"
+msgstr ""
+
+#: ../../user/intro.rst:69
+msgid "Supports Python 2.7, 3.4+"
+msgstr ""
+
+#: ../../user/intro.rst:70
+msgid "Compatible with PyPy"
+msgstr ""
+
+#: ../../user/intro.rst:73
+msgid "About Apache 2.0"
+msgstr ""
+
+#: ../../user/intro.rst:75
+msgid ""
+"Falcon is released under the terms of the `Apache 2.0 License`_. This "
+"means that you can use it in your commercial applications without having "
+"to also open-source your own code. It also means that if someone happens "
+"to contribute code that is associated with a patent, you are granted a "
+"free license to use said patent. That's a pretty sweet deal."
+msgstr ""
+
+#: ../../user/intro.rst:77
+msgid ""
+"Now, if you do make changes to Falcon itself, please consider "
+"contributing your awesome work back to the community."
+msgstr ""
+
+#: ../../user/intro.rst:83
+msgid "Falcon License"
+msgstr ""
+
+#: ../../../LICENSE:1
+msgid ""
+"Copyright 2012-2017 by Rackspace Hosting, Inc. and other contributors, as"
+" noted in the individual source code files."
+msgstr ""
+
+#: ../../../LICENSE:4
+msgid ""
+"Licensed under the Apache License, Version 2.0 (the \"License\"); you may"
+" not use this file except in compliance with the License. You may obtain "
+"a copy of the License at"
+msgstr ""
+
+#: ../../../LICENSE:8
+msgid "http://www.apache.org/licenses/LICENSE-2.0"
+msgstr ""
+
+#: ../../../LICENSE:10
+msgid ""
+"Unless required by applicable law or agreed to in writing, software "
+"distributed under the License is distributed on an \"AS IS\" BASIS, "
+"WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. "
+"See the License for the specific language governing permissions and "
+"limitations under the License."
+msgstr ""
+
+#: ../../../LICENSE:16
+msgid ""
+"By contributing to this project, you agree to also license your source "
+"code under the terms of the Apache License, Version 2.0, as described "
+"above."
+msgstr ""
+

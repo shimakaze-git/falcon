@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../changes/1.4.1.rst:2
+msgid "Changelog for Falcon 1.4.1"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:5
+msgid "Breaking Changes"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:7
+#: ../../changes/1.4.1.rst:12
+#: ../../changes/1.4.1.rst:17
+msgid "(None)"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:10
+msgid "Changes to Supported Platforms"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:15
+msgid "New & Improved"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:20
+msgid "Fixed"
+msgstr ""
+
+#: ../../changes/1.4.1.rst:22
+msgid "Reverted the breaking change in 1.4.0 to :attr:`falcon.testing.Result.json`. Minor releases should have no breaking changes."
+msgstr ""
+
+#: ../../changes/1.4.1.rst:24
+msgid "The README was not rendering properly on PyPI. This was fixed and a validation step was added to the build process."
+msgstr ""
+

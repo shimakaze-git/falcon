@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../community/contribute.rst:4
+msgid "Contribute to Falcon"
+msgstr ""
+
+#: ../../community/contribute.rst:6
+msgid "Thanks for your interest in the project! We welcome pull requests from developers of all skill levels. To get started, simply fork the master branch on GitHub to your personal account and then clone the fork into your development environment."
+msgstr ""
+
+#: ../../community/contribute.rst:11
+msgid "Kurt Griffiths (**kgriffs** on GH, Gitter, and Twitter) is the original creator of the Falcon framework, and currently co-maintains the project along with John Vrbanac (**jmvrbanac** on GH and Gitter, and **jvrbanac** on Twitter). Falcon is developed by a growing community of users and contributors just like you."
+msgstr ""
+
+#: ../../community/contribute.rst:17
+msgid "Please don't hesitate to reach out if you have any questions, or just need a little help getting started. You can find us in `falconry/dev <https://gitter.im/falconry/dev>`_ on Gitter."
+msgstr ""
+
+#: ../../community/contribute.rst:21
+msgid "Please check out our `Contributor's Guide <https://github.com/falconry/falcon/blob/master/CONTRIBUTING.md>`_ for more information."
+msgstr ""
+
+#: ../../community/contribute.rst:25
+msgid "Thanks!"
+msgstr ""
+

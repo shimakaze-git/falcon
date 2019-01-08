@@ -1,0 +1,585 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../api/api.rst:4
+msgid "The API Class"
+msgstr ""
+
+#: ../../api/api.rst:6
+msgid ""
+"Falcon's API class is a WSGI \"application\" that you can host with any "
+"standard-compliant WSGI server."
+msgstr ""
+
+#: falcon.API:1 of
+msgid "This class is the main entry point into a Falcon-based app."
+msgstr ""
+
+#: falcon.API:3 of
+msgid "Each API instance provides a callable WSGI interface and a routing engine."
+msgstr ""
+
+#: falcon.API of
+msgid "Keyword Arguments"
+msgstr ""
+
+#: falcon.API:6 of
+msgid ""
+"Default media type to use as the value for the Content-Type header on "
+"responses (default 'application/json'). The ``falcon`` module provides a "
+"number of constants for common media types, such as "
+"``falcon.MEDIA_MSGPACK``, ``falcon.MEDIA_YAML``, ``falcon.MEDIA_XML``, "
+"etc."
+msgstr ""
+
+#: falcon.API:13 of
+msgid ""
+"Either a single object or a list of objects (instantiated classes) that "
+"implement the following middleware component interface::      class "
+"ExampleComponent(object):         def process_request(self, req, resp):"
+"             \"\"\"Process the request before routing it.              "
+"Args:                 req: Request object that will eventually be"
+"                     routed to an on_* responder method.                 "
+"resp: Response object that will be routed to                     the on_*"
+" responder.             \"\"\"          def process_resource(self, req, "
+"resp, resource, params):             \"\"\"Process the request and "
+"resource *after* routing.              Note:                 This method "
+"is only called when the request matches                 a route to a "
+"resource.              Args:                 req: Request object that "
+"will be passed to the                     routed responder."
+"                 resp: Response object that will be passed to the"
+"                     responder.                 resource: Resource object"
+" to which the request was                     routed. May be None if no "
+"route was found for                     the request.                 "
+"params: A dict-like object representing any                     "
+"additional params derived from the route's URI                     "
+"template fields, that will be passed to the                     "
+"resource's responder method as keyword                     arguments."
+"             \"\"\"          def process_response(self, req, resp, "
+"resource, req_succeeded)             \"\"\"Post-processing of the "
+"response (after routing).              Args:                 req: Request"
+" object.                 resp: Response object.                 resource:"
+" Resource object to which the request was                     routed. May"
+" be None if no route was found                     for the request."
+"                 req_succeeded: True if no exceptions were raised"
+"                     while the framework processed and routed the"
+"                     request; otherwise False.             \"\"\"  (See "
+"also: :ref:`Middleware <middleware>`)"
+msgstr ""
+
+#: falcon.API:13 of
+msgid ""
+"Either a single object or a list of objects (instantiated classes) that "
+"implement the following middleware component interface::"
+msgstr ""
+
+#: falcon.API:64 of
+msgid "(See also: :ref:`Middleware <middleware>`)"
+msgstr ""
+
+#: falcon.API:66 of
+msgid ""
+"``Request``-like class to use instead of Falcon's default class. Among "
+"other things, this feature affords inheriting from "
+"``falcon.request.Request`` in order to override the ``context_type`` "
+"class variable. (default ``falcon.request.Request``)"
+msgstr ""
+
+#: falcon.API:72 of
+msgid ""
+"``Response``-like class to use instead of Falcon's default class. "
+"(default ``falcon.response.Response``)"
+msgstr ""
+
+#: falcon.API:76 of
+msgid ""
+"An instance of a custom router to use in lieu of the default engine. (See"
+" also: :ref:`Custom Routers <routing_custom>`)"
+msgstr ""
+
+#: falcon.API:80 of
+msgid ""
+"Set to ``True`` if response middleware should be executed independently "
+"of whether or not request middleware raises an exception (default "
+"``False``)."
+msgstr ""
+
+#: falcon.API:88 of
+msgid ""
+"A set of behavioral options related to incoming requests. (See also: "
+":py:class:`~.RequestOptions`)"
+msgstr ""
+
+#: falcon.API:93 of
+msgid ""
+"A set of behavioral options related to outgoing responses. (See also: "
+":py:class:`~.ResponseOptions`)"
+msgstr ""
+
+#: falcon.API:98 of
+msgid ""
+"Configuration options for the router. If a custom router is in use, and "
+"it does not expose any configurable options, referencing this attribute "
+"will raise an instance of ``AttributeError``."
+msgstr ""
+
+#: falcon.API:103 of
+msgid "(See also: :ref:`CompiledRouterOptions <compiled_router_options>`)"
+msgstr ""
+
+#: falcon.API.add_error_handler:1 of
+msgid "Register a handler for a given exception error type."
+msgstr ""
+
+#: falcon.API.add_error_handler:3 of
+msgid ""
+"Error handlers may be registered for any type, including "
+":class:`~.HTTPError`. This feature provides a central location for "
+"logging and otherwise handling exceptions raised by responders, hooks, "
+"and middleware components."
+msgstr ""
+
+#: falcon.API.add_error_handler:8 of
+msgid ""
+"A handler can raise an instance of :class:`~.HTTPError` or "
+":class:`~.HTTPStatus` to communicate information about the issue to the "
+"client.  Alternatively, a handler may modify `resp` directly."
+msgstr ""
+
+#: falcon.API.add_error_handler:13 of
+msgid ""
+"Error handlers are matched in LIFO order. In other words, when searching "
+"for an error handler to match a raised exception, and more than one "
+"handler matches the exception type, the framework will choose the one "
+"that was most recently registered. Therefore, more general error handlers"
+" (e.g., for the standard ``Exception`` type) should be added first, to "
+"avoid masking more specific handlers for subclassed types."
+msgstr ""
+
+#: falcon.API.add_error_handler falcon.API.add_route falcon.API.add_sink
+#: falcon.API.add_static_route falcon.API.set_error_serializer of
+msgid "Parameters"
+msgstr ""
+
+#: falcon.API.add_error_handler:21 of
+msgid ""
+"Whenever an error occurs when handling a request that is an instance of "
+"this exception class, the associated handler will be called."
+msgstr ""
+
+#: falcon.API.add_error_handler:25 of
+msgid ""
+"A function or callable object taking the form ``func(ex, req, resp, "
+"params)``.  If not specified explicitly, the handler will default to "
+"``exception.handle``, where ``exception`` is the error type specified "
+"above, and ``handle`` is a static method (i.e., decorated with "
+"@staticmethod) that accepts the same params just described. For example::"
+"      class CustomException(CustomBaseException):          @staticmethod"
+"         def handle(ex, req, resp, params):             # TODO: Log the "
+"error             # Convert to an instance of falcon.HTTPError"
+"             raise falcon.HTTPError(falcon.HTTP_792)"
+msgstr ""
+
+#: falcon.API.add_error_handler:25 of
+msgid ""
+"A function or callable object taking the form ``func(ex, req, resp, "
+"params)``."
+msgstr ""
+
+#: falcon.API.add_error_handler:28 of
+msgid ""
+"If not specified explicitly, the handler will default to "
+"``exception.handle``, where ``exception`` is the error type specified "
+"above, and ``handle`` is a static method (i.e., decorated with "
+"@staticmethod) that accepts the same params just described. For example::"
+msgstr ""
+
+#: falcon.API.add_route:1 of
+msgid "Associate a templatized URI path with a resource."
+msgstr ""
+
+#: falcon.API.add_route:3 of
+msgid ""
+"Falcon routes incoming requests to resources based on a set of URI "
+"templates. If the path requested by the client matches the template for a"
+" given route, the request is then passed on to the associated resource "
+"for processing."
+msgstr ""
+
+#: falcon.API.add_route:8 of
+msgid ""
+"If no route matches the request, control then passes to a default "
+"responder that simply raises an instance of :class:`~.HTTPNotFound`."
+msgstr ""
+
+#: falcon.API.add_route:12 of
+msgid "(See also: :ref:`Routing <routing>`)"
+msgstr ""
+
+#: falcon.API.add_route:14 of
+msgid ""
+"A templatized URI. Care must be taken to ensure the template does not "
+"mask any sink patterns, if any are registered.  (See also: "
+":meth:`~.add_sink`)"
+msgstr ""
+
+#: falcon.API.add_route:14 of
+msgid ""
+"A templatized URI. Care must be taken to ensure the template does not "
+"mask any sink patterns, if any are registered."
+msgstr ""
+
+#: falcon.API.add_route:18 of
+msgid "(See also: :meth:`~.add_sink`)"
+msgstr ""
+
+#: falcon.API.add_route:20 of
+msgid ""
+"Object which represents a REST resource. Falcon will pass \"GET\" "
+"requests to on_get, \"PUT\" requests to on_put, etc. If any HTTP methods "
+"are not supported by your resource, simply don't define the corresponding"
+" request handlers, and Falcon will do the right thing."
+msgstr ""
+
+#: falcon.API.add_route:30 of
+msgid ""
+"Any additional args and kwargs not defined above are passed through to "
+"the underlying router's ``add_route()`` method. The default router does "
+"not expect any additional arguments, but custom routers may take "
+"advantage of this feature to receive additional options when setting up "
+"routes."
+msgstr ""
+
+#: falcon.API.add_sink:1 of
+msgid "Register a sink method for the API."
+msgstr ""
+
+#: falcon.API.add_sink:3 of
+msgid ""
+"If no route matches a request, but the path in the requested URI matches "
+"a sink prefix, Falcon will pass control to the associated sink, "
+"regardless of the HTTP method requested."
+msgstr ""
+
+#: falcon.API.add_sink:7 of
+msgid ""
+"Using sinks, you can drain and dynamically handle a large number of "
+"routes, when creating static resources and responders would be "
+"impractical. For example, you might use a sink to create a smart proxy "
+"that forwards requests to one or more backend services."
+msgstr ""
+
+#: falcon.API.add_sink:12 of
+msgid "A callable taking the form ``func(req, resp)``."
+msgstr ""
+
+#: falcon.API.add_sink:14 of
+msgid ""
+"A regex string, typically starting with '/', which will trigger the sink "
+"if it matches the path portion of the request's URI. Both strings and "
+"precompiled regex objects may be specified. Characters are matched "
+"starting at the beginning of the URI path.  .. note::     Named groups "
+"are converted to kwargs and passed to    the sink as such.  .. warning::"
+"     If the prefix overlaps a registered route template,    the route "
+"will take precedence and mask the sink.        (See also: "
+":meth:`~.add_route`)"
+msgstr ""
+
+#: falcon.API.add_sink:14 of
+msgid ""
+"A regex string, typically starting with '/', which will trigger the sink "
+"if it matches the path portion of the request's URI. Both strings and "
+"precompiled regex objects may be specified. Characters are matched "
+"starting at the beginning of the URI path."
+msgstr ""
+
+#: falcon.API.add_sink:22 of
+msgid "Named groups are converted to kwargs and passed to the sink as such."
+msgstr ""
+
+#: falcon.API.add_sink:27 of
+msgid ""
+"If the prefix overlaps a registered route template, the route will take "
+"precedence and mask the sink."
+msgstr ""
+
+#: falcon.API.add_sink:30 of
+msgid "(See also: :meth:`~.add_route`)"
+msgstr ""
+
+#: falcon.API.add_static_route:1 of
+msgid "Add a route to a directory of static files."
+msgstr ""
+
+#: falcon.API.add_static_route:3 of
+msgid ""
+"Static routes provide a way to serve files directly. This feature "
+"provides an alternative to serving files at the web server level when you"
+" don't have that option, when authorization is required, or for testing "
+"purposes."
+msgstr ""
+
+#: falcon.API.add_static_route:10 of
+msgid ""
+"Serving files directly from the web server, rather than through the "
+"Python app, will always be more efficient, and therefore should be "
+"preferred in production deployments."
+msgstr ""
+
+#: falcon.API.add_static_route:14 of
+msgid ""
+"Static routes are matched in LIFO order. Therefore, if the same prefix is"
+" used for two routes, the second one will override the first. This also "
+"means that more specific routes should be added *after* less specific "
+"ones. For example, the following sequence would result in "
+"``'/foo/bar/thing.js'`` being mapped to the ``'/foo/bar'`` route, and "
+"``'/foo/xyz/thing.js'`` being mapped to the ``'/foo'`` route::"
+msgstr ""
+
+#: falcon.API.add_static_route:25 of
+msgid ""
+"The path prefix to match for this route. If the path in the requested URI"
+" starts with this string, the remainder of the path will be appended to "
+"the source directory to determine the file to serve. This is done in a "
+"secure manner to prevent an attacker from requesting a file outside the "
+"specified directory.  Note that static routes are matched in LIFO order, "
+"and are only attempted after checking dynamic routes and sinks."
+msgstr ""
+
+#: falcon.API.add_static_route:25 of
+msgid ""
+"The path prefix to match for this route. If the path in the requested URI"
+" starts with this string, the remainder of the path will be appended to "
+"the source directory to determine the file to serve. This is done in a "
+"secure manner to prevent an attacker from requesting a file outside the "
+"specified directory."
+msgstr ""
+
+#: falcon.API.add_static_route:32 of
+msgid ""
+"Note that static routes are matched in LIFO order, and are only attempted"
+" after checking dynamic routes and sinks."
+msgstr ""
+
+#: falcon.API.add_static_route:35 of
+msgid "The source directory from which to serve files."
+msgstr ""
+
+#: falcon.API.add_static_route:37 of
+msgid ""
+"Set to ``True`` to include a Content-Disposition header in the response. "
+"The \"filename\" directive is simply set to the name of the requested "
+"file."
+msgstr ""
+
+#: falcon.API.set_error_serializer:1 of
+msgid "Override the default serializer for instances of :class:`~.HTTPError`."
+msgstr ""
+
+#: falcon.API.set_error_serializer:3 of
+msgid ""
+"When a responder raises an instance of :class:`~.HTTPError`, Falcon "
+"converts it to an HTTP response automatically. The default serializer "
+"supports JSON and XML, but may be overridden by this method to use a "
+"custom serializer in order to support other media types."
+msgstr ""
+
+#: falcon.API.set_error_serializer:11 of
+msgid ""
+"If a custom media type is used and the type includes a \"+json\" or "
+"\"+xml\" suffix, the default serializer will convert the error to JSON or"
+" XML, respectively."
+msgstr ""
+
+#: falcon.API.set_error_serializer:15 of
+msgid ""
+"The :class:`~.HTTPError` class contains helper methods, such as "
+"`to_json()` and `to_dict()`, that can be used from within custom "
+"serializers. For example::"
+msgstr ""
+
+#: falcon.API.set_error_serializer:36 of
+msgid ""
+"A function taking the form ``func(req, resp, exception)``, where `req` is"
+" the request object that was passed to the responder method, `resp` is "
+"the response object, and `exception` is an instance of "
+"``falcon.HTTPError``."
+msgstr ""
+
+#: falcon.RequestOptions:1 of
+msgid "Defines a set of configurable request options."
+msgstr ""
+
+#: falcon.RequestOptions:3 of
+msgid ""
+"An instance of this class is exposed via :any:`API.req_options` for "
+"configuring certain :py:class:`~.Request` behaviors."
+msgstr ""
+
+#: falcon.RequestOptions:8 of
+msgid ""
+"*bool* -- Set to ``True`` to keep query string fields even if they do not"
+" have a value (default ``False``). For comma-separated values, this "
+"option also determines whether or not empty elements in the parsed list "
+"are retained."
+msgstr ""
+
+#: falcon.RequestOptions:16 of
+msgid ""
+"Set to ``True`` in order to automatically consume the request stream and "
+"merge the results into the request's query string params when the "
+"request's content type is *application/x-www-form-urlencoded* (default "
+"``False``)."
+msgstr ""
+
+#: falcon.RequestOptions:22 of
+msgid ""
+"Enabling this option makes the form parameters accessible via "
+":attr:`~.params`, :meth:`~.get_param`, etc."
+msgstr ""
+
+#: falcon.RequestOptions:27 of
+msgid ""
+"When this option is enabled, the request's body stream will be left at "
+"EOF. The original data is not retained by the framework."
+msgstr ""
+
+#: falcon.RequestOptions:33 of
+msgid ""
+"The character encoding for fields, before percent-encoding non-ASCII "
+"bytes, is assumed to be UTF-8. The special `_charset_` field is ignored "
+"if present."
+msgstr ""
+
+#: falcon.RequestOptions:38 of
+msgid ""
+"Falcon expects form-encoded request bodies to be encoded according to the"
+" standard W3C algorithm (see also http://goo.gl/6rlcux)."
+msgstr ""
+
+#: falcon.RequestOptions:44 of
+msgid ""
+"Set to ``False`` to treat commas in a query string value as literal "
+"characters, rather than as a comma- separated list (default ``True``). "
+"When this option is enabled, the value will be split on any non-percent-"
+"encoded commas. Disable this option when encoding lists as multiple "
+"occurrences of the same parameter, and when values may be encoded in "
+"alternative formats in which the comma character is significant."
+msgstr ""
+
+#: falcon.RequestOptions:55 of
+msgid ""
+"Set to ``False`` in order to retain a trailing slash, if present, at the "
+"end of the URL path (default ``True``). When this option is enabled, the "
+"URL path is normalized by stripping the trailing slash character. This "
+"lets the application define a single route to a resource for a path that "
+"may or may not end in a forward slash. However, this behavior can be "
+"problematic in certain cases, such as when working with authentication "
+"schemes that employ URL-based signatures."
+msgstr ""
+
+#: falcon.RequestOptions:67 of
+msgid ""
+"*str* -- The default media-type to use when deserializing a response. "
+"This value is normally set to the media type provided when a "
+":class:`falcon.API` is initialized; however, if created independently, "
+"this will default to the ``DEFAULT_MEDIA_TYPE`` specified by Falcon."
+msgstr ""
+
+#: falcon.RequestOptions:75 falcon.ResponseOptions:24 of
+msgid ""
+"*Handlers* -- A dict-like object that allows you to configure the media-"
+"types that you would like to handle. By default, a handler is provided "
+"for the ``application/json`` media type."
+msgstr ""
+
+#: falcon.ResponseOptions:1 of
+msgid "Defines a set of configurable response options."
+msgstr ""
+
+#: falcon.ResponseOptions:3 of
+msgid ""
+"An instance of this class is exposed via :any:`API.resp_options` for "
+"configuring certain :py:class:`~.Response` behaviors."
+msgstr ""
+
+#: falcon.ResponseOptions:8 of
+msgid ""
+"*bool* -- Set to ``False`` in development environments to make the "
+"`secure` attribute for all cookies default to ``False``. This can make "
+"testing easier by not requiring HTTPS. Note, however, that this setting "
+"can be overridden via `set_cookie()`'s `secure` kwarg."
+msgstr ""
+
+#: falcon.ResponseOptions:16 of
+msgid ""
+"*str* -- The default Internet media type (RFC 2046) to use when "
+"deserializing a response. This value is normally set to the media type "
+"provided when a :class:`falcon.API` is initialized; however, if created "
+"independently, this will default to the ``DEFAULT_MEDIA_TYPE`` specified "
+"by Falcon."
+msgstr ""
+
+#: falcon.ResponseOptions:31 of
+msgid ""
+"*dict* -- A mapping of dot-prefixed file extensions to Internet media "
+"types (RFC 2046). Defaults to ``mimetypes.types_map`` after calling "
+"``mimetypes.init()``."
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:1 of
+msgid "Defines a set of configurable router options."
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:3 of
+msgid ""
+"An instance of this class is exposed via :any:`API.router_options` for "
+"configuring certain :py:class:`~.CompiledRouter` behaviors."
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:8 of
+msgid ""
+"Represents the collection of named converters that may be referenced in "
+"URI template field expressions. Adding additional converters is simply a "
+"matter of mapping an identifier to a converter class::"
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:15 of
+msgid ""
+"The identifier can then be used to employ the converter within a URI "
+"template::"
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:20 of
+msgid ""
+"Converter names may only contain ASCII letters, digits, and underscores, "
+"and must start with either a letter or an underscore."
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:26 of
+msgid ""
+"Converter instances are shared between requests. Therefore, in threaded "
+"deployments, care must be taken to implement custom converters in a "
+"thread-safe manner."
+msgstr ""
+
+#: falcon.routing.CompiledRouterOptions:31 of
+msgid "(See also: :ref:`Field Converters <routing_field_converters>`)"
+msgstr ""
+

@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/media.rst:4
+msgid "Media"
+msgstr ""
+
+#: ../../api/media.rst:6
+msgid "Falcon allows for easy and customizable internet media type handling. By default Falcon only enables a single JSON handler. However, additional handlers can be configured through the :any:`falcon.RequestOptions` and :any:`falcon.ResponseOptions` objects specified on your :any:`falcon.API`."
+msgstr ""
+
+#: ../../api/media.rst:13
+msgid "To avoid unnecessary overhead, Falcon will only process request media the first time the media property is referenced. Once it has been referenced, it'll use the cached result for subsequent interactions."
+msgstr ""
+
+#: ../../api/media.rst:18
+msgid "Usage"
+msgstr ""
+
+#: ../../api/media.rst:20
+msgid "Zero configuration is needed if you're creating a JSON API. Just access or set the ``media`` attribute as appropriate and let Falcon do the heavy lifting for you."
+msgstr ""
+
+#: ../../api/media.rst:38
+msgid "Once `media` is called on a request, it'll consume the request's stream."
+msgstr ""
+
+#: ../../api/media.rst:41
+msgid "Validating Media"
+msgstr ""
+
+#: ../../api/media.rst:43
+msgid "Falcon currently only provides a JSON Schema media validator; however, JSON Schema is very versatile and can be used to validate any deserialized media type that JSON also supports (i.e. dicts, lists, etc)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:1
+msgid "Decorator for validating ``req.media`` using JSON Schema."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:3
+msgid "This decorator provides standard JSON Schema validation via the ``jsonschema`` package available from PyPI. Semantic validation via the *format* keyword is enabled for the default checkers implemented by ``jsonschema.FormatChecker``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:10
+msgid "The `jsonschema`` package must be installed separately in order to use this decorator, as Falcon does not install it by default."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:13
+msgid "A dictionary that follows the JSON Schema specification. See `json-schema.org <http://json-schema.org/>`_ for more information on defining a compatible dictionary."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/validators/jsonschema.py:docstring of falcon.media.validators.jsonschema.validate:19
+msgid "Example"
+msgstr ""
+
+#: ../../api/media.rst:49
+msgid "If JSON Schema does not meet your needs, a custom validator may be implemented in a similar manner to the one above."
+msgstr ""
+
+#: ../../api/media.rst:53
+msgid "Content-Type Negotiation"
+msgstr ""
+
+#: ../../api/media.rst:55
+msgid "Falcon currently only supports partial negotiation out of the box. By default, when the ``media`` attribute is used it attempts to de/serialize based on the ``Content-Type`` header value. The missing link that Falcon doesn't provide is the connection between the :any:`falcon.Request` ``Accept`` header provided by a user and the :any:`falcon.Response` ``Content-Type`` header."
+msgstr ""
+
+#: ../../api/media.rst:61
+msgid "If you do need full negotiation, it is very easy to bridge the gap using middleware. Here is an example of how this can be done:"
+msgstr ""
+
+#: ../../api/media.rst:72
+msgid "Replacing the Default Handlers"
+msgstr ""
+
+#: ../../api/media.rst:74
+msgid "When creating your API object you can either add or completely replace all of the handlers. For example, lets say you want to write an API that sends and receives MessagePack. We can easily do this by telling our Falcon API that we want a default media-type of ``application/msgpack`` and then create a new :any:`Handlers` object specifying the desired media type and a handler that can process that data."
+msgstr ""
+
+#: ../../api/media.rst:96
+msgid "Alternatively, if you would like to add an additional handler such as MessagePack, this can be easily done in the following manner:"
+msgstr ""
+
+#: ../../api/media.rst:116
+msgid "Supported Handler Types"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler:1
+msgid "Handler built using Python's :py:mod:`json` module."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:1
+msgid "Deserialize the :any:`falcon.Request` body."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:3
+msgid "Input bytes to deserialize"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:6
+msgid "A deserialized object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.deserialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.deserialize:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:1
+msgid "Serialize the media object on a :any:`falcon.Response`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:3
+msgid "A serializable object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/json.py:docstring of falcon.media.JSONHandler.serialize:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler.serialize:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler.serialize:6
+msgid "The resulting serialized bytes from the input object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler:1
+msgid "Handler built using the :py:mod:`msgpack` module."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler:3
+msgid "This handler uses ``msgpack.unpackb()`` and ``msgpack.packb()``. The MessagePack ``bin`` type is used to distinguish between Unicode strings (``str`` on Python 3, ``unicode`` on Python 2) and byte strings (``bytes`` on Python 2/3, or ``str`` on Python 2)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler:10
+msgid "This handler requires the extra ``msgpack`` package, which must be installed in addition to ``falcon`` from PyPI:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/msgpack.py:docstring of falcon.media.MessagePackHandler:17
+msgid "Python 2.6 users will need to use the deprecated ``msgpack-python`` package instead, pinned to version 0.4.8."
+msgstr ""
+
+#: ../../api/media.rst:125
+msgid "Custom Handler Type"
+msgstr ""
+
+#: ../../api/media.rst:127
+msgid "If Falcon doesn't have an internet media type handler that supports your use case, you can easily implement your own using the abstract base class provided by Falcon:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/base.py:docstring of falcon.media.BaseHandler:1
+msgid "Abstract Base Class for an internet media type handler"
+msgstr ""
+
+#: ../../api/media.rst:137
+msgid "Handlers"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/media/handlers.py:docstring of falcon.media.Handlers:1
+msgid "A dictionary like object that manages internet media type handlers."
+msgstr ""
+
+#: ../../api/media.rst:146
+msgid "Media Type Constants"
+msgstr ""
+
+#: ../../api/media.rst:148
+msgid "The ``falcon`` module provides a number of constants for common media types, including the following:"
+msgstr ""
+

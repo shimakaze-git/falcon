@@ -1,0 +1,1269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/request_and_response.rst:4
+msgid "Request & Response"
+msgstr ""
+
+#: ../../api/request_and_response.rst:6
+msgid "Instances of the Request and Response classes are passed into responders as the second and third arguments, respectively."
+msgstr ""
+
+#: ../../api/request_and_response.rst:21
+msgid "Request"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:1
+msgid "Represents a client's HTTP request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:3
+msgid "`Request` is not meant to be instantiated directly by responders."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.log_error:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.delete_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:5
+msgid "A WSGI environment dict passed in from the server. See also PEP-3333."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:5
+msgid "Set of global options passed from the API handler."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:14
+msgid "*dict* -- Reference to the WSGI environ ``dict`` passed in from the server. (See also PEP-3333.)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:19
+msgid "*dict* -- Dictionary to hold any data about the request which is specific to your app (e.g. session object). Falcon itself will not interact with this attribute after it has been initialized."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:25
+msgid "*class* -- Class variable that determines the factory or type to use for initializing the `context` attribute. By default, the framework will instantiate standard ``dict`` objects. However, you may override this behavior by creating a custom child class of ``falcon.Request``, and then passing that new class to `falcon.API()` by way of the latter's `request_type` parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:34
+msgid "When overriding `context_type` with a factory function (as opposed to a class), the function is called like a method of the current Request instance. Therefore the first argument is the Request instance itself (self)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:41
+msgid "*str* -- URL scheme used for the request. Either 'http' or 'https'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:46
+msgid "If the request was proxied, the scheme may not match what was originally requested by the client. :py:attr:`forwarded_scheme` can be used, instead, to handle such cases."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:53
+msgid "*str* -- Original URL scheme requested by the user agent, if the request was proxied. Typical values are 'http' or 'https'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:57
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:88
+msgid "The following request headers are checked, in order of preference, to determine the forwarded scheme:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:60
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:91
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:222
+msgid "``Forwarded``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:61
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:223
+msgid "``X-Forwarded-For``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:63
+msgid "If none of these headers are available, or if the Forwarded header is available but does not contain a \"proto\" parameter in the first hop, the value of :attr:`scheme` is returned instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:68
+msgid "(See also: `RFC 7239, Section 1 <https://tools.ietf.org/html/rfc7239#section-1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:72
+msgid "*str* -- Deprecated alias for `scheme`. Will be removed in a future release."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:77
+msgid "*str* -- HTTP method requested (e.g., 'GET', 'POST', etc.)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:81
+msgid "*str* -- Host request header field"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:85
+msgid "*str* -- Original host request header as received by the first proxy in front of the application server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:92
+msgid "``X-Forwarded-Host``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:94
+msgid "If none of the above headers are available, or if the Forwarded header is available but the \"host\" parameter is not included in the first hop, the value of :attr:`host` is returned instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:101
+msgid "Reverse proxies are often configured to set the Host header directly to the one that was originally requested by the user agent; in that case, using :attr:`host` is sufficient."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:106
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:251
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:3
+msgid "(See also: `RFC 7239, Section 4 <https://tools.ietf.org/html/rfc7239#section-4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:110
+msgid "*int* -- Port used for the request. If the request URI does not specify a port, the default one for the given schema is returned (80 for HTTP and 443 for HTTPS)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:116
+msgid "*str* -- Returns the 'host:port' portion of the request URL. The port may be ommitted if it is the default one for the URL's schema (80 for HTTP and 443 for HTTPS)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:122
+msgid "*str* -- Leftmost (i.e., most specific) subdomain from the hostname. If only a single domain name is given, `subdomain` will be ``None``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:128
+msgid "If the hostname in the request is an IP address, the value for `subdomain` is undefined."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:133
+msgid "*str* -- The initial portion of the request URI's path that corresponds to the application object, so that the application knows its virtual \"location\". This may be an empty string, if the application corresponds to the \"root\" of the server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:139
+msgid "(Corresponds to the \"SCRIPT_NAME\" environ variable defined by PEP-3333.)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:144
+msgid "*str* -- The fully-qualified URI for the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:148
+msgid "*str* -- Alias for `uri`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:152
+msgid "*str* -- Original URI for proxied requests. Uses :attr:`forwarded_scheme` and :attr:`forwarded_host` in order to reconstruct the original URI requested by the user agent."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:159
+msgid "*str* -- The path and query string portion of the request URI, omitting the scheme and host."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:164
+msgid "*str* -- The prefix of the request URI, including scheme, host, and WSGI app (if any)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:169
+msgid "*str* -- The prefix of the original URI for proxied requests. Uses :attr:`forwarded_scheme` and :attr:`forwarded_host` in order to reconstruct the original URI."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:176
+msgid "*str* -- Path portion of the request URI (not including query string)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:181
+msgid "`req.path` may be set to a new value by a `process_request()` middleware method in order to influence routing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:186
+msgid "*str* -- Query string portion of the request URI, without the preceding '?' character."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:191
+msgid "*str* -- The template for the route that was matched for this request. May be ``None`` if the request has not yet been routed, as would be the case for `process_request()` middleware methods. May also be ``None`` if your app uses a custom routing engine and the engine does not provide the URI template when resolving a route."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:200
+msgid "*str* -- IP address of the closest client or proxy to the WSGI server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:203
+msgid "This property is determined by the value of ``REMOTE_ADDR`` in the WSGI environment dict. Since this address is not derived from an HTTP header, clients and proxies can not forge it."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:210
+msgid "If your application is behind one or more reverse proxies, you can use :py:attr:`~.access_route` to retrieve the real IP address of the client."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:216
+msgid "*list* -- IP address of the original client, as well as any known addresses of proxies fronting the WSGI server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:219
+msgid "The following request headers are checked, in order of preference, to determine the addresses:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:224
+msgid "``X-Real-IP``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:226
+msgid "If none of these headers are available, the value of :py:attr:`~.remote_addr` is used instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:231
+msgid "Per `RFC 7239`_, the access route may contain \"unknown\" and obfuscated identifiers, in addition to IPv4 and IPv6 addresses"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:239
+msgid "Headers can be forged by any client or proxy. Use this property with caution and validate all values before using them. Do not rely on the access route to authorize requests."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:246
+msgid "*list* -- Value of the Forwarded header, as a parsed list of :class:`falcon.Forwarded` objects, or ``None`` if the header is missing. If the header value is malformed, Falcon will make a best effort to parse what it can."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:255
+msgid "*datetime* -- Value of the Date header, converted to a ``datetime`` instance. The header value is assumed to conform to RFC 1123."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:261
+msgid "*str* -- Value of the Authorization header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:266
+msgid "*str* -- Value of the User-Agent header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:271
+msgid "*str* -- Value of the Referer header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:276
+msgid "*str* -- Value of the Accept header, or '*/*' if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:281
+msgid "*bool* -- ``True`` if the Accept header indicates that the client is willing to receive JSON, otherwise ``False``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:286
+msgid "*bool* -- ``True`` if the Accept header indicates that the client is willing to receive MessagePack, otherwise ``False``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:292
+msgid "*bool* -- ``True`` if the Accept header indicates that the client is willing to receive XML, otherwise ``False``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:297
+msgid "*dict* -- A dict of name/value cookie pairs. (See also: :ref:`Getting Cookies <getting-cookies>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:302
+msgid "*str* -- Value of the Content-Type header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:307
+msgid "*int* -- Value of the Content-Length header converted to an ``int``, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:312
+msgid "File-like input object for reading the body of the request, if any. This object provides direct access to the server's data stream and is non-seekable. In order to avoid unintended side effects, and to provide maximum flexibility to the application, Falcon itself does not buffer or spool the data in any way."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:319
+msgid "Since this object is provided by the WSGI server itself, rather than by Falcon, it may behave differently depending on how you host your app. For example, attempting to read more bytes than are expected (as determined by the Content-Length header) may or may not block indefinitely. It's a good idea to test your WSGI server to find out how it behaves."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:327
+msgid "This can be particulary problematic when a request body is expected, but none is given. In this case, the following call blocks under certain WSGI servers::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:334
+msgid "The workaround is fairly straightforward, if verbose::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:340
+msgid "Alternatively, when passing the stream directly to a consumer, it may be necessary to branch off the value of the Content-Length header::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:347
+msgid "For a slight performance cost, you may instead wish to use :py:attr:`bounded_stream`, which wraps the native WSGI input object to normalize its behavior."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:353
+msgid "If an HTML form is POSTed to the API using the *application/x-www-form-urlencoded* media type, and the :py:attr:`~.RequestOptions.auto_parse_form_urlencoded` option is set, the framework will consume `stream` in order to parse the parameters and merge them into the query string parameters. In this case, the stream will be left at EOF."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:363
+msgid "File-like wrapper around `stream` to normalize certain differences between the native input objects employed by different WSGI servers. In particular, `bounded_stream` is aware of the expected Content-Length of the body, and will never block on out-of-bounds reads, assuming the client does not stall while transmitting the data to the server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:371
+msgid "For example, the following will not block when Content-Length is 0 or the header is missing altogether::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:376
+msgid "This is also safe::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:382
+msgid "*str* -- Value of the Expect header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:387
+msgid "*object* -- Returns a deserialized form of the request stream. When called, it will attempt to deserialize the request stream using the Content-Type header as well as the media-type handlers configured via :class:`falcon.RequestOptions`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:392
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:29
+msgid "See :ref:`media` for more information regarding media handling."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:396
+msgid "This operation will consume the request stream the first time it's called and cache the results. Follow-up calls will just retrieve a cached version of the object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:402
+msgid "*tuple of int* -- A 2-member ``tuple`` parsed from the value of the Range header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:405
+msgid "The two members correspond to the first and last byte positions of the requested resource, inclusive. Negative indices indicate offset from the end of the resource, where -1 is the last byte, -2 is the second-to-last byte, and so forth."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:411
+msgid "Only continous ranges are supported (e.g., \"bytes=0-0,-1\" would result in an HTTPBadRequest exception when the attribute is accessed.)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:417
+msgid "*str* -- Unit of the range parsed from the value of the Range header, or ``None`` if the header is missing"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:422
+msgid "*str* -- Value of the If-Match header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:427
+msgid "*str* -- Value of the If-None-Match header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:432
+msgid "*datetime* -- Value of the If-Modified-Since header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:437
+msgid "*datetime* -- Value of the If-Unmodified-Since header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:442
+msgid "*str* -- Value of the If-Range header, or ``None`` if the header is missing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:447
+msgid "*dict* -- Raw HTTP headers from the request with canonical dash-separated names. Parsing all the headers to create this dict is done the first time this attribute is accessed. This parsing can be costly, so unless you need all the headers in this format, you should use the `get_header` method or one of the convenience attributes instead, to get a value for a specific header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:457
+msgid "*dict* -- The mapping of request query parameter names to their values.  Where the parameter appears multiple times in the query string, the value mapped to that parameter key will be a list of all the values in the order seen."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request:464
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:105
+msgid "*dict* -- Set of global options passed from the API handler."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:1
+msgid "Determine whether or not the client accepts a given media type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:3
+msgid "An Internet media type to check."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:6
+msgid "``True`` if the client has indicated in the Accept header that it accepts the specified media type. Otherwise, returns ``False``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_accepts:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:1
+msgid "Return the client's preferred media type, given several choices."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:3
+msgid "One or more Internet media types from which to choose the client's preferred type. This value **must** be an iterable collection of strings."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.client_prefers:8
+msgid "The client's preferred media type, based on the Accept header. Returns ``None`` if the client does not accept any of the given types."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:1
+msgid "Retrieve the raw string value for the given header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:3
+msgid "Header name, case-insensitive (e.g., 'Content-Type')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:6
+msgid "Set to ``True`` to raise ``HTTPBadRequest`` instead of returning gracefully when the header is not found (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:10
+msgid "Value to return if the header is not found (default ``None``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:14
+msgid "The value of the specified header if it exists, or the default value if the header is not found and is not required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:0
+msgid "raises"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:19
+msgid ":exc:`HTTPBadRequest` -- The header was not found in the request, but it was required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:1
+msgid "Return an HTTP header with HTTP-Date values as a datetime."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:3
+msgid "Header name, case-insensitive (e.g., 'Date')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:10
+msgid "Support obs-date formats according to RFC 7231, e.g.: \"Sunday, 06-Nov-94 08:49:37 GMT\" (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:15
+msgid "The value of the specified header if it exists, or ``None`` if the header is not found and is not required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_header_as_datetime:21
+msgid ":exc:`HttpInvalidHeader` -- The header contained a malformed/invalid value."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:1
+msgid "Return the raw value of a query string parameter as a string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:5
+msgid "If an HTML form is POSTed to the API using the *application/x-www-form-urlencoded* media type, Falcon can automatically parse the parameters from the request body and merge them into the query string parameters. To enable this functionality, set :py:attr:`~.RequestOptions.auto_parse_form_urlencoded` to ``True`` via :any:`API.req_options`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:15
+msgid "Similar to the way multiple keys in form data is handled, if a query parameter is assigned a comma-separated list of values (e.g., ``foo=a,b,c``), only one of those values will be returned, and it is undefined which one. Use :meth:`~.get_param_as_list` to retrieve all the values."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:21
+msgid "Parameter name, case-sensitive (e.g., 'sort')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:16
+msgid "Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None`` when the parameter is not found (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:28
+msgid "A ``dict``-like object in which to place the value of the param, but only if the param is present."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:31
+msgid "If the param is not found returns the given value instead of None"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:35
+msgid "The value of the param as a string, or ``None`` if param is not found and is not required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param:39
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:1
+msgid "Return the value of a query string parameter as a boolean"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:3
+msgid "The following boolean strings are supported::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:8
+msgid "Parameter name, case-sensitive (e.g., 'detailed')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:11
+msgid "Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None`` when the parameter is not found or is not a recognized boolean string (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:13
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:24
+msgid "A ``dict``-like object in which to place the value of the param, but only if the param is found (default ``None``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:20
+msgid "If ``True``, an empty string value will be treated as ``True`` (default ``False``). Normally empty strings are ignored; if you would like to recognize such parameters, you must set the `keep_blank_qs_values` request option to ``True``. Request options are set globally for each instance of ``falcon.API`` through the `req_options` attribute."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:28
+msgid "The value of the param if it is found and can be converted to a ``bool``. If the param is not found, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_bool:33
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request, or can not be converted to a ``bool``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:1
+msgid "Return the value of a query string parameter as a date."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:7
+msgid "Parameter name, case-sensitive (e.g., 'ids')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:6
+msgid "String used to parse the param value into a date. Any format recognized by strptime() is supported (default ``\"%Y-%m-%d\"``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:19
+msgid "The value of the param if it is found and can be converted to a ``date`` according to the supplied format string. If the param is not found, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_date:25
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request, or the value could not be converted to a ``date``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:1
+msgid "Return the value of a query string parameter as a datetime."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:6
+msgid "String used to parse the param value into a ``datetime``. Any format recognized by strptime() is supported (default ``'%Y-%m-%dT%H:%M:%SZ'``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:19
+msgid "The value of the param if it is found and can be converted to a ``datetime`` according to the supplied format string. If the param is not found, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_datetime:25
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request, or the value could not be converted to a ``datetime``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_dict:1
+msgid "Deprecated alias of :meth:`~get_param_as_json`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_dict:3
+msgid "This method has been deprecated and will be removed in a future release."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:1
+msgid "Return the value of a query string parameter as an int."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:3
+msgid "Parameter name, case-sensitive (e.g., 'limit')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:6
+msgid "Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None`` when the parameter is not found or is not an integer (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:11
+msgid "Set to the minimum value allowed for this param. If the param is found and it is less than min, an ``HTTPError`` is raised."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:15
+msgid "Set to the maximum value allowed for this param. If the param is found and its value is greater than max, an ``HTTPError`` is raised."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:24
+msgid "The value of the param if it is found and can be converted to an ``int``. If the param is not found, returns ``None``, unless `required` is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:36
+msgid "Raises"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:36
+msgid "HTTPBadRequest: The param was not found in the request, even though"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_int:31
+msgid "it was required to be there, or it was found but could not be converted to an ``int``. Also raised if the param's value falls outside the given interval, i.e., the value must be in the interval: min <= value <= max to avoid triggering an error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:1
+msgid "Return the decoded JSON value of a query string parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:3
+msgid "Given a JSON value, decode it to an appropriate Python type, (e.g., ``dict``, ``list``, ``str``, ``int``, ``bool``, etc.)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:6
+msgid "Parameter name, case-sensitive (e.g., 'payload')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:18
+msgid "The value of the param if it is found. Otherwise, returns ``None`` unless required is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_json:22
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request, or the value could not be parsed as JSON."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:1
+msgid "Return the value of a query string parameter as a list."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:3
+msgid "List items must be comma-separated or must be provided as multiple instances of the same param in the query string ala *application/x-www-form-urlencoded*."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:10
+msgid "An optional transform function that takes as input each element in the list as a ``str`` and outputs a transformed element for inclusion in the list that will be returned. For example, passing ``int`` will transform list items into numbers."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:25
+msgid "The value of the param if it is found. Otherwise, returns ``None`` unless required is True. Empty list elements will be discarded. For example, the following query strings would both result in `['1', '3']`::      things=1,,3     things=1&things=&things=3"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:25
+msgid "The value of the param if it is found. Otherwise, returns ``None`` unless required is True. Empty list elements will be discarded. For example, the following query strings would both result in `['1', '3']`::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_list:34
+msgid ":exc:`HTTPBadRequest` -- A required param is missing from the request, or a transform function raised an instance of ``ValueError``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:1
+msgid "Return the value of a query string parameter as an UUID."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:3
+msgid "The value to convert must conform to the standard UUID string representation per RFC 4122. For example, the following strings are all valid::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:16
+msgid "Parameter name, case-sensitive (e.g., 'id')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:19
+msgid "Set to ``True`` to raise ``HTTPBadRequest`` instead of returning ``None`` when the parameter is not found or is not a UUID (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:29
+msgid "The value of the param if it is found and can be converted to a ``UUID``. If the param is not found, returns ``None``, unless `required` is ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.get_param_as_uuid:36
+msgid "it was required to be there, or it was found but could not be converted to a ``UUID``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.log_error:1
+msgid "Write an error message to the server's log."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.log_error:3
+msgid "Prepends timestamp and request info to message, and writes the result out to the WSGI server's error stream (`wsgi.error`)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.Request.log_error:6
+msgid "Description of the problem. On Python 2, instances of ``unicode`` will be converted to UTF-8."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:1
+msgid "Represents a parsed Forwarded header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:7
+msgid "*str* -- The value of the \"for\" parameter, or ``None`` if the parameter is absent. Identifies the node making the request to the proxy."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:13
+msgid "*str* -- The value of the \"by\" parameter, or ``None`` if the parameter is absent. Identifies the client-facing interface of the proxy."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:19
+msgid "*str* -- The value of the \"host\" parameter, or ``None`` if the parameter is absent. Provides the host request header field as received by the proxy."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/forwarded.py:docstring of falcon.Forwarded:25
+msgid "*str* -- The value of the \"proto\" parameter, or ``None`` if the parameter is absent. Indicates the protocol that was used to make the request to the proxy."
+msgstr ""
+
+#: ../../api/request_and_response.rst:30
+msgid "Response"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:1
+msgid "Represents an HTTP response to a client request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:3
+msgid "`Response` is not meant to be instantiated directly by responders."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:10
+msgid "*str* -- HTTP status line (e.g., '200 OK'). Falcon requires the full status line, not just the code (e.g., 200). This design makes the framework more efficient because it does not have to do any kind of conversion or lookup when composing the WSGI response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:16
+msgid "If not set explicitly, the status defaults to '200 OK'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:20
+msgid "Falcon provides a number of constants for common status codes. They all start with the ``HTTP_`` prefix, as in: ``falcon.HTTP_204``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:26
+msgid "*object* -- A serializable object supported by the media handlers configured via :class:`falcon.RequestOptions`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:33
+msgid "*str or unicode* -- String representing response content."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:35
+msgid "If set to a Unicode type (``unicode`` in Python 2, or ``str`` in Python 3), Falcon will encode the text as UTF-8 in the response. If the content is already a byte string, use the :attr:`data` attribute instead (it's faster)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:42
+msgid "*bytes* -- Byte string representing response content."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:44
+msgid "Use this attribute in lieu of `body` when your content is already a byte string (``str`` or ``bytes`` in Python 2, or simply ``bytes`` in Python 3). See also the note below."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:50
+msgid "Under Python 2.x, if your content is of type ``str``, using the `data` attribute instead of `body` is the most efficient approach. However, if your text is of type ``unicode``, you will need to use the `body` attribute instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:56
+msgid "Under Python 3.x, on the other hand, the 2.x ``str`` type can be thought of as having been replaced by what was once the ``unicode`` type, and so you will need to always use the `body` attribute for strings to ensure Unicode characters are properly encoded in the HTTP response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:66
+msgid "Either a file-like object with a `read()` method that takes an optional size argument and returns a block of bytes, or an iterable object, representing response content, and yielding blocks as byte strings. Falcon will use *wsgi.file_wrapper*, if provided by the WSGI server, in order to efficiently serve file-like objects."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:75
+msgid "*int* -- Expected length of `stream`. If `stream` is set, but `stream_len` is not, Falcon will not supply a Content-Length header to the WSGI server. Consequently, the server may choose to use chunked encoding or one of the other strategies suggested by PEP-3333."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:83
+msgid "*dict* -- Dictionary to hold any data about the response which is specific to your app. Falcon itself will not interact with this attribute after it has been initialized."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:89
+msgid "*class* -- Class variable that determines the factory or type to use for initializing the `context` attribute. By default, the framework will instantiate standard ``dict`` objects. However, you may override this behavior by creating a custom child class of ``falcon.Response``, and then passing that new class to `falcon.API()` by way of the latter's `response_type` parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response:98
+msgid "When overriding `context_type` with a factory function (as opposed to a class), the function is called like a method of the current Response instance. Therefore the first argument is the Response instance itself (self)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.accept_ranges:1
+msgid "Set the Accept-Ranges header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.accept_ranges:3
+msgid "The Accept-Ranges header field indicates to the client which range units are supported (e.g. \"bytes\") for the target resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.accept_ranges:7
+msgid "If range requests are not supported for the target resource, the header may be set to \"none\" to advise the client not to attempt any such requests."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.accept_ranges:13
+msgid "\"none\" is the literal string, not Python's built-in ``None`` type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:1
+msgid "Add a link header to the response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:3
+msgid "(See also: `RFC 5988, Section 1 <https://tools.ietf.org/html/rfc5988#section-1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:7
+msgid "Calling this method repeatedly will cause each link to be appended to the Link header value, separated by commas."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:12
+msgid "So-called \"link-extension\" elements, as defined by RFC 5988, are not yet supported. See also Issue #288."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:15
+msgid "Target IRI for the resource identified by the link. Will be converted to a URI, if necessary, per `RFC 3987, Section 3.1. <https://tools.ietf.org/html/rfc3987#section-3.1.>`_"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:19
+msgid "Relation type of the link, such as \"next\" or \"bookmark\".  (See also: http://www.iana.org/assignments/link-relations/link-relations.xhtml)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:19
+msgid "Relation type of the link, such as \"next\" or \"bookmark\"."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:22
+msgid "(See also: http://www.iana.org/assignments/link-relations/link-relations.xhtml)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:25
+msgid "Human-readable label for the destination of the link (default ``None``). If the title includes non-ASCII characters, you will need to use `title_star` instead, or provide both a US-ASCII version using `title` and a Unicode version using `title_star`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:31
+msgid "Localized title describing the destination of the link (default ``None``). The value must be a two-member tuple in the form of (*language-tag*, *text*), where *language-tag* is a standard language identifier as defined in `RFC 5646, Section 2.1 <https://tools.ietf.org/html/rfc5646#section-2.1>`_, and *text* is a Unicode string.  .. note::     *language-tag* may be an empty string, in which case the    client will assume the language from the general context    of the current request.  .. note::     *text* will always be encoded as UTF-8. If the string    contains non-ASCII characters, it should be passed as    a ``unicode`` type string (requires the 'u' prefix in    Python 2)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:31
+msgid "Localized title describing the destination of the link (default ``None``). The value must be a two-member tuple in the form of (*language-tag*, *text*), where *language-tag* is a standard language identifier as defined in `RFC 5646, Section 2.1 <https://tools.ietf.org/html/rfc5646#section-2.1>`_, and *text* is a Unicode string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:40
+msgid "*language-tag* may be an empty string, in which case the client will assume the language from the general context of the current request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:46
+msgid "*text* will always be encoded as UTF-8. If the string contains non-ASCII characters, it should be passed as a ``unicode`` type string (requires the 'u' prefix in Python 2)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:51
+msgid "Override the context IRI with a different URI (default None). By default, the context IRI for the link is simply the IRI of the requested resource. The value provided may be a relative URI."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:56
+msgid "Either a single *language-tag*, or a ``list`` or ``tuple`` of such tags to provide a hint to the client as to the language of the result of following the link. A list of tags may be given in order to indicate to the client that the target resource is available in multiple languages."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.add_link:63
+msgid "Provides a hint as to the media type of the result of dereferencing the link (default ``None``). As noted in RFC 5988, this is only a hint and does not override the Content-Type header returned when the link is followed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:1
+msgid "Set or append a header for this response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:5
+msgid "If the header already exists, the new value will be appended to it, delimited by a comma. Most header specifications support this format, Set-Cookie being the notable exceptions."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:9
+msgid "For setting cookies, see :py:meth:`~.set_cookie`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:11
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:7
+msgid "Header name (case-insensitive). The restrictions noted below for the header's value also apply here."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.append_header:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:10
+msgid "Value for the header. Must be convertable to ``str`` or be of type ``str`` or ``StringType``. Strings must contain only US-ASCII characters. Under Python 2.x, the ``unicode`` type is also accepted, although such strings are also limited to US-ASCII."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.cache_control:1
+msgid "Set the Cache-Control header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.cache_control:3
+msgid "Used to set a list of cache directives to use as the value of the Cache-Control header. The list will be joined with \", \" to produce the value for the header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_location:1
+msgid "Set the Content-Location header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_location:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.location:3
+msgid "This value will be URI encoded per RFC 3986. If the value that is being set is already URI encoded it should be decoded first or the header should be set manually using the set_header method."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_range:1
+msgid "A tuple to use in constructing a value for the Content-Range header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_range:3
+msgid "The tuple has the form (*start*, *end*, *length*, [*unit*]), where *start* and *end* designate the range (inclusive), and *length* is the total length, or '\\*' if unknown. You may pass ``int``'s for these numbers (no need to convert to ``str`` beforehand). The optional value *unit* describes the range unit and defaults to 'bytes'"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_range:11
+msgid "You only need to use the alternate form, 'bytes \\*/1234', for responses that use the status '416 Range Not Satisfiable'. In this case, raising ``falcon.HTTPRangeNotSatisfiable`` will do the right thing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_range:16
+msgid "(See also: `RFC 7233, Section 4.2 <https://tools.ietf.org/html/rfc7233#section-4.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_type:1
+msgid "Sets the Content-Type header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.content_type:3
+msgid "The ``falcon`` module provides a number of constants for common media types, including ``falcon.MEDIA_JSON``, ``falcon.MEDIA_MSGPACK``, ``falcon.MEDIA_YAML``, ``falcon.MEDIA_XML``, ``falcon.MEDIA_HTML``, ``falcon.MEDIA_JS``, ``falcon.MEDIA_TEXT``, ``falcon.MEDIA_JPEG``, ``falcon.MEDIA_PNG``, and ``falcon.MEDIA_GIF``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.delete_header:1
+msgid "Delete a header that was previously set for this response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.delete_header:3
+msgid "If the header was not previously set, nothing is done (no error is raised)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.delete_header:6
+msgid "Note that calling this method is equivalent to setting the corresponding header property (when said property is available) to ``None``. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.delete_header:12
+msgid "Header name (case-insensitive).  Must be of type ``str`` or ``StringType`` and contain only US-ASCII characters. Under Python 2.x, the ``unicode`` type is also accepted, although such strings are also limited to US-ASCII."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.downloadable_as:1
+msgid "Set the Content-Disposition header using the given filename."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.downloadable_as:3
+msgid "The value will be used for the *filename* directive. For example, given ``'report.pdf'``, the Content-Disposition header would be set to: ``'attachment; filename=\"report.pdf\"'``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.etag:1
+msgid "Set the ETag header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:3
+msgid "Header name, case-insensitive. Must be of type ``str`` or ``StringType``, and only character values 0x00 through 0xFF may be used on platforms that use wide characters."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.get_header:8
+msgid "The header's value if set, otherwise ``None``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.last_modified:1
+msgid "Set the Last-Modified header. Set to a ``datetime`` (UTC) instance."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.last_modified:3
+msgid "Falcon will format the ``datetime`` as an HTTP date string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.location:1
+msgid "Set the Location header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.retry_after:1
+msgid "Set the Retry-After header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.retry_after:3
+msgid "The expected value is an integral number of seconds to use as the value for the header. The HTTP-date syntax is not supported."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:1
+msgid "Set a response cookie."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:5
+msgid "This method can be called multiple times to add one or more cookies to the response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:10
+msgid "To learn more about setting cookies, see :ref:`Setting Cookies <setting-cookies>`. The parameters listed below correspond to those defined in `RFC 6265`_."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:14
+msgid "Cookie name"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:16
+msgid "Cookie value"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:19
+msgid "Specifies when the cookie should expire. By default, cookies expire when the user agent exits.  (See also: `RFC 6265, Section 4.1.2.1 <https://tools.ietf.org/html/rfc6265#section-4.1.2.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:19
+msgid "Specifies when the cookie should expire. By default, cookies expire when the user agent exits."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:22
+msgid "(See also: `RFC 6265, Section 4.1.2.1 <https://tools.ietf.org/html/rfc6265#section-4.1.2.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:24
+msgid "Defines the lifetime of the cookie in seconds. By default, cookies expire when the user agent exits. If both `max_age` and `expires` are set, the latter is ignored by the user agent.  .. note::     Coercion to ``int`` is attempted if provided with    ``float`` or ``str``.  (See also: `RFC 6265, Section 4.1.2.2 <https://tools.ietf.org/html/rfc6265#section-4.1.2.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:24
+msgid "Defines the lifetime of the cookie in seconds. By default, cookies expire when the user agent exits. If both `max_age` and `expires` are set, the latter is ignored by the user agent."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:31
+msgid "Coercion to ``int`` is attempted if provided with ``float`` or ``str``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:34
+msgid "(See also: `RFC 6265, Section 4.1.2.2 <https://tools.ietf.org/html/rfc6265#section-4.1.2.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:36
+msgid "Restricts the cookie to a specific domain and any subdomains of that domain. By default, the user agent will return the cookie only to the origin server. When overriding this default behavior, the specified domain must include the origin server. Otherwise, the user agent will reject the cookie.  (See also: `RFC 6265, Section 4.1.2.3 <https://tools.ietf.org/html/rfc6265#section-4.1.2.3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:36
+msgid "Restricts the cookie to a specific domain and any subdomains of that domain. By default, the user agent will return the cookie only to the origin server. When overriding this default behavior, the specified domain must include the origin server. Otherwise, the user agent will reject the cookie."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:43
+msgid "(See also: `RFC 6265, Section 4.1.2.3 <https://tools.ietf.org/html/rfc6265#section-4.1.2.3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:45
+msgid "Scopes the cookie to the given path plus any subdirectories under that path (the \"/\" character is interpreted as a directory separator). If the cookie does not specify a path, the user agent defaults to the path component of the requested URI.  .. warning::     User agent interfaces do not always isolate    cookies by path, and so this should not be    considered an effective security measure.  (See also: `RFC 6265, Section 4.1.2.4 <https://tools.ietf.org/html/rfc6265#section-4.1.2.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:45
+msgid "Scopes the cookie to the given path plus any subdirectories under that path (the \"/\" character is interpreted as a directory separator). If the cookie does not specify a path, the user agent defaults to the path component of the requested URI."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:53
+msgid "User agent interfaces do not always isolate cookies by path, and so this should not be considered an effective security measure."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:57
+msgid "(See also: `RFC 6265, Section 4.1.2.4 <https://tools.ietf.org/html/rfc6265#section-4.1.2.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:59
+msgid "Direct the client to only return the cookie in subsequent requests if they are made over HTTPS (default: ``True``). This prevents attackers from reading sensitive cookie data.  .. note::     The default value for this argument is normally    ``True``, but can be modified by setting    :py:attr:`~.ResponseOptions.secure_cookies_by_default`    via :any:`API.resp_options`.  .. warning::     For the `secure` cookie attribute to be effective,    your application will need to enforce HTTPS.  (See also: `RFC 6265, Section 4.1.2.5 <https://tools.ietf.org/html/rfc6265#section-4.1.2.5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:59
+msgid "Direct the client to only return the cookie in subsequent requests if they are made over HTTPS (default: ``True``). This prevents attackers from reading sensitive cookie data."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:66
+msgid "The default value for this argument is normally ``True``, but can be modified by setting :py:attr:`~.ResponseOptions.secure_cookies_by_default` via :any:`API.resp_options`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:73
+msgid "For the `secure` cookie attribute to be effective, your application will need to enforce HTTPS."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:76
+msgid "(See also: `RFC 6265, Section 4.1.2.5 <https://tools.ietf.org/html/rfc6265#section-4.1.2.5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:78
+msgid "Direct the client to only transfer the cookie with unscripted HTTP requests (default: ``True``). This is intended to mitigate some forms of cross-site scripting.  (See also: `RFC 6265, Section 4.1.2.6 <https://tools.ietf.org/html/rfc6265#section-4.1.2.6>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:78
+msgid "Direct the client to only transfer the cookie with unscripted HTTP requests (default: ``True``). This is intended to mitigate some forms of cross-site scripting."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:83
+msgid "(See also: `RFC 6265, Section 4.1.2.6 <https://tools.ietf.org/html/rfc6265#section-4.1.2.6>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:86
+msgid ":exc:`KeyError` -- `name` is not a valid cookie name."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_cookie:87
+msgid ":exc:`ValueError` -- `value` is not a valid cookie value."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:1
+msgid "Set a header for this response to a given value."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:3
+msgid "Calling this method overwrites the existing value, if any."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_header:5
+msgid "For setting cookies, see instead :meth:`~.set_cookie`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:1
+msgid "Set several headers at once."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:3
+msgid "Calling this method overwrites existing values, if any."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:5
+msgid "A dictionary of header names and values to set, or a ``list`` of (*name*, *value*) tuples. Both *name* and *value* must be of type ``str`` or ``StringType`` and contain only US-ASCII characters. Under Python 2.x, the ``unicode`` type is also accepted, although such strings are also limited to US-ASCII.  .. note::     Falcon can process a list of tuples slightly faster    than a dict."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:5
+msgid "A dictionary of header names and values to set, or a ``list`` of (*name*, *value*) tuples. Both *name* and *value* must be of type ``str`` or ``StringType`` and contain only US-ASCII characters. Under Python 2.x, the ``unicode`` type is also accepted, although such strings are also limited to US-ASCII."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:14
+msgid "Falcon can process a list of tuples slightly faster than a dict."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_headers:18
+msgid ":exc:`ValueError` -- `headers` was not a ``dict`` or ``list`` of ``tuple``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_stream:1
+msgid "Convenience method for setting both `stream` and `stream_len`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_stream:3
+msgid "Although the `stream` and `stream_len` properties may be set directly, using this method ensures `stream_len` is not accidentally neglected when the length of the stream is known in advance."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.set_stream:10
+msgid "If the stream length is unknown, you can set `stream` directly, and ignore `stream_len`. In this case, the WSGI server may choose to use chunked encoding or one of the other strategies suggested by PEP-3333."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.unset_cookie:1
+msgid "Unset a cookie in the response"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.unset_cookie:3
+msgid "Clears the contents of the cookie, and instructs the user agent to immediately expire its own copy of the cookie."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.unset_cookie:8
+msgid "In order to successfully remove a cookie, both the path and the domain must match the values that were used when the cookie was created."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.vary:1
+msgid "Value to use for the Vary header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.vary:3
+msgid "Set this property to an iterable of header names. For a single asterisk or field value, simply pass a single-element ``list`` or ``tuple``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.vary:7
+msgid "The \"Vary\" header field in a response describes what parts of a request message, aside from the method, Host header field, and request target, might influence the origin server's process for selecting and representing this response.  The value consists of either a single asterisk (\"*\") or a list of header field names (case-insensitive)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.Response.vary:14
+msgid "(See also: `RFC 7231, Section 7.1.4 <https://tools.ietf.org/html/rfc7231#section-7.1.4>`_)"
+msgstr ""
+

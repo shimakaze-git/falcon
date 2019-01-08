@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/util.rst:4
+msgid "Utilities"
+msgstr ""
+
+#: ../../api/util.rst:7
+msgid "URI Functions"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri:1
+msgid "URI utilities."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri:3
+msgid "This module provides utility functions to parse, encode, decode, and otherwise manipulate a URI. These functions are not available directly in the `falcon` module, and so must be explicitly imported::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:1
+msgid "Encodes a full or relative URI according to RFC 3986."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:3
+msgid "RFC 3986 defines a set of \"unreserved\" characters as well as a set of \"reserved\" characters used as delimiters. This function escapes all other \"disallowed\" characters by percent-encoding them."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:9
+msgid "This utility is faster in the average case than the similar `quote` function found in ``urlib``. It also strives to be easier to use by assuming a sensible default of allowed characters."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.deprecated:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:13
+msgid "URI or part of a URI to encode. If this is a wide string (i.e., ``six.text_type``), it will be encoded to a UTF-8 byte array and any multibyte sequences will be percent-encoded as-is."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_now:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:25
+msgid "An escaped version of `uri`, where all disallowed characters have been percent-encoded."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_now:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:1
+msgid "Encodes a value string according to RFC 3986."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:3
+msgid "Disallowed characters are percent-encoded in a way that models ``urllib.parse.quote(safe=\"~\")``. However, the Falcon function is faster in the average case than the similar `quote` function found in urlib. It also strives to be easier to use by assuming a sensible default of allowed characters."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:9
+msgid "All reserved characters are lumped together into a single set of \"delimiters\", and everything in that set is escaped."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:14
+msgid "RFC 3986 defines a set of \"unreserved\" characters as well as a set of \"reserved\" characters used as delimiters."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.encode_value:17
+msgid "URI fragment to encode. It is assumed not to cross delimiter boundaries, and so any reserved URI delimiter characters included in it will be escaped. If `value` is a wide string (i.e., ``six.text_type``), it will be encoded to a UTF-8 byte array and any multibyte sequences will be percent-encoded as-is."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:1
+msgid "Decodes percent-encoded characters in a URI or query string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:3
+msgid "This function models the behavior of `urllib.parse.unquote_plus`, albeit in a faster, more straightforward manner."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:6
+msgid "An encoded URI (full or partial)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.decode:9
+msgid "A decoded URL. If the URL contains escaped non-ASCII characters, UTF-8 is assumed per RFC 3986."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:1
+msgid "Parse a canonical 'host:port' string into parts."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:3
+msgid "Parse a host string (which may or may not contain a port) into parts, taking into account that the string may contain either a domain name or an IP address. In the latter case, both IPv4 and IPv6 addresses are supported."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:8
+msgid "Host string to parse, optionally containing a port number."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:12
+msgid "Port number to return when the host string does not contain one (default ``None``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_host:16
+msgid "A parsed (*host*, *port*) tuple from the given host string, with the port converted to an ``int``. If the host string does not specify a port, `default_port` is used instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:1
+msgid "Parse a query string into a dict."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:3
+msgid "Query string parameters are assumed to use standard form-encoding. Only parameters with values are returned. For example, given 'foo=bar&flag', this function would ignore 'flag' unless the `keep_blank_qs_values` option is set."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:10
+msgid "In addition to the standard HTML form-based method for specifying lists by repeating a given param multiple times, Falcon supports a more compact form in which the param may be given a single time but set to a ``list`` of comma-separated elements (e.g., 'foo=a,b,c')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:15
+msgid "When using this format, all commas uri-encoded will not be treated by Falcon as a delimiter. If the client wants to send a value as a list, it must not encode the commas with the values."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:19
+msgid "The two different ways of specifying lists may not be mixed in a single query string for the same parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:22
+msgid "The query string to parse."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:24
+msgid "Set to ``True`` to return fields even if they do not have a value (default ``False``). For comma-separated values, this option also determines whether or not empty elements in the parsed list are retained."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:29
+msgid "Set to ``False`` in order to disable splitting query parameters on ``,`` (default ``True``). Depending on the user agent, encoding lists as multiple occurrences of the same parameter might be preferable. In this case, setting `parse_qs_csv` to ``False`` will cause the framework to treat commas as literal characters in each occurring parameter value."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:36
+msgid "A dictionary of (*name*, *value*) pairs, one per query parameter. Note that *value* may be a single ``str``, or a ``list`` of ``str``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:0
+msgid "raises"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.parse_query_string:41
+msgid ":exc:`TypeError` -- `query_string` was not a ``str``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:1
+msgid "Unquote an RFC 7320 \"quoted-string\"."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:3
+msgid "Original quoted string"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:6
+msgid "unquoted string"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/uri.py:docstring of falcon.uri.unquote_string:9
+msgid ":exc:`TypeError` -- `quoted` was not a ``str``."
+msgstr ""
+
+#: ../../api/util.rst:14
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.deprecated:1
+msgid "Flags a method as deprecated."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.deprecated:3
+msgid "This function returns a decorator which can be used to mark deprecated functions. Applying this decorator will result in a warning being emitted when the function is used."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.deprecated:7
+msgid "Specific guidance for the developer, e.g.: 'Please migrate to add_proxy(...)''"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_now:1
+msgid "Returns the current UTC time as an IMF-fixdate."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_now:3
+msgid "The current UTC time as an IMF-fixdate, e.g., 'Tue, 15 Nov 1994 12:45:26 GMT'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:1
+msgid "Converts a ``datetime`` instance to an HTTP date string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:3
+msgid "A ``datetime`` instance to convert, assumed to be UTC."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.dt_to_http:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:3
+msgid "An RFC 1123 date string, e.g.: \"Tue, 15 Nov 1994 12:45:26 GMT\"."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:1
+msgid "Converts an HTTP date string to a datetime instance."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:7
+msgid "Support obs-date formats according to RFC 7231, e.g.: \"Sunday, 06-Nov-94 08:49:37 GMT\" (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:12
+msgid "A UTC datetime instance corresponding to the given HTTP date."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.http_date_to_dt:16
+msgid ":exc:`ValueError` -- http_date doesn't match any of the available time formats"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:1
+msgid "Converts a dictionary of parameters to a query string."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:3
+msgid "A dictionary of parameters, where each key is a parameter name, and each value is either a ``str`` or something that can be converted into a ``str``, or a list of such values. If a ``list``, the value will be converted to a comma-delimited string of values (e.g., 'thing=1,2,3')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:10
+msgid "Set to ``False`` to encode list values by specifying multiple instances of the parameter (e.g., 'thing=1&thing=2&thing=3'). Otherwise, parameters will be encoded as comma-separated values (e.g., 'thing=1,2,3'). Defaults to ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:16
+msgid "Set to ``False`` to exclude the '?' prefix in the result string (default ``True``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.to_query_str:20
+msgid "A URI query string, including the '?' prefix (unless `prefix` is ``False``), or an empty string if no params are given (the ``dict`` is empty)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:1
+msgid "Gets both the http status code and description from just a code"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:3
+msgid "integer or string that can be converted to an integer"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:4
+msgid "default text to be appended to the status_code if the lookup does not find a result"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:7
+msgid "status code e.g. \"404 Not Found\""
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_http_status:10
+msgid ":exc:`ValueError` -- the value entered could not be converted to an integer"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:1
+msgid "Get a bound method of the given object by name."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:3
+msgid "Object on which to look up the method."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:4
+msgid "Name of the method to retrieve."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:6
+msgid "Bound method, or ``None`` if the method does not exist on the object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.get_bound_method:9
+msgid ":exc:`AttributeError` -- The method exists, but it isn't bound (most likely a class was passed, rather than an instance of that class)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT:1
+msgid "GMT timezone class implementing the :py:class:`datetime.tzinfo` interface."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:1
+msgid "Return the daylight saving time (DST) adjustment."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:3
+msgid "Ignored"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.dst:6
+msgid "DST adjustment for GMT, which is always 0."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:1
+msgid "Get the name of this timezone."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.tzname:6
+msgid "\"GMT\""
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:1
+msgid "Get the offset from UTC."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/util/time.py:docstring of falcon.TimezoneGMT.utcoffset:6
+msgid "GMT offset, which is equivalent to UTC and so is aways 0."
+msgstr ""
+

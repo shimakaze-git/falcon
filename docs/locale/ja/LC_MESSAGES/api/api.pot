@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/api.rst:4
+msgid "The API Class"
+msgstr ""
+
+#: ../../api/api.rst:6
+msgid "Falcon's API class is a WSGI \"application\" that you can host with any standard-compliant WSGI server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:1
+msgid "This class is the main entry point into a Falcon-based app."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:3
+msgid "Each API instance provides a callable WSGI interface and a routing engine."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:6
+msgid "Default media type to use as the value for the Content-Type header on responses (default 'application/json'). The ``falcon`` module provides a number of constants for common media types, such as ``falcon.MEDIA_MSGPACK``, ``falcon.MEDIA_YAML``, ``falcon.MEDIA_XML``, etc."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:13
+msgid "Either a single object or a list of objects (instantiated classes) that implement the following middleware component interface::      class ExampleComponent(object):         def process_request(self, req, resp):             \"\"\"Process the request before routing it.              Args:                 req: Request object that will eventually be                     routed to an on_* responder method.                 resp: Response object that will be routed to                     the on_* responder.             \"\"\"          def process_resource(self, req, resp, resource, params):             \"\"\"Process the request and resource *after* routing.              Note:                 This method is only called when the request matches                 a route to a resource.              Args:                 req: Request object that will be passed to the                     routed responder.                 resp: Response object that will be passed to the                     responder.                 resource: Resource object to which the request was                     routed. May be None if no route was found for                     the request.                 params: A dict-like object representing any                     additional params derived from the route's URI                     template fields, that will be passed to the                     resource's responder method as keyword                     arguments.             \"\"\"          def process_response(self, req, resp, resource, req_succeeded)             \"\"\"Post-processing of the response (after routing).              Args:                 req: Request object.                 resp: Response object.                 resource: Resource object to which the request was                     routed. May be None if no route was found                     for the request.                 req_succeeded: True if no exceptions were raised                     while the framework processed and routed the                     request; otherwise False.             \"\"\"  (See also: :ref:`Middleware <middleware>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:13
+msgid "Either a single object or a list of objects (instantiated classes) that implement the following middleware component interface::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:64
+msgid "(See also: :ref:`Middleware <middleware>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:66
+msgid "``Request``-like class to use instead of Falcon's default class. Among other things, this feature affords inheriting from ``falcon.request.Request`` in order to override the ``context_type`` class variable. (default ``falcon.request.Request``)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:72
+msgid "``Response``-like class to use instead of Falcon's default class. (default ``falcon.response.Response``)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:76
+msgid "An instance of a custom router to use in lieu of the default engine. (See also: :ref:`Custom Routers <routing_custom>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:80
+msgid "Set to ``True`` if response middleware should be executed independently of whether or not request middleware raises an exception (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:88
+msgid "A set of behavioral options related to incoming requests. (See also: :py:class:`~.RequestOptions`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:93
+msgid "A set of behavioral options related to outgoing responses. (See also: :py:class:`~.ResponseOptions`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:98
+msgid "Configuration options for the router. If a custom router is in use, and it does not expose any configurable options, referencing this attribute will raise an instance of ``AttributeError``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API:103
+msgid "(See also: :ref:`CompiledRouterOptions <compiled_router_options>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:1
+msgid "Register a handler for a given exception error type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:3
+msgid "Error handlers may be registered for any type, including :class:`~.HTTPError`. This feature provides a central location for logging and otherwise handling exceptions raised by responders, hooks, and middleware components."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:8
+msgid "A handler can raise an instance of :class:`~.HTTPError` or :class:`~.HTTPStatus` to communicate information about the issue to the client.  Alternatively, a handler may modify `resp` directly."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:13
+msgid "Error handlers are matched in LIFO order. In other words, when searching for an error handler to match a raised exception, and more than one handler matches the exception type, the framework will choose the one that was most recently registered. Therefore, more general error handlers (e.g., for the standard ``Exception`` type) should be added first, to avoid masking more specific handlers for subclassed types."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:21
+msgid "Whenever an error occurs when handling a request that is an instance of this exception class, the associated handler will be called."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:25
+msgid "A function or callable object taking the form ``func(ex, req, resp, params)``.  If not specified explicitly, the handler will default to ``exception.handle``, where ``exception`` is the error type specified above, and ``handle`` is a static method (i.e., decorated with @staticmethod) that accepts the same params just described. For example::      class CustomException(CustomBaseException):          @staticmethod         def handle(ex, req, resp, params):             # TODO: Log the error             # Convert to an instance of falcon.HTTPError             raise falcon.HTTPError(falcon.HTTP_792)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:25
+msgid "A function or callable object taking the form ``func(ex, req, resp, params)``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_error_handler:28
+msgid "If not specified explicitly, the handler will default to ``exception.handle``, where ``exception`` is the error type specified above, and ``handle`` is a static method (i.e., decorated with @staticmethod) that accepts the same params just described. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:1
+msgid "Associate a templatized URI path with a resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:3
+msgid "Falcon routes incoming requests to resources based on a set of URI templates. If the path requested by the client matches the template for a given route, the request is then passed on to the associated resource for processing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:8
+msgid "If no route matches the request, control then passes to a default responder that simply raises an instance of :class:`~.HTTPNotFound`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:12
+msgid "(See also: :ref:`Routing <routing>`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:14
+msgid "A templatized URI. Care must be taken to ensure the template does not mask any sink patterns, if any are registered.  (See also: :meth:`~.add_sink`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:14
+msgid "A templatized URI. Care must be taken to ensure the template does not mask any sink patterns, if any are registered."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:18
+msgid "(See also: :meth:`~.add_sink`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:20
+msgid "Object which represents a REST resource. Falcon will pass \"GET\" requests to on_get, \"PUT\" requests to on_put, etc. If any HTTP methods are not supported by your resource, simply don't define the corresponding request handlers, and Falcon will do the right thing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_route:30
+msgid "Any additional args and kwargs not defined above are passed through to the underlying router's ``add_route()`` method. The default router does not expect any additional arguments, but custom routers may take advantage of this feature to receive additional options when setting up routes."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:1
+msgid "Register a sink method for the API."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:3
+msgid "If no route matches a request, but the path in the requested URI matches a sink prefix, Falcon will pass control to the associated sink, regardless of the HTTP method requested."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:7
+msgid "Using sinks, you can drain and dynamically handle a large number of routes, when creating static resources and responders would be impractical. For example, you might use a sink to create a smart proxy that forwards requests to one or more backend services."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:12
+msgid "A callable taking the form ``func(req, resp)``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:14
+msgid "A regex string, typically starting with '/', which will trigger the sink if it matches the path portion of the request's URI. Both strings and precompiled regex objects may be specified. Characters are matched starting at the beginning of the URI path.  .. note::     Named groups are converted to kwargs and passed to    the sink as such.  .. warning::     If the prefix overlaps a registered route template,    the route will take precedence and mask the sink.        (See also: :meth:`~.add_route`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:14
+msgid "A regex string, typically starting with '/', which will trigger the sink if it matches the path portion of the request's URI. Both strings and precompiled regex objects may be specified. Characters are matched starting at the beginning of the URI path."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:22
+msgid "Named groups are converted to kwargs and passed to the sink as such."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:27
+msgid "If the prefix overlaps a registered route template, the route will take precedence and mask the sink."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_sink:30
+msgid "(See also: :meth:`~.add_route`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:1
+msgid "Add a route to a directory of static files."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:3
+msgid "Static routes provide a way to serve files directly. This feature provides an alternative to serving files at the web server level when you don't have that option, when authorization is required, or for testing purposes."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:10
+msgid "Serving files directly from the web server, rather than through the Python app, will always be more efficient, and therefore should be preferred in production deployments."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:14
+msgid "Static routes are matched in LIFO order. Therefore, if the same prefix is used for two routes, the second one will override the first. This also means that more specific routes should be added *after* less specific ones. For example, the following sequence would result in ``'/foo/bar/thing.js'`` being mapped to the ``'/foo/bar'`` route, and ``'/foo/xyz/thing.js'`` being mapped to the ``'/foo'`` route::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:25
+msgid "The path prefix to match for this route. If the path in the requested URI starts with this string, the remainder of the path will be appended to the source directory to determine the file to serve. This is done in a secure manner to prevent an attacker from requesting a file outside the specified directory.  Note that static routes are matched in LIFO order, and are only attempted after checking dynamic routes and sinks."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:25
+msgid "The path prefix to match for this route. If the path in the requested URI starts with this string, the remainder of the path will be appended to the source directory to determine the file to serve. This is done in a secure manner to prevent an attacker from requesting a file outside the specified directory."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:32
+msgid "Note that static routes are matched in LIFO order, and are only attempted after checking dynamic routes and sinks."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:35
+msgid "The source directory from which to serve files."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.add_static_route:37
+msgid "Set to ``True`` to include a Content-Disposition header in the response. The \"filename\" directive is simply set to the name of the requested file."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:1
+msgid "Override the default serializer for instances of :class:`~.HTTPError`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:3
+msgid "When a responder raises an instance of :class:`~.HTTPError`, Falcon converts it to an HTTP response automatically. The default serializer supports JSON and XML, but may be overridden by this method to use a custom serializer in order to support other media types."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:11
+msgid "If a custom media type is used and the type includes a \"+json\" or \"+xml\" suffix, the default serializer will convert the error to JSON or XML, respectively."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:15
+msgid "The :class:`~.HTTPError` class contains helper methods, such as `to_json()` and `to_dict()`, that can be used from within custom serializers. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/api.py:docstring of falcon.API.set_error_serializer:36
+msgid "A function taking the form ``func(req, resp, exception)``, where `req` is the request object that was passed to the responder method, `resp` is the response object, and `exception` is an instance of ``falcon.HTTPError``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:1
+msgid "Defines a set of configurable request options."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:3
+msgid "An instance of this class is exposed via :any:`API.req_options` for configuring certain :py:class:`~.Request` behaviors."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:8
+msgid "*bool* -- Set to ``True`` to keep query string fields even if they do not have a value (default ``False``). For comma-separated values, this option also determines whether or not empty elements in the parsed list are retained."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:16
+msgid "Set to ``True`` in order to automatically consume the request stream and merge the results into the request's query string params when the request's content type is *application/x-www-form-urlencoded* (default ``False``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:22
+msgid "Enabling this option makes the form parameters accessible via :attr:`~.params`, :meth:`~.get_param`, etc."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:27
+msgid "When this option is enabled, the request's body stream will be left at EOF. The original data is not retained by the framework."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:33
+msgid "The character encoding for fields, before percent-encoding non-ASCII bytes, is assumed to be UTF-8. The special `_charset_` field is ignored if present."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:38
+msgid "Falcon expects form-encoded request bodies to be encoded according to the standard W3C algorithm (see also http://goo.gl/6rlcux)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:44
+msgid "Set to ``False`` to treat commas in a query string value as literal characters, rather than as a comma- separated list (default ``True``). When this option is enabled, the value will be split on any non-percent-encoded commas. Disable this option when encoding lists as multiple occurrences of the same parameter, and when values may be encoded in alternative formats in which the comma character is significant."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:55
+msgid "Set to ``False`` in order to retain a trailing slash, if present, at the end of the URL path (default ``True``). When this option is enabled, the URL path is normalized by stripping the trailing slash character. This lets the application define a single route to a resource for a path that may or may not end in a forward slash. However, this behavior can be problematic in certain cases, such as when working with authentication schemes that employ URL-based signatures."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:67
+msgid "*str* -- The default media-type to use when deserializing a response. This value is normally set to the media type provided when a :class:`falcon.API` is initialized; however, if created independently, this will default to the ``DEFAULT_MEDIA_TYPE`` specified by Falcon."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/request.py:docstring of falcon.RequestOptions:75
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:24
+msgid "*Handlers* -- A dict-like object that allows you to configure the media-types that you would like to handle. By default, a handler is provided for the ``application/json`` media type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:1
+msgid "Defines a set of configurable response options."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:3
+msgid "An instance of this class is exposed via :any:`API.resp_options` for configuring certain :py:class:`~.Response` behaviors."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:8
+msgid "*bool* -- Set to ``False`` in development environments to make the `secure` attribute for all cookies default to ``False``. This can make testing easier by not requiring HTTPS. Note, however, that this setting can be overridden via `set_cookie()`'s `secure` kwarg."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:16
+msgid "*str* -- The default Internet media type (RFC 2046) to use when deserializing a response. This value is normally set to the media type provided when a :class:`falcon.API` is initialized; however, if created independently, this will default to the ``DEFAULT_MEDIA_TYPE`` specified by Falcon."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/response.py:docstring of falcon.ResponseOptions:31
+msgid "*dict* -- A mapping of dot-prefixed file extensions to Internet media types (RFC 2046). Defaults to ``mimetypes.types_map`` after calling ``mimetypes.init()``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:1
+msgid "Defines a set of configurable router options."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:3
+msgid "An instance of this class is exposed via :any:`API.router_options` for configuring certain :py:class:`~.CompiledRouter` behaviors."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:8
+msgid "Represents the collection of named converters that may be referenced in URI template field expressions. Adding additional converters is simply a matter of mapping an identifier to a converter class::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:15
+msgid "The identifier can then be used to employ the converter within a URI template::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:20
+msgid "Converter names may only contain ASCII letters, digits, and underscores, and must start with either a letter or an underscore."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:26
+msgid "Converter instances are shared between requests. Therefore, in threaded deployments, care must be taken to implement custom converters in a thread-safe manner."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouterOptions:31
+msgid "(See also: :ref:`Field Converters <routing_field_converters>`)"
+msgstr ""
+

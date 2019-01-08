@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/hooks.rst:4
+msgid "Hooks"
+msgstr ""
+
+#: ../../api/hooks.rst:6
+msgid "Falcon supports *before* and *after* hooks. You install a hook simply by applying one of the decorators below, either to an individual responder or to an entire resource."
+msgstr ""
+
+#: ../../api/hooks.rst:10
+msgid "For example, consider this hook that validates a POST request for an image resource:"
+msgstr ""
+
+#: ../../api/hooks.rst:20
+msgid "You would attach this hook to an ``on_post`` responder like so:"
+msgstr ""
+
+#: ../../api/hooks.rst:28
+msgid "Or, suppose you had a hook that you would like to apply to *all* responders for a given resource. In that case, you would simply decorate the resource class:"
+msgstr ""
+
+#: ../../api/hooks.rst:42
+msgid "Note also that you can pass additional arguments to your hook function as needed:"
+msgstr ""
+
+#: ../../api/hooks.rst:56
+msgid "Falcon supports using any callable as a hook. This allows for using a class instead of a function:"
+msgstr ""
+
+#: ../../api/hooks.rst:73
+msgid "Falcon :ref:`middleware components <middleware>` can also be used to insert logic before and after requests. However, unlike hooks, :ref:`middleware components <middleware>` are triggered **globally** for all requests."
+msgstr ""
+
+#: ../../api/hooks.rst:79
+msgid "In order to pass data from a hook function to a resource function use the ``req.context`` and ``resp.context`` dictionaries. These context dictionaries are intended to hold request and response data specific to your app as it passes through the framework."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:1
+msgid "Decorator to execute the given action function *before* the responder."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.after:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:3
+msgid "A function of the form ``func(req, resp, resource, params)``, where `resource` is a reference to the resource class instance associated with the request, and `params` is a dict of URI Template field names, if any, that will be passed into the resource responder as kwargs.  .. note::     Hooks may inject extra params as needed. For example::            def do_something(req, resp, resource, params):            try:                params['id'] = int(params['id'])            except ValueError:                raise falcon.HTTPBadRequest('Invalid ID',                                            'ID was not valid.')                params['answer'] = 42"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:3
+msgid "A function of the form ``func(req, resp, resource, params)``, where `resource` is a reference to the resource class instance associated with the request, and `params` is a dict of URI Template field names, if any, that will be passed into the resource responder as kwargs."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:12
+msgid "Hooks may inject extra params as needed. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.after:8
+msgid "Any additional arguments will be passed to *action* in the order given, immediately following the *req*, *resp*, *resource*, and *params* arguments."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.before:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.after:11
+msgid "Any additional keyword arguments will be passed through to *action*."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.after:1
+msgid "Decorator to execute the given action function *after* the responder."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/__init__.py:docstring of falcon.after:3
+msgid "A function of the form ``func(req, resp, resource)``, where `resource` is a reference to the resource class instance associated with the request"
+msgstr ""
+

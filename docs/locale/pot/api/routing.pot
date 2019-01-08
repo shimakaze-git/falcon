@@ -1,0 +1,420 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/routing.rst:4
+msgid "Routing"
+msgstr ""
+
+#: ../../api/routing.rst:6
+msgid "Falcon routes incoming requests to resources based on a set of URI templates. If the path requested by the client matches the template for a given route, the request is then passed on to the associated resource for processing."
+msgstr ""
+
+#: ../../api/routing.rst:11
+msgid "If no route matches the request, control then passes to a default responder that simply raises an instance of :class:`~.HTTPNotFound`. Normally this will result in sending a 404 response back to the client."
+msgstr ""
+
+#: ../../api/routing.rst:16
+msgid "Here's a quick example to show how all the pieces fit together:"
+msgstr ""
+
+#: ../../api/routing.rst:50
+#: ../../api/routing.rst:298
+msgid "Default Router"
+msgstr ""
+
+#: ../../api/routing.rst:52
+msgid "Falcon's default routing engine is based on a decision tree that is first compiled into Python code, and then evaluated by the runtime."
+msgstr ""
+
+#: ../../api/routing.rst:55
+msgid "The :meth:`~.API.add_route` method is used to associate a URI template with a resource. Falcon then maps incoming requests to resources based on these templates."
+msgstr ""
+
+#: ../../api/routing.rst:59
+msgid "Falcon's default router uses Python classes to represent resources. In practice, these classes act as controllers in your application. They convert an incoming request into one or more internal actions, and then compose a response back to the client based on the results of those actions. (See also: :ref:`Tutorial: Creating Resources <tutorial_resources>`)"
+msgstr ""
+
+#: ../../api/routing.rst:75
+msgid "Each resource class defines various \"responder\" methods, one for each HTTP method the resource allows. Responder names start with ``on_`` and are named according to which HTTP method they handle, as in ``on_get()``, ``on_post()``, ``on_put()``, etc."
+msgstr ""
+
+#: ../../api/routing.rst:81
+msgid "If your resource does not support a particular HTTP method, simply omit the corresponding responder and Falcon will use a default responder that raises an instance of :class:`~.HTTPMethodNotAllowed` when that method is requested. Normally this results in sending a 405 response back to the client."
+msgstr ""
+
+#: ../../api/routing.rst:88
+msgid "Responders must always define at least two arguments to receive :class:`~.Request` and :class:`~.Response` objects, respectively::"
+msgstr ""
+
+#: ../../api/routing.rst:94
+msgid "The :class:`~.Request` object represents the incoming HTTP request. It exposes properties and methods for examining headers, query string parameters, and other metadata associated with the request. A file-like stream object is also provided for reading any data that was included in the body of the request."
+msgstr ""
+
+#: ../../api/routing.rst:100
+msgid "The :class:`~.Response` object represents the application's HTTP response to the above request. It provides properties and methods for setting status, header and body data. The :class:`~.Response` object also exposes a dict-like :attr:`~.Response.context` property for passing arbitrary data to hooks and middleware methods."
+msgstr ""
+
+#: ../../api/routing.rst:108
+msgid "Rather than directly manipulate the :class:`~.Response` object, a responder may raise an instance of either :class:`~.HTTPError` or :class:`~.HTTPStatus`. Falcon will convert these exceptions to appropriate HTTP responses. Alternatively, you can handle them youself via :meth:`~.API.add_error_handler`."
+msgstr ""
+
+#: ../../api/routing.rst:115
+msgid "In addition to the standard `req` and `resp` parameters, if the route's template contains field expressions, any responder that desires to receive requests for that route must accept arguments named after the respective field names defined in the template."
+msgstr ""
+
+#: ../../api/routing.rst:120
+msgid "A field expression consists of a bracketed field name. For example, given the following template::"
+msgstr ""
+
+#: ../../api/routing.rst:125
+msgid "A PUT request to \"/user/kgriffs\" would be routed to:"
+msgstr ""
+
+#: ../../api/routing.rst:132
+msgid "Because field names correspond to argument names in responder methods, they must be valid Python identifiers."
+msgstr ""
+
+#: ../../api/routing.rst:135
+msgid "Individual path segments may contain one or more field expressions, and fields need not span the entire path segment. For example::"
+msgstr ""
+
+#: ../../api/routing.rst:142
+msgid "(See also the :ref:`Falcon tutorial <tutorial>` for additional examples and a walkthough of setting up routes within the context of a sample application.)"
+msgstr ""
+
+#: ../../api/routing.rst:149
+msgid "Field Converters"
+msgstr ""
+
+#: ../../api/routing.rst:151
+msgid "Falcon's default router supports the use of field converters to transform a URI template field value. Field converters may also perform simple input validation. For example, the following URI template uses the `int` converter to convert the value of `tid` to a Python ``int``, but only if it has exactly eight digits::"
+msgstr ""
+
+#: ../../api/routing.rst:159
+msgid "If the value is malformed and can not be converted, Falcon will reject the request with a 404 response to the client."
+msgstr ""
+
+#: ../../api/routing.rst:162
+msgid "Converters are instantiated with the argument specification given in the field expression. These specifications follow the standard Python syntax for passing arguments. For example, the comments in the following code show how a converter would be instantiated given different argument specifications in the URI template:"
+msgstr ""
+
+#: ../../api/routing.rst:189
+msgid "Built-in Converters"
+msgstr ""
+
+#: ../../api/routing.rst:192
+msgid "Identifier"
+msgstr ""
+
+#: ../../api/routing.rst:192
+msgid "Class"
+msgstr ""
+
+#: ../../api/routing.rst:192
+msgid "Example"
+msgstr ""
+
+#: ../../api/routing.rst:194
+msgid "``int``"
+msgstr ""
+
+#: ../../api/routing.rst:194
+msgid ":class:`~.IntConverter`"
+msgstr ""
+
+#: ../../api/routing.rst:194
+msgid "``/teams/{tid:int(8)}``"
+msgstr ""
+
+#: ../../api/routing.rst:195
+msgid "``uuid``"
+msgstr ""
+
+#: ../../api/routing.rst:195
+msgid ":class:`~.UUIDConverter`"
+msgstr ""
+
+#: ../../api/routing.rst:195
+msgid "``/diff/{left:uuid}...{right:uuid}``"
+msgstr ""
+
+#: ../../api/routing.rst:196
+msgid "``dt``"
+msgstr ""
+
+#: ../../api/routing.rst:196
+msgid ":class:`~.DateTimeConverter`"
+msgstr ""
+
+#: ../../api/routing.rst:196
+msgid "``/logs/{day:dt(\"%Y-%m-%d\")}``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:1
+msgid "Converts a field value to an int."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:3
+msgid "Identifier: `int`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:5
+msgid "Require the value to have the given number of digits."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:8
+msgid "Reject the value if it is less than this number."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter:10
+msgid "Reject the value if it is greater than this number."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:1
+msgid "Convert a URI template field value to another format or type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.add_route:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.set_default_responders:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:3
+msgid "Original string to convert."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:6
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:6
+msgid "Converted field value, or ``None`` if the field     can not be converted."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:8
+msgid "Converted field value, or ``None`` if the field"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:9
+msgid "can not be converted."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.IntConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter.convert:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter:1
+msgid "Converts a field value to a uuid.UUID."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter:3
+msgid "Identifier: `uuid`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.UUIDConverter:5
+msgid "In order to be converted, the field value must consist of a string of 32 hexadecimal digits, as defined in `RFC 4122, Section 3. <https://tools.ietf.org/html/rfc4122#section-3.>`_ Note, however, that hyphens and the URN prefix are optional."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter:1
+msgid "Converts a field value to a datetime."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter:3
+msgid "Identifier: `dt`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.DateTimeConverter:5
+msgid "String used to parse the field value into a datetime. Any format recognized by strptime() is supported (default ``'%Y-%m-%dT%H:%M:%SZ'``)."
+msgstr ""
+
+#: ../../api/routing.rst:211
+msgid "Custom Converters"
+msgstr ""
+
+#: ../../api/routing.rst:213
+msgid "Custom converters can be registered via the :attr:`~.CompiledRouterOptions.converters` router option. A converter is simply a class that implements the ``BaseConverter`` interface:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/converters.py:docstring of falcon.routing.BaseConverter:1
+msgid "Abstract base class for URI template field converters."
+msgstr ""
+
+#: ../../api/routing.rst:223
+msgid "Custom Routers"
+msgstr ""
+
+#: ../../api/routing.rst:225
+msgid "A custom routing engine may be specified when instantiating :py:meth:`falcon.API`. For example:"
+msgstr ""
+
+#: ../../api/routing.rst:233
+msgid "Custom routers may derive from the default :py:class:`~.CompiledRouter` engine, or implement a completely different routing strategy (such as object-based routing)."
+msgstr ""
+
+#: ../../api/routing.rst:237
+msgid "A custom router is any class that implements the following interface:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter:1
+msgid "Fast URI router which compiles its routing logic to Python code."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter:3
+msgid "Generally you do not need to use this router class directly, as an instance is created by default when the falcon.API class is initialized."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter:6
+msgid "The router treats URI paths as a tree of URI segments and searches by checking the URI one segment at a time. Instead of interpreting the route tree for each look-up, it generates inlined, bespoke Python code to perform the search, then compiles that code. This makes the route processing quite fast."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.add_route:1
+msgid "Adds a route between a URI path template and a resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.add_route:3
+msgid "A URI template to use for the route"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.add_route:5
+msgid "A mapping of HTTP methods (e.g., 'GET', 'POST') to methods of a resource object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.add_route:8
+msgid "The resource instance to associate with the URI template."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:1
+msgid "Search for a route that matches the given partial URI."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:3
+msgid "The requested path to route."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:6
+msgid "The Request object that will be passed to the routed responder. Currently the value of this argument is ignored by :class:`~.CompiledRouter`. Routing is based solely on the path."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:12
+msgid "A 4-member tuple composed of (resource, method_map,     params, uri_template), or ``None`` if no route matches     the requested path."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:15
+msgid "A 4-member tuple composed of (resource, method_map,"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/compiled.py:docstring of falcon.routing.CompiledRouter.find:15
+msgid "params, uri_template), or ``None`` if no route matches the requested path."
+msgstr ""
+
+#: ../../api/routing.rst:305
+msgid "Routing Utilities"
+msgstr ""
+
+#: ../../api/routing.rst:307
+msgid "The *falcon.routing* module contains the following utilities that may be used by custom routing engines."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:1
+msgid "Maps HTTP methods (e.g., 'GET', 'POST') to methods of a resource object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:3
+msgid "An object with *responder* methods, following the naming convention *on_\\**, that correspond to each method the resource supports. For example, if a resource supports GET and POST, it should define ``on_get(self, req, resp)`` and ``on_post(self, req, resp)``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.map_http_methods:9
+msgid "A mapping of HTTP methods to explicitly defined resource responders."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.set_default_responders:1
+msgid "Maps HTTP methods not explicitly defined on a resource to default responders."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.set_default_responders:3
+msgid "A dict with HTTP methods mapped to responders explicitly defined in a resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:1
+msgid "Compile the given URI template string into a pattern matcher."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:3
+msgid "This function can be used to construct custom routing engines that iterate through a list of possible routes, attempting to match an incoming request against each route's compiled regular expression."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:7
+msgid "Each field is converted to a named group, so that when a match is found, the fields can be easily extracted using :py:meth:`re.MatchObject.groupdict`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:11
+msgid "This function does not support the more flexible templating syntax used in the default router. Only simple paths with bracketed field expressions are recognized. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:21
+msgid "Also, note that if the template contains a trailing slash character, it will be stripped in order to normalize the routing logic."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:24
+msgid "The template to compile. Note that field names are restricted to ASCII a-z, A-Z, and the underscore character."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/routing/util.py:docstring of falcon.routing.compile_uri_template:28
+msgid "(template_field_names, template_regex)"
+msgstr ""
+

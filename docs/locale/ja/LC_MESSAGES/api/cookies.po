@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../api/cookies.rst:4
+msgid "Cookies"
+msgstr ""
+
+#: ../../api/cookies.rst:6
+msgid "Cookie support is available in Falcon version 0.3 or later."
+msgstr ""
+
+#: ../../api/cookies.rst:11
+msgid "Getting Cookies"
+msgstr ""
+
+#: ../../api/cookies.rst:13
+msgid ""
+"Cookies can be read from a request via the :py:attr:`~.Request.cookies` "
+"request attribute:"
+msgstr ""
+
+#: ../../api/cookies.rst:27
+msgid ""
+"The :py:attr:`~.Request.cookies` attribute is a regular :py:class:`dict` "
+"object."
+msgstr ""
+
+#: ../../api/cookies.rst:32
+msgid ""
+"The :py:attr:`~.Request.cookies` attribute returns a copy of the response"
+" cookie dictionary. Assign it to a variable, as shown in the above "
+"example, to improve performance when you need to look up more than one "
+"cookie."
+msgstr ""
+
+#: ../../api/cookies.rst:40
+msgid "Setting Cookies"
+msgstr ""
+
+#: ../../api/cookies.rst:42
+msgid ""
+"Setting cookies on a response is done via "
+":py:meth:`~.Response.set_cookie`."
+msgstr ""
+
+#: ../../api/cookies.rst:44
+msgid ""
+"The :py:meth:`~.Response.set_cookie` method should be used instead of "
+":py:meth:`~.Response.set_header` or :py:meth:`~.Response.append_header`. "
+"With :py:meth:`~.Response.set_header` you cannot set multiple headers "
+"with the same name (which is how multiple cookies are sent to the "
+"client). Furthermore, :py:meth:`~.Response.append_header` appends "
+"multiple values to the same header field in a way that is not compatible "
+"with the special format required by the `Set-Cookie` header."
+msgstr ""
+
+#: ../../api/cookies.rst:52
+msgid "Simple example:"
+msgstr ""
+
+#: ../../api/cookies.rst:63
+msgid "You can of course also set the domain, path and lifetime of the cookie."
+msgstr ""
+
+#: ../../api/cookies.rst:75
+msgid ""
+"You can also instruct the client to remove a cookie with the "
+":py:meth:`~.Response.unset_cookie` method:"
+msgstr ""
+
+#: ../../api/cookies.rst:90
+msgid "The Secure Attribute"
+msgstr ""
+
+#: ../../api/cookies.rst:92
+msgid ""
+"By default, Falcon sets the `secure` attribute for cookies. This "
+"instructs the client to never transmit the cookie in the clear over HTTP,"
+" in order to protect any sensitive data that cookie might contain. If a "
+"cookie is set, and a subsequent request is made over HTTP (rather than "
+"HTTPS), the client will not include that cookie in the request."
+msgstr ""
+
+#: ../../api/cookies.rst:101
+msgid ""
+"For this attribute to be effective, your web server or load balancer will"
+" need to enforce HTTPS when setting the cookie, as well as in all "
+"subsequent requests that require the cookie to be sent back from the "
+"client."
+msgstr ""
+
+#: ../../api/cookies.rst:106
+msgid ""
+"When running your application in a development environment, you can "
+"disable this default behavior by setting "
+":py:attr:`~.ResponseOptions.secure_cookies_by_default` to ``False`` via "
+":any:`API.resp_options`. This lets you test your app locally without "
+"having to set up TLS. You can make this option configurable to easily "
+"switch between development and production environments."
+msgstr ""
+
+#: ../../api/cookies.rst:113
+msgid "See also: `RFC 6265, Section 4.1.2.5`_"
+msgstr ""
+

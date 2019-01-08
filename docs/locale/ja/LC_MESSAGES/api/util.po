@@ -1,0 +1,441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../api/util.rst:4
+msgid "Utilities"
+msgstr ""
+
+#: ../../api/util.rst:7
+msgid "URI Functions"
+msgstr ""
+
+#: falcon.uri:1 of
+msgid "URI utilities."
+msgstr ""
+
+#: falcon.uri:3 of
+msgid ""
+"This module provides utility functions to parse, encode, decode, and "
+"otherwise manipulate a URI. These functions are not available directly in"
+" the `falcon` module, and so must be explicitly imported::"
+msgstr ""
+
+#: falcon.uri.encode:1 of
+msgid "Encodes a full or relative URI according to RFC 3986."
+msgstr ""
+
+#: falcon.uri.encode:3 of
+msgid ""
+"RFC 3986 defines a set of \"unreserved\" characters as well as a set of "
+"\"reserved\" characters used as delimiters. This function escapes all "
+"other \"disallowed\" characters by percent-encoding them."
+msgstr ""
+
+#: falcon.uri.encode:9 of
+msgid ""
+"This utility is faster in the average case than the similar `quote` "
+"function found in ``urlib``. It also strives to be easier to use by "
+"assuming a sensible default of allowed characters."
+msgstr ""
+
+#: falcon.TimezoneGMT.dst falcon.TimezoneGMT.tzname
+#: falcon.TimezoneGMT.utcoffset falcon.deprecated falcon.dt_to_http
+#: falcon.get_bound_method falcon.get_http_status falcon.http_date_to_dt
+#: falcon.to_query_str falcon.uri.decode falcon.uri.encode
+#: falcon.uri.encode_value falcon.uri.parse_host falcon.uri.parse_query_string
+#: falcon.uri.unquote_string of
+msgid "Parameters"
+msgstr ""
+
+#: falcon.uri.encode:13 of
+msgid ""
+"URI or part of a URI to encode. If this is a wide string (i.e., "
+"``six.text_type``), it will be encoded to a UTF-8 byte array and any "
+"multibyte sequences will be percent-encoded as-is."
+msgstr ""
+
+#: falcon.TimezoneGMT.dst falcon.TimezoneGMT.tzname
+#: falcon.TimezoneGMT.utcoffset falcon.dt_to_http falcon.get_bound_method
+#: falcon.get_http_status falcon.http_date_to_dt falcon.http_now
+#: falcon.to_query_str falcon.uri.decode falcon.uri.encode
+#: falcon.uri.encode_value falcon.uri.parse_host falcon.uri.parse_query_string
+#: falcon.uri.unquote_string of
+msgid "Returns"
+msgstr ""
+
+#: falcon.uri.encode:19 falcon.uri.encode_value:25 of
+msgid ""
+"An escaped version of `uri`, where all disallowed characters have been "
+"percent-encoded."
+msgstr ""
+
+#: falcon.TimezoneGMT.dst falcon.TimezoneGMT.tzname
+#: falcon.TimezoneGMT.utcoffset falcon.dt_to_http falcon.get_http_status
+#: falcon.http_date_to_dt falcon.http_now falcon.to_query_str falcon.uri.decode
+#: falcon.uri.encode falcon.uri.encode_value falcon.uri.parse_host
+#: falcon.uri.parse_query_string falcon.uri.unquote_string of
+msgid "Return type"
+msgstr ""
+
+#: falcon.uri.encode_value:1 of
+msgid "Encodes a value string according to RFC 3986."
+msgstr ""
+
+#: falcon.uri.encode_value:3 of
+msgid ""
+"Disallowed characters are percent-encoded in a way that models "
+"``urllib.parse.quote(safe=\"~\")``. However, the Falcon function is "
+"faster in the average case than the similar `quote` function found in "
+"urlib. It also strives to be easier to use by assuming a sensible default"
+" of allowed characters."
+msgstr ""
+
+#: falcon.uri.encode_value:9 of
+msgid ""
+"All reserved characters are lumped together into a single set of "
+"\"delimiters\", and everything in that set is escaped."
+msgstr ""
+
+#: falcon.uri.encode_value:14 of
+msgid ""
+"RFC 3986 defines a set of \"unreserved\" characters as well as a set of "
+"\"reserved\" characters used as delimiters."
+msgstr ""
+
+#: falcon.uri.encode_value:17 of
+msgid ""
+"URI fragment to encode. It is assumed not to cross delimiter boundaries, "
+"and so any reserved URI delimiter characters included in it will be "
+"escaped. If `value` is a wide string (i.e., ``six.text_type``), it will "
+"be encoded to a UTF-8 byte array and any multibyte sequences will be "
+"percent-encoded as-is."
+msgstr ""
+
+#: falcon.uri.decode:1 of
+msgid "Decodes percent-encoded characters in a URI or query string."
+msgstr ""
+
+#: falcon.uri.decode:3 of
+msgid ""
+"This function models the behavior of `urllib.parse.unquote_plus`, albeit "
+"in a faster, more straightforward manner."
+msgstr ""
+
+#: falcon.uri.decode:6 of
+msgid "An encoded URI (full or partial)."
+msgstr ""
+
+#: falcon.uri.decode:9 of
+msgid ""
+"A decoded URL. If the URL contains escaped non-ASCII characters, UTF-8 is"
+" assumed per RFC 3986."
+msgstr ""
+
+#: falcon.uri.parse_host:1 of
+msgid "Parse a canonical 'host:port' string into parts."
+msgstr ""
+
+#: falcon.uri.parse_host:3 of
+msgid ""
+"Parse a host string (which may or may not contain a port) into parts, "
+"taking into account that the string may contain either a domain name or "
+"an IP address. In the latter case, both IPv4 and IPv6 addresses are "
+"supported."
+msgstr ""
+
+#: falcon.uri.parse_host:8 of
+msgid "Host string to parse, optionally containing a port number."
+msgstr ""
+
+#: falcon.http_date_to_dt falcon.uri.parse_host of
+msgid "Keyword Arguments"
+msgstr ""
+
+#: falcon.uri.parse_host:12 of
+msgid ""
+"Port number to return when the host string does not contain one (default "
+"``None``)."
+msgstr ""
+
+#: falcon.uri.parse_host:16 of
+msgid ""
+"A parsed (*host*, *port*) tuple from the given host string, with the port"
+" converted to an ``int``. If the host string does not specify a port, "
+"`default_port` is used instead."
+msgstr ""
+
+#: falcon.uri.parse_query_string:1 of
+msgid "Parse a query string into a dict."
+msgstr ""
+
+#: falcon.uri.parse_query_string:3 of
+msgid ""
+"Query string parameters are assumed to use standard form-encoding. Only "
+"parameters with values are returned. For example, given 'foo=bar&flag', "
+"this function would ignore 'flag' unless the `keep_blank_qs_values` "
+"option is set."
+msgstr ""
+
+#: falcon.uri.parse_query_string:10 of
+msgid ""
+"In addition to the standard HTML form-based method for specifying lists "
+"by repeating a given param multiple times, Falcon supports a more compact"
+" form in which the param may be given a single time but set to a ``list``"
+" of comma-separated elements (e.g., 'foo=a,b,c')."
+msgstr ""
+
+#: falcon.uri.parse_query_string:15 of
+msgid ""
+"When using this format, all commas uri-encoded will not be treated by "
+"Falcon as a delimiter. If the client wants to send a value as a list, it "
+"must not encode the commas with the values."
+msgstr ""
+
+#: falcon.uri.parse_query_string:19 of
+msgid ""
+"The two different ways of specifying lists may not be mixed in a single "
+"query string for the same parameter."
+msgstr ""
+
+#: falcon.uri.parse_query_string:22 of
+msgid "The query string to parse."
+msgstr ""
+
+#: falcon.uri.parse_query_string:24 of
+msgid ""
+"Set to ``True`` to return fields even if they do not have a value "
+"(default ``False``). For comma-separated values, this option also "
+"determines whether or not empty elements in the parsed list are retained."
+msgstr ""
+
+#: falcon.uri.parse_query_string:29 of
+msgid ""
+"Set to ``False`` in order to disable splitting query parameters on ``,`` "
+"(default ``True``). Depending on the user agent, encoding lists as "
+"multiple occurrences of the same parameter might be preferable. In this "
+"case, setting `parse_qs_csv` to ``False`` will cause the framework to "
+"treat commas as literal characters in each occurring parameter value."
+msgstr ""
+
+#: falcon.uri.parse_query_string:36 of
+msgid ""
+"A dictionary of (*name*, *value*) pairs, one per query parameter. Note "
+"that *value* may be a single ``str``, or a ``list`` of ``str``."
+msgstr ""
+
+#: falcon.get_bound_method falcon.get_http_status falcon.http_date_to_dt
+#: falcon.uri.parse_query_string falcon.uri.unquote_string of
+msgid "raises"
+msgstr ""
+
+#: falcon.uri.parse_query_string:41 of
+msgid ":exc:`TypeError` -- `query_string` was not a ``str``."
+msgstr ""
+
+#: falcon.uri.unquote_string:1 of
+msgid "Unquote an RFC 7320 \"quoted-string\"."
+msgstr ""
+
+#: falcon.uri.unquote_string:3 of
+msgid "Original quoted string"
+msgstr ""
+
+#: falcon.uri.unquote_string:6 of
+msgid "unquoted string"
+msgstr ""
+
+#: falcon.uri.unquote_string:9 of
+msgid ":exc:`TypeError` -- `quoted` was not a ``str``."
+msgstr ""
+
+#: ../../api/util.rst:14
+msgid "Miscellaneous"
+msgstr ""
+
+#: falcon.deprecated:1 of
+msgid "Flags a method as deprecated."
+msgstr ""
+
+#: falcon.deprecated:3 of
+msgid ""
+"This function returns a decorator which can be used to mark deprecated "
+"functions. Applying this decorator will result in a warning being emitted"
+" when the function is used."
+msgstr ""
+
+#: falcon.deprecated:7 of
+msgid ""
+"Specific guidance for the developer, e.g.: 'Please migrate to "
+"add_proxy(...)''"
+msgstr ""
+
+#: falcon.http_now:1 of
+msgid "Returns the current UTC time as an IMF-fixdate."
+msgstr ""
+
+#: falcon.http_now:3 of
+msgid ""
+"The current UTC time as an IMF-fixdate, e.g., 'Tue, 15 Nov 1994 12:45:26 "
+"GMT'."
+msgstr ""
+
+#: falcon.dt_to_http:1 of
+msgid "Converts a ``datetime`` instance to an HTTP date string."
+msgstr ""
+
+#: falcon.dt_to_http:3 of
+msgid "A ``datetime`` instance to convert, assumed to be UTC."
+msgstr ""
+
+#: falcon.dt_to_http:6 falcon.http_date_to_dt:3 of
+msgid "An RFC 1123 date string, e.g.: \"Tue, 15 Nov 1994 12:45:26 GMT\"."
+msgstr ""
+
+#: falcon.http_date_to_dt:1 of
+msgid "Converts an HTTP date string to a datetime instance."
+msgstr ""
+
+#: falcon.http_date_to_dt:7 of
+msgid ""
+"Support obs-date formats according to RFC 7231, e.g.: \"Sunday, 06-Nov-94"
+" 08:49:37 GMT\" (default ``False``)."
+msgstr ""
+
+#: falcon.http_date_to_dt:12 of
+msgid "A UTC datetime instance corresponding to the given HTTP date."
+msgstr ""
+
+#: falcon.http_date_to_dt:16 of
+msgid ""
+":exc:`ValueError` -- http_date doesn't match any of the available time "
+"formats"
+msgstr ""
+
+#: falcon.to_query_str:1 of
+msgid "Converts a dictionary of parameters to a query string."
+msgstr ""
+
+#: falcon.to_query_str:3 of
+msgid ""
+"A dictionary of parameters, where each key is a parameter name, and each "
+"value is either a ``str`` or something that can be converted into a "
+"``str``, or a list of such values. If a ``list``, the value will be "
+"converted to a comma-delimited string of values (e.g., 'thing=1,2,3')."
+msgstr ""
+
+#: falcon.to_query_str:10 of
+msgid ""
+"Set to ``False`` to encode list values by specifying multiple instances "
+"of the parameter (e.g., 'thing=1&thing=2&thing=3'). Otherwise, parameters"
+" will be encoded as comma-separated values (e.g., 'thing=1,2,3'). "
+"Defaults to ``True``."
+msgstr ""
+
+#: falcon.to_query_str:16 of
+msgid ""
+"Set to ``False`` to exclude the '?' prefix in the result string (default "
+"``True``)."
+msgstr ""
+
+#: falcon.to_query_str:20 of
+msgid ""
+"A URI query string, including the '?' prefix (unless `prefix` is "
+"``False``), or an empty string if no params are given (the ``dict`` is "
+"empty)."
+msgstr ""
+
+#: falcon.get_http_status:1 of
+msgid "Gets both the http status code and description from just a code"
+msgstr ""
+
+#: falcon.get_http_status:3 of
+msgid "integer or string that can be converted to an integer"
+msgstr ""
+
+#: falcon.get_http_status:4 of
+msgid ""
+"default text to be appended to the status_code if the lookup does not "
+"find a result"
+msgstr ""
+
+#: falcon.get_http_status:7 of
+msgid "status code e.g. \"404 Not Found\""
+msgstr ""
+
+#: falcon.get_http_status:10 of
+msgid ""
+":exc:`ValueError` -- the value entered could not be converted to an "
+"integer"
+msgstr ""
+
+#: falcon.get_bound_method:1 of
+msgid "Get a bound method of the given object by name."
+msgstr ""
+
+#: falcon.get_bound_method:3 of
+msgid "Object on which to look up the method."
+msgstr ""
+
+#: falcon.get_bound_method:4 of
+msgid "Name of the method to retrieve."
+msgstr ""
+
+#: falcon.get_bound_method:6 of
+msgid "Bound method, or ``None`` if the method does not exist on the object."
+msgstr ""
+
+#: falcon.get_bound_method:9 of
+msgid ""
+":exc:`AttributeError` -- The method exists, but it isn't bound (most "
+"likely a class was passed, rather than an instance of that class)."
+msgstr ""
+
+#: falcon.TimezoneGMT:1 of
+msgid "GMT timezone class implementing the :py:class:`datetime.tzinfo` interface."
+msgstr ""
+
+#: falcon.TimezoneGMT.dst:1 of
+msgid "Return the daylight saving time (DST) adjustment."
+msgstr ""
+
+#: falcon.TimezoneGMT.dst:3 falcon.TimezoneGMT.tzname:3
+#: falcon.TimezoneGMT.utcoffset:3 of
+msgid "Ignored"
+msgstr ""
+
+#: falcon.TimezoneGMT.dst:6 of
+msgid "DST adjustment for GMT, which is always 0."
+msgstr ""
+
+#: falcon.TimezoneGMT.tzname:1 of
+msgid "Get the name of this timezone."
+msgstr ""
+
+#: falcon.TimezoneGMT.tzname:6 of
+msgid "\"GMT\""
+msgstr ""
+
+#: falcon.TimezoneGMT.utcoffset:1 of
+msgid "Get the offset from UTC."
+msgstr ""
+
+#: falcon.TimezoneGMT.utcoffset:6 of
+msgid "GMT offset, which is equivalent to UTC and so is aways 0."
+msgstr ""
+

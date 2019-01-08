@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../user/install.rst:4
+msgid "Installation"
+msgstr ""
+
+#: ../../user/install.rst:7
+msgid "PyPy"
+msgstr ""
+
+#: ../../user/install.rst:9
+msgid ""
+"`PyPy <http://pypy.org/>`__ is the fastest way to run your Falcon app. "
+"Both PyPy2.7 and PyPy3.5 are supported as of PyPy v5.10."
+msgstr ""
+
+#: ../../user/install.rst:16
+msgid "Or, to install the latest beta or release candidate, if any:"
+msgstr ""
+
+#: ../../user/install.rst:23
+msgid "CPython"
+msgstr ""
+
+#: ../../user/install.rst:25
+msgid ""
+"Falcon also fully supports `CPython "
+"<https://www.python.org/downloads/>`__ 2.7, and 3.4+."
+msgstr ""
+
+#: ../../user/install.rst:28
+msgid ""
+"A universal wheel is available on PyPI for the the Falcon framework. "
+"Installing it is as simple as:"
+msgstr ""
+
+#: ../../user/install.rst:35
+msgid ""
+"If `ujson <https://pypi.python.org/pypi/ujson>`__ is available, Falcon "
+"will use it to speed up media (de)serialization, error serialization, and"
+" query string parsing. Note that ``ujson`` can actually be slower on PyPy"
+" than the standard ``json`` module due to ctypes overhead, and so we "
+"recommend only using ``ujson`` with CPython deployments:"
+msgstr ""
+
+#: ../../user/install.rst:45
+msgid ""
+"Installing the Falcon wheel is a great way to get up and running quickly "
+"in a development environment, but for an extra speed boost when deploying"
+" your application in production, Falcon can compile itself with Cython."
+msgstr ""
+
+#: ../../user/install.rst:50
+msgid ""
+"The following commands tell pip to install Cython, and then to invoke "
+"Falcon's ``setup.py``, which will in turn detect the presence of Cython "
+"and then compile (AKA cythonize) the Falcon framework with the system's "
+"default C compiler."
+msgstr ""
+
+#: ../../user/install.rst:60
+msgid ""
+"If you want to verify that Cython is being invoked, simply pass `-v` to "
+"pip in order to echo the compilation commands:"
+msgstr ""
+
+#: ../../user/install.rst:67
+msgid "**Installing on OS X**"
+msgstr ""
+
+#: ../../user/install.rst:69
+msgid ""
+"Xcode Command Line Tools are required to compile Cython. Install them "
+"with this command:"
+msgstr ""
+
+#: ../../user/install.rst:76
+msgid ""
+"The Clang compiler treats unrecognized command-line options as errors, "
+"for example:"
+msgstr ""
+
+#: ../../user/install.rst:83
+msgid ""
+"You might also see warnings about unused functions. You can work around "
+"these issues by setting additional Clang C compiler flags as follows:"
+msgstr ""
+
+#: ../../user/install.rst:91
+msgid "Dependencies"
+msgstr ""
+
+#: ../../user/install.rst:93
+msgid ""
+"Falcon depends on `six` and `python-mimeparse`. `python-mimeparse` is a "
+"better-maintained fork of the similarly named `mimeparse` project. "
+"Normally the correct package will be selected by Falcon's ``setup.py``. "
+"However, if you are using an alternate strategy to manage dependencies, "
+"please take care to install the correct package in order to avoid errors."
+msgstr ""
+
+#: ../../user/install.rst:101
+msgid "WSGI Server"
+msgstr ""
+
+#: ../../user/install.rst:103
+msgid ""
+"Falcon speaks WSGI, and so in order to serve a Falcon app, you will need "
+"a WSGI server. Gunicorn and uWSGI are some of the more popular ones out "
+"there, but anything that can load a WSGI app will do."
+msgstr ""
+
+#: ../../user/install.rst:107
+msgid ""
+"All Windows developers can use Waitress production-quality pure-Python "
+"WSGI server with very acceptable performance. Unfortunately Gunicorn is "
+"still not working on Windows and uWSGI need to have Cygwin on Windows "
+"installed. Waitress can be good alternative for Windows users if they "
+"want quick start using Falcon on it."
+msgstr ""
+
+#: ../../user/install.rst:116
+msgid "Source Code"
+msgstr ""
+
+#: ../../user/install.rst:118
+msgid ""
+"Falcon `lives on GitHub <https://github.com/falconry/falcon>`_, making "
+"the code easy to browse, download, fork, etc. Pull requests are always "
+"welcome! Also, please remember to star the project if it makes you happy."
+" :)"
+msgstr ""
+
+#: ../../user/install.rst:122
+msgid ""
+"Once you have cloned the repo or downloaded a tarball from GitHub, you "
+"can install Falcon like this:"
+msgstr ""
+
+#: ../../user/install.rst:130
+msgid ""
+"Or, if you want to edit the code, first fork the main repo, clone the "
+"fork to your desktop, and then run the following to install it using "
+"symbolic linking, so that when you change your code, the changes will be "
+"automagically available to your app without having to reinstall the "
+"package:"
+msgstr ""
+
+#: ../../user/install.rst:140
+msgid ""
+"You can manually test changes to the Falcon framework by switching to the"
+" directory of the cloned repo and then running pytest:"
+msgstr ""
+
+#: ../../user/install.rst:149
+msgid "Or, to run the default set of tests:"
+msgstr ""
+
+#: ../../user/install.rst:157
+msgid ""
+"See also the `tox.ini "
+"<https://github.com/falconry/falcon/blob/master/tox.ini>`_ file for a "
+"full list of available environments."
+msgstr ""
+
+#: ../../user/install.rst:160
+msgid "Finally, to build Falcon's docs from source, simply run:"
+msgstr ""
+
+#: ../../user/install.rst:166
+msgid ""
+"Once the docs have been built, you can view them by opening the following"
+" index page in your browser. On OS X it's as simple as::"
+msgstr ""
+
+#: ../../user/install.rst:171
+msgid "Or on Linux::"
+msgstr ""
+

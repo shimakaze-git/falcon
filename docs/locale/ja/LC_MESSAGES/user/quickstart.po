@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../user/quickstart.rst:4
+msgid "Quickstart"
+msgstr ""
+
+#: ../../user/quickstart.rst:6
+msgid ""
+"If you haven't done so already, please take a moment to :ref:`install "
+"<install>` the Falcon web framework before continuing."
+msgstr ""
+
+#: ../../user/quickstart.rst:11
+msgid "Learning by Example"
+msgstr ""
+
+#: ../../user/quickstart.rst:13
+msgid ""
+"Here is a simple example from Falcon's README, showing how to get started"
+" writing an API:"
+msgstr ""
+
+#: ../../user/quickstart.rst:45
+msgid ""
+"You can run the above example using any WSGI server, such as uWSGI or "
+"Gunicorn. For example:"
+msgstr ""
+
+#: ../../user/quickstart.rst:53
+msgid ""
+"On Windows where Gunicorn and uWSGI don't work yet you can use Waitress "
+"server"
+msgstr ""
+
+#: ../../user/quickstart.rst:60
+msgid "Then, in another terminal:"
+msgstr ""
+
+#: ../../user/quickstart.rst:66
+msgid ""
+"Curl is a bit of a pain to use, so let's install `HTTPie "
+"<https://github.com/jkbr/httpie>`_ and use it from now on."
+msgstr ""
+
+#: ../../user/quickstart.rst:77
+msgid "More Features"
+msgstr ""
+
+#: ../../user/quickstart.rst:79
+msgid ""
+"Here is a more involved example that demonstrates reading headers and "
+"query parameters, handling errors, and working with request and response "
+"bodies."
+msgstr ""
+
+#: ../../user/quickstart.rst:306
+msgid "To test this example go to the another terminal and run:"
+msgstr ""
+

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../changes/0.3.0.rst:2
+msgid "Changelog for Falcon 0.3.0"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:5
+msgid "Breaking Changes"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:6
+msgid "Date headers are now returned as :py:class:`datetime.datetime` objects instead of strings."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:8
+msgid "The expected signature for the ``add_route()`` method of custom routers no longer includes a `method_map` parameter. Custom routers should, instead, call the :py:meth:`falcon.routing.util.map_http_methods` function directly from their ``add_route()`` method if they require this mapping."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:14
+msgid "New & Improved"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:16
+msgid "This release includes a new router architecture for improved performance and flexibility."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:18
+msgid "A custom router can now be specified when instantiating the :py:class:`API` class."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:20
+msgid "URI templates can now include multiple parameterized fields within a single path segment."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:22
+msgid "Falcon now supports reading and writing cookies."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:23
+msgid "Falcon now supports Jython 2.7."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:24
+msgid "A method for getting a query param as a date was added to the :py:class:`Request` class."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:26
+msgid "Date headers are now returned as :py:class:`datetime.datetime` objects."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:27
+msgid "A default value can now be specified when calling :py:meth:`Request.get_param`. This provides an alternative to using the pattern::"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:33
+msgid "Friendly constants for status codes were added (e.g., :py:attr:`falcon.HTTP_NO_CONTENT` vs. :py:attr:`falcon.HTTP_204`.)"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:35
+msgid "Several minor performance optimizations were made to the code base."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:38
+msgid "Fixed"
+msgstr ""
+
+#: ../../changes/0.3.0.rst:40
+msgid "The query string parser was modified to improve handling of percent-encoded data."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:42
+msgid "Several errors in the documentation were corrected."
+msgstr ""
+
+#: ../../changes/0.3.0.rst:43
+msgid "The :py:mod:`six` package was pinned to 1.4.0 or better. :py:attr:`six.PY2` is required by Falcon, but that wasn't added to :py:mod:`six` until version 1.4.0."
+msgstr ""
+

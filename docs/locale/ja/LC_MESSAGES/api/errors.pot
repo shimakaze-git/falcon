@@ -1,0 +1,1176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/errors.rst:4
+msgid "Error Handling"
+msgstr ""
+
+#: ../../api/errors.rst:6
+msgid "When it comes to error handling, you can always directly set the error status, appropriate response headers, and error body using the ``resp`` object. However, Falcon tries to make things a little easier by providing a set of error classes you can raise when something goes wrong. All of these classes inherit from :class:`~.HTTPError`."
+msgstr ""
+
+#: ../../api/errors.rst:12
+msgid "Falcon will convert any instance or subclass of :class:`~.HTTPError` raised by a responder, hook, or middleware component into an appropriate HTTP response. The default error serializer supports both JSON and XML. If the client indicates acceptance of both JSON and XML with equal weight, JSON will be chosen. Other media types may be supported by overriding the default serializer via :meth:`~.API.set_error_serializer`."
+msgstr ""
+
+#: ../../api/errors.rst:22
+msgid "If a custom media type is used and the type includes a \"+json\" or \"+xml\" suffix, the default serializer will convert the error to JSON or XML, respectively."
+msgstr ""
+
+#: ../../api/errors.rst:26
+msgid "To customize what data is passed to the serializer, subclass :class:`~.HTTPError` or any of its child classes, and override the :meth:`~.HTTPError.to_dict` method. To also support XML, override the :meth:`~.HTTPError.to_xml` method. For example::"
+msgstr ""
+
+#: ../../api/errors.rst:48
+msgid "All classes are available directly in the ``falcon`` package namespace::"
+msgstr ""
+
+#: ../../api/errors.rst:64
+msgid "Note also that any exception (not just instances of :class:`~.HTTPError`) can be caught, logged, and otherwise handled at the global level by registering one or more custom error handlers. See also :meth:`~.API.add_error_handler` to learn more about this feature."
+msgstr ""
+
+#: ../../api/errors.rst:71
+msgid "Base Class"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:1
+msgid "Represents a generic HTTP error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:3
+msgid "Raise an instance or subclass of ``HTTPError`` to have Falcon return a formatted error response and an appropriate HTTP status code to the client when something goes wrong. JSON and XML media types are supported by default."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:8
+msgid "To customize the error presentation, implement a custom error serializer and set it on the :class:`~.API` instance via :meth:`~.API.set_error_serializer`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:12
+msgid "To customize what data is passed to the serializer, subclass ``HTTPError`` and override the ``to_dict()`` method (``to_json()`` is implemented via ``to_dict()``). To also support XML, override the ``to_xml()`` method."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:19
+msgid "*str* -- HTTP status line, e.g. '748 Confounded by Ponies'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:23
+msgid "*bool* -- Read-only property that determines whether error details will be serialized when composing the HTTP response. In ``HTTPError`` this property always returns ``True``, but child classes may override it in order to return ``False`` when an empty HTTP body is desired."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:29
+msgid "(See also: :class:`falcon.http_error.NoRepresentation`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:33
+msgid "*str* -- Error title to send to the client."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:37
+msgid "*str* -- Description of the error to send to the client."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:41
+msgid "*dict* -- Extra headers to add to the response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:45
+msgid "*str* -- An href that the client can provide to the user for getting help."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:50
+msgid "*int* -- An internal application code that a user can reference when requesting support for the error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:53
+msgid "HTTP status code and text, such as \"400 Bad Request\""
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:56
+msgid "Human-friendly error title. If not provided, defaults to the HTTP status line as determined by the ``status`` argument."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:59
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:25
+msgid "Human-friendly description of the error, along with a helpful suggestion or two (default ``None``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:62
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:22
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:13
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:27
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:27
+msgid "A ``dict`` of header names and values to set, or a ``list`` of (*name*, *value*) tuples. Both *name* and *value* must be of type ``str`` or ``StringType``, and only character values 0x00 through 0xFF may be used on platforms that use wide characters.  .. note::     The Content-Type header, if present, will be overridden. If    you wish to return custom error messages, you can create    your own HTTP error class, and install an error handler    to convert it into an appropriate HTTP response for the    client  .. note::     Falcon can process a list of ``tuple`` slightly faster    than a ``dict``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:62
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:22
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:13
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:27
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:27
+msgid "A ``dict`` of header names and values to set, or a ``list`` of (*name*, *value*) tuples. Both *name* and *value* must be of type ``str`` or ``StringType``, and only character values 0x00 through 0xFF may be used on platforms that use wide characters."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:70
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:20
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:22
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:30
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:21
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:27
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:22
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:35
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:35
+msgid "The Content-Type header, if present, will be overridden. If you wish to return custom error messages, you can create your own HTTP error class, and install an error handler to convert it into an appropriate HTTP response for the client"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:78
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:24
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:26
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:39
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:30
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:44
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:35
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:30
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:43
+msgid "Falcon can process a list of ``tuple`` slightly faster than a ``dict``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:81
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:27
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:31
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:51
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:45
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:45
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:45
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:51
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:35
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:39
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:47
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:39
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:46
+msgid "A URL someone can visit to find out more information (default ``None``). Unicode characters are percent-encoded."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:84
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:30
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:54
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:54
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:39
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:45
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:44
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:50
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:35
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:49
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:37
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:49
+msgid "If href is given, use this as the friendly title/description for the link (default 'API documentation for this error')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError:88
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:34
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:58
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:52
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:50
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:52
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:47
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:52
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:58
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:43
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:44
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:49
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:42
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:48
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:50
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:47
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:54
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:39
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:45
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:40
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:53
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:44
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:53
+msgid "An internal code that customers can reference in their support request or to help them when searching for knowledge base articles related to this error (default ``None``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:1
+msgid "Return a basic dictionary representing the error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:3
+msgid "This method can be useful when serializing the error to hash-like media types, such as YAML, JSON, and MessagePack."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:6
+msgid "A dict-like type that will be used to store the error information (default ``dict``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_xml:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:9
+msgid "A dictionary populated with the error's title, description, etc."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_dict:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_json:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_xml:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_json:1
+msgid "Return a pretty-printed JSON representation of the error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_json:3
+msgid "A JSON document for the error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_xml:1
+msgid "Return an XML-encoded representation of the error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.HTTPError.to_xml:3
+msgid "An XML document for the error."
+msgstr ""
+
+#: ../../api/errors.rst:77
+msgid "Mixins"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.http_error.NoRepresentation:1
+msgid "Mixin for ``HTTPError`` child classes that have no representation."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.http_error.NoRepresentation:3
+msgid "This class can be mixed in when inheriting from ``HTTPError``, in order to override the `has_representation` property such that it always returns ``False``. This, in turn, will cause Falcon to return an empty response body to the client."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.http_error.NoRepresentation:8
+msgid "You can use this mixin when defining errors that either should not have a body (as dictated by HTTP standards or common practice), or in the case that a detailed error response may leak information to an attacker."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/http_error.py:docstring of falcon.http_error.NoRepresentation:14
+msgid "This mixin class must appear before ``HTTPError`` in the base class list when defining the child; otherwise, it will not override the `has_representation` property as expected."
+msgstr ""
+
+#: ../../api/errors.rst:85
+msgid "Predefined Errors"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:1
+msgid "400 Bad Request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:3
+msgid "The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:8
+msgid "(See also: `RFC 7231, Section 6.5.1 <https://tools.ietf.org/html/rfc7231#section-6.5.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:10
+msgid "Error title (default '400 Bad Request')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadRequest:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:18
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:13
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:11
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:11
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:15
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:24
+msgid "Human-friendly description of the error, along with a helpful suggestion or two."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:3
+msgid "One of the headers in the request is invalid."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:5
+msgid "A description of why the value is invalid."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidHeader:7
+msgid "The name of the invalid header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:1
+msgid "400 Bad Request"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:3
+msgid "A header is missing from the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingHeader:5
+msgid "The name of the missing header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:3
+msgid "A parameter in the request is invalid. This error may refer to a parameter in a query string, form, or document that was submitted with the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:7
+msgid "A description of the invalid parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInvalidParam:9
+msgid "The name of the parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:3
+msgid "A parameter is missing from the request. This error may refer to a parameter in a query string, form, or document that was submitted with the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMissingParam:7
+msgid "The name of the missing parameter."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:1
+msgid "401 Unauthorized."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:3
+msgid "The request has not been applied because it lacks valid authentication credentials for the target resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:6
+msgid "The server generating a 401 response MUST send a WWW-Authenticate header field containing at least one challenge applicable to the target resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:10
+msgid "If the request included authentication credentials, then the 401 response indicates that authorization has been refused for those credentials. The user agent MAY repeat the request with a new or replaced Authorization header field. If the 401 response contains the same challenge as the prior response, and the user agent has already attempted authentication at least once, then the user agent SHOULD present the enclosed representation to the user, since it usually contains relevant diagnostic information."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:19
+msgid "(See also: `RFC 7235, Section 3.1 <https://tools.ietf.org/html/rfc7235#section-3.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:21
+msgid "Error title (default '401 Unauthorized')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:26
+msgid "One or more authentication challenges to use as the value of the WWW-Authenticate header in the response.  (See also: `RFC 7235, Section 2.1 <https://tools.ietf.org/html/rfc7235#section-2.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:26
+msgid "One or more authentication challenges to use as the value of the WWW-Authenticate header in the response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnauthorized:30
+msgid "(See also: `RFC 7235, Section 2.1 <https://tools.ietf.org/html/rfc7235#section-2.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:1
+msgid "403 Forbidden."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:3
+msgid "The server understood the request but refuses to authorize it."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:5
+msgid "A server that wishes to make public why the request has been forbidden can describe that reason in the response payload (if any)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:8
+msgid "If authentication credentials were provided in the request, the server considers them insufficient to grant access. The client SHOULD NOT automatically repeat the request with the same credentials. The client MAY repeat the request with new or different credentials. However, a request might be forbidden for reasons unrelated to the credentials."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:15
+msgid "An origin server that wishes to \"hide\" the current existence of a forbidden target resource MAY instead respond with a status code of 404 Not Found."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:19
+msgid "(See also: `RFC 7231, Section 6.5.4 <https://tools.ietf.org/html/rfc7231#section-6.5.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPForbidden:21
+msgid "Error title (default '403 Forbidden')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:1
+msgid "404 Not Found."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:3
+msgid "The origin server did not find a current representation for the target resource or is not willing to disclose that one exists."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:6
+msgid "A 404 status code does not indicate whether this lack of representation is temporary or permanent; the 410 Gone status code is preferred over 404 if the origin server knows, presumably through some configurable means, that the condition is likely to be permanent."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:12
+msgid "A 404 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:15
+msgid "(See also: `RFC 7231, Section 6.5.3 <https://tools.ietf.org/html/rfc7231#section-6.5.3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotFound:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:25
+msgid "Human-friendly error title. If not provided, and `description` is also not provided, no body will be included in the response."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:1
+msgid "405 Method Not Allowed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:3
+msgid "The method received in the request-line is known by the origin server but not supported by the target resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:6
+msgid "The origin server MUST generate an Allow header field in a 405 response containing a list of the target resource's currently supported methods."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:10
+msgid "A 405 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:13
+msgid "(See also: `RFC 7231, Section 6.5.5 <https://tools.ietf.org/html/rfc7231#section-6.5.5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPMethodNotAllowed:15
+msgid "Allowed HTTP methods for this resource (e.g., ``['GET', 'POST', 'HEAD']``)."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:1
+msgid "406 Not Acceptable."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:3
+msgid "The target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:8
+msgid "The server SHOULD generate a payload containing a list of available representation characteristics and corresponding resource identifiers from which the user or user agent can choose the one most appropriate. A user agent MAY automatically select the most appropriate choice from that list. However, this specification does not define any standard for such automatic selection, as described in `RFC 7231, Section 6.4.1 <https://tools.ietf.org/html/rfc7231#section-6.4.1>`_"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotAcceptable:16
+msgid "(See also: `RFC 7231, Section 6.5.6 <https://tools.ietf.org/html/rfc7231#section-6.5.6>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:1
+msgid "409 Conflict."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:3
+msgid "The request could not be completed due to a conflict with the current state of the target resource. This code is used in situations where the user might be able to resolve the conflict and resubmit the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:8
+msgid "The server SHOULD generate a payload that includes enough information for a user to recognize the source of the conflict."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:11
+msgid "Conflicts are most likely to occur in response to a PUT request. For example, if versioning were being used and the representation being PUT included changes to a resource that conflict with those made by an earlier (third-party) request, the origin server might use a 409 response to indicate that it can't complete the request. In this case, the response representation would likely contain information useful for merging the differences based on the revision history."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:19
+msgid "(See also: `RFC 7231, Section 6.5.8 <https://tools.ietf.org/html/rfc7231#section-6.5.8>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPConflict:21
+msgid "Error title (default '409 Conflict')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:1
+msgid "410 Gone."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:3
+msgid "The target resource is no longer available at the origin server and this condition is likely to be permanent."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:6
+msgid "If the origin server does not know, or has no facility to determine, whether or not the condition is permanent, the status code 404 Not Found ought to be used instead."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:10
+msgid "The 410 response is primarily intended to assist the task of web maintenance by notifying the recipient that the resource is intentionally unavailable and that the server owners desire that remote links to that resource be removed. Such an event is common for limited-time, promotional services and for resources belonging to individuals no longer associated with the origin server's site. It is not necessary to mark all permanently unavailable resources as \"gone\" or to keep the mark for any length of time -- that is left to the discretion of the server owner."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:20
+msgid "A 410 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGone:23
+msgid "(See also: `RFC 7231, Section 6.5.9 <https://tools.ietf.org/html/rfc7231#section-6.5.9>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:1
+msgid "411 Length Required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:3
+msgid "The server refuses to accept the request without a defined Content- Length."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:6
+msgid "The client MAY repeat the request if it adds a valid Content-Length header field containing the length of the message body in the request message."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:10
+msgid "(See also: `RFC 7231, Section 6.5.10 <https://tools.ietf.org/html/rfc7231#section-6.5.10>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLengthRequired:12
+msgid "Error title (default '411 Length Required')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:1
+msgid "412 Precondition Failed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:3
+msgid "One or more conditions given in the request header fields evaluated to false when tested on the server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:6
+msgid "This response code allows the client to place preconditions on the current resource state (its current representations and metadata) and, thus, prevent the request method from being applied if the target resource is in an unexpected state."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:11
+msgid "(See also: `RFC 7232, Section 4.2 <https://tools.ietf.org/html/rfc7232#section-4.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionFailed:13
+msgid "Error title (default '412 Precondition Failed')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:1
+msgid "414 URI Too Long."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:3
+msgid "The server is refusing to service the request because the request- target is longer than the server is willing to interpret."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:6
+msgid "This rare condition is only likely to occur when a client has improperly converted a POST request to a GET request with long query information, when the client has descended into a \"black hole\" of redirection (e.g., a redirected URI prefix that points to a suffix of itself) or when the server is under attack by a client attempting to exploit potential security holes."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:13
+msgid "A 414 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:16
+msgid "(See also: `RFC 7231, Section 6.5.12 <https://tools.ietf.org/html/rfc7231#section-6.5.12>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUriTooLong:18
+msgid "Error title (default '414 URI Too Long')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:1
+msgid "415 Unsupported Media Type."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:3
+msgid "The origin server is refusing to service the request because the payload is in a format not supported by this method on the target resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:7
+msgid "The format problem might be due to the request's indicated Content- Type or Content-Encoding, or as a result of inspecting the data directly."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnsupportedMediaType:11
+msgid "(See also: `RFC 7231, Section 6.5.13 <https://tools.ietf.org/html/rfc7231#section-6.5.13>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:1
+msgid "416 Range Not Satisfiable."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:3
+msgid "None of the ranges in the request's Range header field overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:8
+msgid "For byte ranges, failing to overlap the current extent means that the first-byte-pos of all of the byte-range-spec values were greater than the current length of the selected representation. When this status code is generated in response to a byte-range request, the sender SHOULD generate a Content-Range header field specifying the current length of the selected representation."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:15
+msgid "(See also: `RFC 7233, Section 4.4 <https://tools.ietf.org/html/rfc7233#section-4.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRangeNotSatisfiable:17
+msgid "The maximum value for the last-byte-pos of a range request. Used to set the Content-Range header."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:1
+msgid "422 Unprocessable Entity."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:3
+msgid "The server understands the content type of the request entity (hence a 415 Unsupported Media Type status code is inappropriate), and the syntax of the request entity is correct (thus a 400 Bad Request status code is inappropriate) but was unable to process the contained instructions."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:9
+msgid "For example, this error condition may occur if an XML request body contains well-formed (i.e., syntactically correct), but semantically erroneous, XML instructions."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:13
+msgid "(See also: `RFC 4918, Section 11.2 <https://tools.ietf.org/html/rfc4918#section-11.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnprocessableEntity:15
+msgid "Error title (default '422 Unprocessable Entity')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:1
+msgid "423 Locked."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:3
+msgid "The 423 (Locked) status code means the source or destination resource of a method is locked. This response SHOULD contain an appropriate precondition or postcondition code, such as 'lock-token-submitted' or 'no-conflicting-lock'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:8
+msgid "(See also: `RFC 4918, Section 11.3 <https://tools.ietf.org/html/rfc4918#section-11.3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLocked:10
+msgid "Error title (default '423 Locked')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:1
+msgid "424 Failed Dependency."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:3
+msgid "The 424 (Failed Dependency) status code means that the method could not be performed on the resource because the requested action depended on another action and that action failed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:7
+msgid "(See also: `RFC 4918, Section 11.4 <https://tools.ietf.org/html/rfc4918#section-11.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPFailedDependency:9
+msgid "Error title (default '424 Failed Dependency')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:1
+msgid "428 Precondition Required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:3
+msgid "The 428 status code indicates that the origin server requires the request to be conditional."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:6
+msgid "Its typical use is to avoid the \"lost update\" problem, where a client GETs a resource's state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, leading to a conflict.  By requiring requests to be conditional, the server can assure that clients are working with the correct copies."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:12
+msgid "Responses using this status code SHOULD explain how to resubmit the request successfully."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:15
+msgid "(See also: `RFC 6585, Section 3 <https://tools.ietf.org/html/rfc6585#section-3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPPreconditionRequired:17
+msgid "Error title (default '428 Precondition Required')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:1
+msgid "429 Too Many Requests."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:3
+msgid "The user has sent too many requests in a given amount of time (\"rate limiting\")."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:6
+msgid "The response representations SHOULD include details explaining the condition, and MAY include a Retry-After header indicating how long to wait before making a new request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:10
+msgid "Responses with the 429 status code MUST NOT be stored by a cache."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:12
+msgid "(See also: `RFC 6585, Section 4 <https://tools.ietf.org/html/rfc6585#section-4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:14
+msgid "Error title (default '429 Too Many Requests')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:18
+msgid "Human-friendly description of the rate limit that was exceeded."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPTooManyRequests:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:22
+msgid "Value for the Retry-After header. If a ``datetime`` object, will serialize as an HTTP date. Otherwise, a non-negative ``int`` is expected, representing the number of seconds to wait."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:1
+msgid "431 Request Header Fields Too Large."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:3
+msgid "The 431 status code indicates that the server is unwilling to process the request because its header fields are too large.  The request MAY be resubmitted after reducing the size of the request header fields."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:7
+msgid "It can be used both when the set of request header fields in total is too large, and when a single header field is at fault.  In the latter case, the response representation SHOULD specify which header field was too large."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:12
+msgid "Responses with the 431 status code MUST NOT be stored by a cache."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:14
+msgid "(See also: `RFC 6585, Section 5 <https://tools.ietf.org/html/rfc6585#section-5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPRequestHeaderFieldsTooLarge:16
+msgid "Error title (default '431 Request Header Fields Too Large')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:1
+msgid "451 Unavailable For Legal Reasons."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:3
+msgid "The server is denying access to the resource as a consequence of a legal demand."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:6
+msgid "The server in question might not be an origin server. This type of legal demand typically most directly affects the operations of ISPs and search engines."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:10
+msgid "Responses using this status code SHOULD include an explanation, in the response body, of the details of the legal demand: the party making it, the applicable legislation or regulation, and what classes of person and resource it applies to."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:15
+msgid "Note that in many cases clients can still access the denied resource by using technical countermeasures such as a VPN or the Tor network."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:18
+msgid "A 451 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:21
+msgid "(See also: `RFC 7725, Section 3 <https://tools.ietf.org/html/rfc7725#section-3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPUnavailableForLegalReasons:23
+msgid "Error title (default '451 Unavailable For Legal Reasons')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:1
+msgid "500 Internal Server Error."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:3
+msgid "The server encountered an unexpected condition that prevented it from fulfilling the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:6
+msgid "(See also: `RFC 7231, Section 6.6.1 <https://tools.ietf.org/html/rfc7231#section-6.6.1>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInternalServerError:8
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:14
+msgid "Error title (default '500 Internal Server Error')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:1
+msgid "501 Not Implemented."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:3
+msgid "The 501 (Not Implemented) status code indicates that the server does not support the functionality required to fulfill the request.  This is the appropriate response when the server does not recognize the request method and is not capable of supporting it for any resource."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:8
+msgid "A 501 response is cacheable by default; i.e., unless otherwise indicated by the method definition or explicit cache controls as described in `RFC 7234, Section 4.2.2. <https://tools.ietf.org/html/rfc7234#section-4.2.2.>`_"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNotImplemented:12
+msgid "(See also: `RFC 7231, Section 6.6.2 <https://tools.ietf.org/html/rfc7231#section-6.6.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:1
+msgid "502 Bad Gateway."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:3
+msgid "The server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:7
+msgid "(See also: `RFC 7231, Section 6.6.3 <https://tools.ietf.org/html/rfc7231#section-6.6.3>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPBadGateway:9
+msgid "Error title (default '502 Bad Gateway')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:1
+msgid "503 Service Unavailable."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:3
+msgid "The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:7
+msgid "The server MAY send a Retry-After header field to suggest an appropriate amount of time for the client to wait before retrying the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:11
+msgid "Note: The existence of the 503 status code does not imply that a server has to use it when becoming overloaded. Some servers might simply refuse the connection."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:15
+msgid "(See also: `RFC 7231, Section 6.6.4 <https://tools.ietf.org/html/rfc7231#section-6.6.4>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPServiceUnavailable:17
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:10
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:15
+msgid "Error title (default '503 Service Unavailable')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:1
+msgid "504 Gateway Timeout."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:3
+msgid "The 504 (Gateway Timeout) status code indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPGatewayTimeout:8
+msgid "(See also: `RFC 7231, Section 6.6.5 <https://tools.ietf.org/html/rfc7231#section-6.6.5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:1
+msgid "505 HTTP Version Not Supported"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:3
+msgid "The 505 (HTTP Version Not Supported) status code indicates that the server does not support, or refuses to support, the major version of HTTP that was used in the request message.  The server is indicating that it is unable or unwilling to complete the request using the same major version as the client (as described in `RFC 7230, Section 2.6 <https://tools.ietf.org/html/rfc7230#section-2.6>`_), other than with this error message.  The server SHOULD generate a representation for the 505 response that describes why that version is not supported and what other protocols are supported by that server."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPVersionNotSupported:13
+msgid "(See also: `RFC 7231, Section 6.6.6 <https://tools.ietf.org/html/rfc7231#section-6.6.6>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:1
+msgid "507 Insufficient Storage."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:3
+msgid "The 507 (Insufficient Storage) status code means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request. This condition is considered to be temporary. If the request that received this status code was the result of a user action, the request MUST NOT be repeated until it is requested by a separate user action."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:11
+msgid "(See also: `RFC 4918, Section 11.5 <https://tools.ietf.org/html/rfc4918#section-11.5>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPInsufficientStorage:13
+msgid "Error title (default '507 Insufficient Storage')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:1
+msgid "508 Loop Detected."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:3
+msgid "The 508 (Loop Detected) status code indicates that the server terminated an operation because it encountered an infinite loop while processing a request with \"Depth: infinity\". This status indicates that the entire operation failed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:8
+msgid "(See also: `RFC 5842, Section 7.2 <https://tools.ietf.org/html/rfc5842#section-7.2>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPLoopDetected:10
+msgid "Error title (default '508 Loop Detected')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:1
+msgid "511 Network Authentication Required."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:3
+msgid "The 511 status code indicates that the client needs to authenticate to gain network access."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:6
+msgid "The response representation SHOULD contain a link to a resource that allows the user to submit credentials."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:9
+msgid "Note that the 511 response SHOULD NOT contain a challenge or the authentication interface itself, because clients would show the interface as being associated with the originally requested URL, which may cause confusion."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:14
+msgid "The 511 status SHOULD NOT be generated by origin servers; it is intended for use by intercepting proxies that are interposed as a means of controlling access to the network."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:18
+msgid "Responses with the 511 status code MUST NOT be stored by a cache."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:20
+msgid "(See also: `RFC 6585, Section 6 <https://tools.ietf.org/html/rfc6585#section-6>`_)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/errors.py:docstring of falcon.HTTPNetworkAuthenticationRequired:22
+msgid "Error title (default '511 Network Authentication Required')."
+msgstr ""
+

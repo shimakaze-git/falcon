@@ -1,0 +1,827 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-06 19:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../user/faq.rst:4
+msgid "FAQ"
+msgstr ""
+
+#: ../../user/faq.rst:9
+msgid "Design Philosophy"
+msgstr ""
+
+#: ../../user/faq.rst:12
+msgid "Why doesn't Falcon come with batteries included?"
+msgstr ""
+
+#: ../../user/faq.rst:13
+msgid ""
+"Falcon is designed for applications that require a high level of "
+"customization or performance tuning. The framework's minimalist design "
+"frees the developer to select the best strategies and 3rd-party packages "
+"for the task at hand."
+msgstr ""
+
+#: ../../user/faq.rst:18
+msgid ""
+"The Python ecosystem offers a number of great packages that you can use "
+"from within your responders, hooks, and middleware components. As a "
+"starting point, the community maintains a list of `Falcon add-ons and "
+"complementary packages <https://github.com/falconry/falcon/wiki>`_."
+msgstr ""
+
+#: ../../user/faq.rst:24
+msgid "Why doesn't Falcon create a new Resource instance for every request?"
+msgstr ""
+
+#: ../../user/faq.rst:25
+msgid ""
+"Falcon generally tries to minimize the number of objects that it "
+"instantiates. It does this for two reasons: first, to avoid the expense "
+"of creating the object, and second to reduce memory usage by reducing the"
+" total number of objects required under highly concurrent workloads. "
+"Therefore, when adding a route, Falcon requires an *instance* of your "
+"resource class, rather than the class type. That same instance will be "
+"used to serve all requests coming in on that route."
+msgstr ""
+
+#: ../../user/faq.rst:34
+msgid "Why does raising an error inside a resource crash my app?"
+msgstr ""
+
+#: ../../user/faq.rst:35
+msgid ""
+"Generally speaking, Falcon assumes that resource responders (such as "
+"``on_get()``, ``on_post()``, etc.) will, for the most part, do the right "
+"thing. In other words, Falcon doesn't try very hard to protect responder "
+"code from itself."
+msgstr ""
+
+#: ../../user/faq.rst:40
+msgid ""
+"This approach reduces the number of checks that Falcon would otherwise "
+"have to perform, making the framework more efficient. With that in mind, "
+"writing a high-quality API based on Falcon requires that:"
+msgstr ""
+
+#: ../../user/faq.rst:44
+msgid "Resource responders set response variables to sane values."
+msgstr ""
+
+#: ../../user/faq.rst:45
+msgid "Your code is well-tested, with high code coverage."
+msgstr ""
+
+#: ../../user/faq.rst:46
+msgid ""
+"Errors are anticipated, detected, and handled appropriately within each "
+"responder and with the aid of custom error handlers."
+msgstr ""
+
+#: ../../user/faq.rst:49
+msgid ""
+"Falcon will re-raise errors that do not inherit from "
+":class:`~falcon.HTTPError` unless you have registered a custom error "
+"handler for that type (see also: :ref:`falcon.API <api>`)."
+msgstr ""
+
+#: ../../user/faq.rst:54
+msgid "How do I generate API documentation for my Falcon API?"
+msgstr ""
+
+#: ../../user/faq.rst:55
+msgid ""
+"When it comes to API documentation, some developers prefer to use the API"
+" implementation as the user contract or source of truth (taking an "
+"implementation-first approach), while other developers prefer to use the "
+"API spec itself as the contract, implementing and testing the API against"
+" that spec (taking a design-first approach)."
+msgstr ""
+
+#: ../../user/faq.rst:61
+msgid ""
+"At the risk of erring on the side of flexiblity, Falcon does not provide "
+"API spec support out of the box. However, there are several community "
+"projects available in this vein. Our `Add on Catalog "
+"<https://github.com/falconry/falcon/wiki/Add-on-Catalog>`_ lists a couple"
+" of these projects, but you may also wish to search `PyPI "
+"<https://pypi.python.org/pypi>`_ for additional packages."
+msgstr ""
+
+#: ../../user/faq.rst:68
+msgid ""
+"If you are interested in the design-first approach mentioned above, you "
+"may also want to check out API design and gateway services such as Tyk, "
+"Apiary, Amazon API Gateway, or Google Cloud Endpoints."
+msgstr ""
+
+#: ../../user/faq.rst:73
+msgid "Performance"
+msgstr ""
+
+#: ../../user/faq.rst:76
+msgid "Does Falcon work with HTTP/2?"
+msgstr ""
+
+#: ../../user/faq.rst:78
+msgid ""
+"Falcon is a WSGI framework and as such does not serve HTTP requests "
+"directly. However, you can get most of the benefits of HTTP/2 by simply "
+"deploying any HTTP/2-compliant web server or load balancer in front of "
+"your app to translate between HTTP/2 and HTTP/1.1. Eventually we expect "
+"that Python web servers (such as uWSGI) will support HTTP/2 natively, "
+"eliminating the need for a translation layer."
+msgstr ""
+
+#: ../../user/faq.rst:86
+msgid "Is Falcon thread-safe?"
+msgstr ""
+
+#: ../../user/faq.rst:88
+msgid ""
+"The Falcon framework is, itself, thread-safe. For example, new "
+":class:`~falcon.Request` and :class:`~falcon.Response` objects are "
+"created for each incoming HTTP request. However, a single instance of "
+"each resource class attached to a route is shared among all requests. "
+"Middleware objects and other types of hooks, such as custom error "
+"handlers, are likewise shared. Therefore, as long as you implement these "
+"classes and callables in a thread-safe manner, and ensure that any third-"
+"party libraries used by your app are also thread-safe, your WSGI app as a"
+" whole will be thread-safe."
+msgstr ""
+
+#: ../../user/faq.rst:97
+msgid ""
+"That being said, IO-bound Falcon APIs are usually scaled via multiple "
+"processes and green threads (courtesy of the `gevent "
+"<http://www.gevent.org/>`_ library or similar) which aren't truly running"
+" concurrently, so there may be some edge cases where Falcon is not "
+"thread-safe that we aren't aware of. If you run into any issues, please "
+"let us know."
+msgstr ""
+
+#: ../../user/faq.rst:104
+msgid "Does Falcon support asyncio?"
+msgstr ""
+
+#: ../../user/faq.rst:106
+msgid ""
+"Due to the limitations of WSGI, Falcon is unable to support ``asyncio`` "
+"at this time. However, we are exploring alternatives to WSGI (such as "
+"`ASGI <https://github.com/django/asgiref/blob/master/specs/asgi.rst>`_) "
+"that will allow us to support asyncio natively in the future."
+msgstr ""
+
+#: ../../user/faq.rst:111
+msgid ""
+"In the meantime, we recommend using the battle-tested `gevent "
+"<http://www.gevent.org/>`_ library via Gunicorn or uWSGI to scale IO-"
+"bound services. `meinheld <https://pypi.org/project/meinheld/>`_ has also"
+" been used successfully by the community to power high-throughput, low-"
+"latency services. Note that if you use Gunicorn, you can combine gevent "
+"and PyPy to achieve an impressive level of performance. (Unfortunately, "
+"uWSGI does not yet support using gevent and PyPy together.)"
+msgstr ""
+
+#: ../../user/faq.rst:121
+msgid "Does Falcon support WebSocket?"
+msgstr ""
+
+#: ../../user/faq.rst:123
+msgid ""
+"Due to the limitations of WSGI, Falcon is unable to support the WebSocket"
+" protocol as stated above."
+msgstr ""
+
+#: ../../user/faq.rst:126
+msgid ""
+"In the meantime, you might try leveraging `uWSGI's native WebSocket "
+"support <http://uwsgi.readthedocs.io/en/latest/WebSockets.html>`_, or "
+"implementing a standalone service via Aymeric Augustin's handy "
+"`websockets <https://pypi.python.org/pypi/websockets/4.0.1>`_ library."
+msgstr ""
+
+#: ../../user/faq.rst:132
+msgid "Routing"
+msgstr ""
+
+#: ../../user/faq.rst:135
+msgid "How do I implement CORS with Falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:137
+msgid ""
+"In order for a website or SPA to access an API hosted under a different "
+"domain name, that API must implement `Cross-Origin Resource Sharing "
+"(CORS) <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`_. For a "
+"public API, implementing CORS in Falcon can be as simple as implementing "
+"a middleware component similar to the following:"
+msgstr ""
+
+#: ../../user/faq.rst:170
+msgid ""
+"When using the above approach, OPTIONS requests must also be special-"
+"cased in any other middleware or hooks you use for auth, content-"
+"negotiation, etc. For example, you will typically skip auth for preflight"
+" requests because it is simply unnecessary; note that such request do not"
+" include the Authorization header in any case."
+msgstr ""
+
+#: ../../user/faq.rst:176
+msgid ""
+"For more sophisticated use cases, have a look at Falcon add-ons from the "
+"community, such as `falcon-cors <https://github.com/lwcolton/falcon-"
+"cors>`_, or try one of the generic `WSGI CORS libraries available on PyPI"
+" "
+"<https://pypi.python.org/pypi?%3Aaction=search&term=cors&submit=search>`_."
+" If you use an API gateway, you might also look into what CORS "
+"functionaly it provides at that level."
+msgstr ""
+
+#: ../../user/faq.rst:184
+msgid "How do I implement redirects within Falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:186
+msgid ""
+"Falcon provides a number of exception classes that can be raised to "
+"redirect the client to a different location (see also :ref:`Redirection "
+"<redirects>`)."
+msgstr ""
+
+#: ../../user/faq.rst:189
+msgid ""
+"Note, however, that it is more efficient to handle permanent redirects "
+"directly with your web server, if possible, rather than placing "
+"additional load on your app for such requests."
+msgstr ""
+
+#: ../../user/faq.rst:194
+msgid ""
+"How do I split requests between my original app and the part I migrated "
+"to Falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:196
+msgid ""
+"It is common to carve out a portion of an app and reimplement it in "
+"Falcon to boost performance where it is most needed."
+msgstr ""
+
+#: ../../user/faq.rst:199
+msgid ""
+"If you have access to your load balancer or reverse proxy configuration, "
+"we recommend setting up path or subdomain-based rules to split requests "
+"between your original implementation and the parts that have been "
+"migrated to Falcon (e.g., by adding an additional ``location`` directive "
+"to your NGINX config)."
+msgstr ""
+
+#: ../../user/faq.rst:205
+msgid ""
+"If the above approach isn't an option for your deployment, you can "
+"implement a simple WSGI wrapper that does the same thing:"
+msgstr ""
+
+#: ../../user/faq.rst:226
+msgid ""
+"See also `PEP 3333 <https://www.python.org/dev/peps/pep-3333/#environ-"
+"variables>`_ for a complete list of the variables that are provided via "
+"``environ``."
+msgstr ""
+
+#: ../../user/faq.rst:230
+msgid "How do I implement both POSTing and GETing items for the same resource?"
+msgstr ""
+
+#: ../../user/faq.rst:232
+msgid "Suppose you have the following routes::"
+msgstr ""
+
+#: ../../user/faq.rst:243
+msgid ""
+"You can implement this sort of API by simply using two Python classes, "
+"one to represent a single resource, and another to represent the "
+"collection of said resources. It is common to place both classes in the "
+"same module (see also :ref:`this section of the tutorial <tutorial-"
+"serving-images>`.)"
+msgstr ""
+
+#: ../../user/faq.rst:248
+msgid ""
+"Alternatively, you can use suffixed responders to map both routes to the "
+"same resource class:"
+msgstr ""
+
+#: ../../user/faq.rst:278
+msgid "What is the recommended way to map related routes to resource classes?"
+msgstr ""
+
+#: ../../user/faq.rst:280
+msgid "Let's say we have the following URL schema::"
+msgstr ""
+
+#: ../../user/faq.rst:288
+msgid "We can break this down into three resources::"
+msgstr ""
+
+#: ../../user/faq.rst:304
+msgid ""
+"GameState may be thought of as a sub-resource of Game. It is a distinct "
+"logical entity encapsulated within a more general Game concept."
+msgstr ""
+
+#: ../../user/faq.rst:308
+msgid "In Falcon, these resources would be implemented with standard classes:"
+msgstr ""
+
+#: ../../user/faq.rst:361
+msgid ""
+"Alternatively, a single resource class could implement suffixed "
+"responders in order to handle all three routes:"
+msgstr ""
+
+#: ../../user/faq.rst:399
+msgid "Extensibility"
+msgstr ""
+
+#: ../../user/faq.rst:402
+msgid "How do I use WSGI middleware with Falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:403
+msgid ""
+"Instances of :class:`falcon.API` are first-class WSGI apps, so you can "
+"use the standard pattern outlined in PEP-3333. In your main \"app\" file,"
+" you would simply wrap your api instance with a middleware app. For "
+"example:"
+msgstr ""
+
+#: ../../user/faq.rst:414
+msgid ""
+"See also the `WSGI middleware example "
+"<https://www.python.org/dev/peps/pep-3333/#middleware-components-that-"
+"play-both-sides>`_ given in PEP-3333."
+msgstr ""
+
+#: ../../user/faq.rst:417
+msgid "How can I pass data from a hook to a responder, and between hooks?"
+msgstr ""
+
+#: ../../user/faq.rst:418
+msgid ""
+"You can inject extra responder kwargs from a hook by adding them to the "
+"*params* dict passed into the hook. You can also add custom data to the "
+"``req.context`` dict, as a way of passing contextual information around."
+msgstr ""
+
+#: ../../user/faq.rst:423
+msgid "How can I write a custom handler for 404 and 500 pages in falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:424
+msgid ""
+"When a route can not be found for an incoming request, Falcon uses a "
+"default responder that simply raises an instance of "
+":attr:`falcon.HTTPNotFound`. You can use "
+":meth:`falcon.API.add_error_handler` to register a custom error handler "
+"for this exception type. Alternatively, you may be able to configure your"
+" web server to transform the response for you (e.g., using Nginx's "
+"``error_page`` directive)."
+msgstr ""
+
+#: ../../user/faq.rst:431
+msgid ""
+"500 errors are typically the result of an unhandled exception making its "
+"way up to the web server. To handle these errors more gracefully, you can"
+" add a custom error handler for Python's base :class:`Exception` type."
+msgstr ""
+
+#: ../../user/faq.rst:436
+msgid "Request Handling"
+msgstr ""
+
+#: ../../user/faq.rst:439
+msgid "How do I authenticate requests?"
+msgstr ""
+
+#: ../../user/faq.rst:440
+msgid ""
+"Hooks and middleware components can be used together to authenticate and "
+"authorize requests. For example, a middleware component could be used to "
+"parse incoming credentials and place the results in ``req.context``. "
+"Downstream components or hooks could then use this information to "
+"authorize the request, taking into account the user's role and the "
+"requested resource."
+msgstr ""
+
+#: ../../user/faq.rst:448
+msgid "Why does req.stream.read() hang for certain requests?"
+msgstr ""
+
+#: ../../user/faq.rst:450
+msgid ""
+"This behavior is an unfortunate artifact of the request body mechanics "
+"not being fully defined by the WSGI spec (PEP-3333). This is discussed in"
+" the reference documentation for :attr:`~falcon.Request.stream`, and a "
+"workaround is provided in the form of "
+":attr:`~falcon.Request.bounded_stream`."
+msgstr ""
+
+#: ../../user/faq.rst:456
+msgid "Why are trailing slashes trimmed from req.path?"
+msgstr ""
+
+#: ../../user/faq.rst:457
+msgid ""
+"By default, Falcon normalizes incoming URI paths to simplify later "
+"processing and improve the predictability of application logic. This "
+"behavior can be disabled via the "
+":attr:`~falcon.RequestOptions.strip_url_path_trailing_slash` request "
+"option."
+msgstr ""
+
+#: ../../user/faq.rst:462
+msgid ""
+"Note also that routing is also normalized, so adding a route for "
+"\"/foo/bar\" also implicitly adds a route for \"/foo/bar/\". Requests "
+"coming in for either path will be sent to the same resource."
+msgstr ""
+
+#: ../../user/faq.rst:467
+msgid "Why is my query parameter missing from the req object?"
+msgstr ""
+
+#: ../../user/faq.rst:468
+msgid ""
+"If a query param does not have a value, Falcon will by default ignore "
+"that parameter. For example, passing ``'foo'`` or ``'foo='`` will result "
+"in the parameter being ignored."
+msgstr ""
+
+#: ../../user/faq.rst:472
+msgid ""
+"If you would like to recognize such parameters, you must set the "
+"`keep_blank_qs_values` request option to ``True``. Request options are "
+"set globally for each instance of :class:`falcon.API` via the "
+":attr:`~falcon.API.req_options` property. For example:"
+msgstr ""
+
+#: ../../user/faq.rst:482
+msgid "Why are '+' characters in my params being converted to spaces?"
+msgstr ""
+
+#: ../../user/faq.rst:483
+msgid ""
+"The ``+`` character is often used instead of ``%20`` to represent spaces "
+"in query string params, due to the historical conflation of form "
+"parameter encoding (``application/x-www-form-urlencoded``) and URI "
+"percent-encoding.  Therefore, Falcon, converts ``+`` to a space when "
+"decoding strings."
+msgstr ""
+
+#: ../../user/faq.rst:488
+msgid ""
+"To work around this, RFC 3986 specifies ``+`` as a reserved character, "
+"and recommends percent-encoding any such characters when their literal "
+"value is desired (``%2B`` in the case of ``+``)."
+msgstr ""
+
+#: ../../user/faq.rst:493
+msgid "How can I access POSTed form params?"
+msgstr ""
+
+#: ../../user/faq.rst:494
+msgid ""
+"By default, Falcon does not consume request bodies. However, setting the "
+":attr:`~RequestOptions.auto_parse_form_urlencoded` to ``True`` on an "
+"instance of ``falcon.API`` will cause the framework to consume the "
+"request body when the content type is ``application/x-www-form-"
+"urlencoded``, making the form parameters accessible via "
+":attr:`~.Request.params`, :meth:`~.Request.get_param`, etc."
+msgstr ""
+
+#: ../../user/faq.rst:506
+msgid ""
+"Alternatively, POSTed form parameters may be read directly from "
+":attr:`~.Request.stream` and parsed via "
+":meth:`falcon.uri.parse_query_string` or `urllib.parse.parse_qs() "
+"<https://docs.python.org/3.6/library/urllib.parse.html#urllib.parse.parse_qs>`_."
+msgstr ""
+
+#: ../../user/faq.rst:512
+msgid "How can I access POSTed files?"
+msgstr ""
+
+#: ../../user/faq.rst:513
+msgid ""
+"Falcon does not currently support parsing files submitted by an HTTP form"
+" (``multipart/form-data``), although we do plan to add this feature in a "
+"future version. In the meantime, you can use the standard "
+"``cgi.FieldStorage`` class to parse the request:"
+msgstr ""
+
+#: ../../user/faq.rst:542
+msgid ""
+"You might also try this `streaming_form_data <https://streaming-form-"
+"data.readthedocs.io/en/latest/>`_ package by Siddhant Goel, or searching "
+"PyPI for additional options from the community."
+msgstr ""
+
+#: ../../user/faq.rst:548
+msgid "How do I consume a query string that has a JSON value?"
+msgstr ""
+
+#: ../../user/faq.rst:549
+msgid ""
+"Falcon defaults to treating commas in a query string as literal "
+"characters delimiting a comma separated list. For example, given the "
+"query string ``?c=1,2,3``, Falcon defaults to adding this to your "
+"``request.params`` dictionary as ``{'c': ['1', '2', '3']}``. If you "
+"attempt to use JSON in the value of the query string, for example "
+"``?c={'a':1,'b':2}``, the value will get added to your ``request.params``"
+" in a way that you probably don't expect: ``{'c': [\"{'a':1\", "
+"\"'b':2}\"]}``."
+msgstr ""
+
+#: ../../user/faq.rst:557
+msgid ""
+"Commas are a reserved character that can be escaped according to `RFC "
+"3986 - 2.2. Reserved Characters "
+"<https://tools.ietf.org/html/rfc3986#section-2.2>`_, so one possible "
+"solution is to percent encode any commas that appear in your JSON query "
+"string. The other option is to switch the way Falcon handles commas in a "
+"query string by setting the "
+":attr:`~falcon.RequestOptions.auto_parse_qs_csv` to ``False`` on an "
+"instance of :class:`falcon.API`:"
+msgstr ""
+
+#: ../../user/faq.rst:569
+msgid ""
+"When :attr:`~falcon.RequestOptions.auto_parse_qs_csv` is set to "
+"``False``, the value of the query string ``?c={'a':1,'b':2}`` will be "
+"added to the ``req.params`` dictionary as  ``{'c': \"{'a':1,'b':2}\"}``. "
+"This lets you consume JSON whether or not the client chooses to escape "
+"commas in the request."
+msgstr ""
+
+#: ../../user/faq.rst:576
+msgid "How can I handle forward slashes within a route template field?"
+msgstr ""
+
+#: ../../user/faq.rst:578
+msgid ""
+"In Falcon 1.3 we shipped initial support for `field converters "
+"<http://falcon.readthedocs.io/en/stable/api/routing.html#field-"
+"converters>`_. We’ve discussed building on this feature to support "
+"consuming multiple path segments ala Flask. This work is currently "
+"planned for 2.0."
+msgstr ""
+
+#: ../../user/faq.rst:583
+msgid ""
+"In the meantime, the workaround is to percent-encode the forward slash. "
+"If you don’t control the clients and can't enforce this, you can "
+"implement a Falcon middleware component to rewrite the path before it is "
+"routed."
+msgstr ""
+
+#: ../../user/faq.rst:588
+msgid "Response Handling"
+msgstr ""
+
+#: ../../user/faq.rst:591
+msgid "How can I use resp.media with types like datetime?"
+msgstr ""
+
+#: ../../user/faq.rst:593
+msgid ""
+"The default JSON handler for ``resp.media`` only supports the objects and"
+" types listed in the table documented under `json.JSONEncoder "
+"<https://docs.python.org/3.6/library/json.html#json.JSONEncoder>`_. To "
+"handle additional types, you can either serialize them beforehand, or "
+"create a custom JSON media handler that sets the `default` param for "
+"``json.dumps()``. When deserializing an incoming request body, you may "
+"also wish to implement `object_hook` for ``json.loads()``. Note, however,"
+" that setting the `default` or `object_hook` params can negatively impact"
+" the performance of (de)serialization."
+msgstr ""
+
+#: ../../user/faq.rst:603
+msgid "Does Falcon set Content-Length or do I need to do that explicitly?"
+msgstr ""
+
+#: ../../user/faq.rst:604
+msgid ""
+"Falcon will try to do this for you, based on the value of ``resp.body``, "
+"``resp.data``, or ``resp.stream_len`` (whichever is set in the response, "
+"checked in that order.)"
+msgstr ""
+
+#: ../../user/faq.rst:608
+msgid ""
+"For dynamically-generated content, you can choose to not set "
+"``stream_len``, in which case Falcon will then leave off the Content-"
+"Length header, and hopefully your WSGI server will do the Right Thing™ "
+"(assuming you've told it to enable keep-alive)."
+msgstr ""
+
+#: ../../user/faq.rst:613
+msgid ""
+"PEP-3333 prohibits apps from setting hop-by-hop headers itself, such as "
+"Transfer-Encoding."
+msgstr ""
+
+#: ../../user/faq.rst:617
+msgid ""
+"Why is an empty response body returned when I raise an instance of "
+"HTTPError?"
+msgstr ""
+
+#: ../../user/faq.rst:619
+msgid ""
+"Falcon attempts to serialize the :class:`~falcon.HTTPError` instance "
+"using its :meth:`~falcon.HTTPError.to_json` or "
+":meth:`~falcon.HTTPError.to_xml` methods, according to the Accept header "
+"in the request. If neither JSON nor XML is acceptable, no response body "
+"will be generated. You can override this behavior if needed via "
+":meth:`~falcon.API.set_error_serializer`."
+msgstr ""
+
+#: ../../user/faq.rst:626
+msgid ""
+"I'm setting a response body, but it isn't getting returned. What's going "
+"on?"
+msgstr ""
+
+#: ../../user/faq.rst:627
+msgid ""
+"Falcon skips processing the response body when, according to the HTTP "
+"spec, no body should be returned. If the client sends a HEAD request, the"
+" framework will always return an empty body. Falcon will also return an "
+"empty body whenever the response status is any of the following::"
+msgstr ""
+
+#: ../../user/faq.rst:638
+msgid ""
+"If you have another case where the body isn't being returned, it's "
+"probably a bug! :ref:`Let us know <help>` so we can help."
+msgstr ""
+
+#: ../../user/faq.rst:642
+msgid "I'm setting a cookie, but it isn't being returned in subsequent requests."
+msgstr ""
+
+#: ../../user/faq.rst:643
+msgid ""
+"By default, Falcon enables the `secure` cookie attribute. Therefore, if "
+"you are testing your app over HTTP (instead of HTTPS), the client will "
+"not send the cookie in subsequent requests."
+msgstr ""
+
+#: ../../user/faq.rst:647
+msgid "(See also the :ref:`cookie documentation <cookie-secure-attribute>`.)"
+msgstr ""
+
+#: ../../user/faq.rst:650
+msgid "How can I serve a downloadable file with falcon?"
+msgstr ""
+
+#: ../../user/faq.rst:651
+msgid ""
+"In the ``on_get()`` responder method for the resource, you can tell the "
+"user agent to download the file by setting the Content-Disposition "
+"header. Falcon includes the :attr:`~falcon.Request.downloadable_as` "
+"property to make this easy:"
+msgstr ""
+
+#: ../../user/faq.rst:661
+msgid "Can Falcon serve static files?"
+msgstr ""
+
+#: ../../user/faq.rst:663
+msgid ""
+"Falcon makes it easy to efficiently serve static files by simply "
+"assigning an open file to ``resp.stream`` :ref:`as demonstrated in the "
+"tutorial <tutorial-serving-images>`. You can also serve an entire "
+"directory of files via :meth:`falcon.API.add_static_route`. However, if "
+"possible, it is best to serve static files directly from a web server "
+"like Nginx, or from a CDN."
+msgstr ""
+
+#: ../../user/faq.rst:670
+msgid "Misc."
+msgstr ""
+
+#: ../../user/faq.rst:673
+msgid "How do I manage my database connections?"
+msgstr ""
+
+#: ../../user/faq.rst:675
+msgid ""
+"Assuming your database library manages its own connection pool, all you "
+"need to do is initialize the client and pass an instance of it into your "
+"resource classes. For example, using SQLAlchemy Core:"
+msgstr ""
+
+#: ../../user/faq.rst:684
+msgid "Then, within ``SomeResource``:"
+msgstr ""
+
+#: ../../user/faq.rst:706
+msgid ""
+"When using a data access layer, simply pass the engine into your data "
+"access objects instead. See also `this sample Falcon project "
+"<https://github.com/jmvrbanac/falcon-example>`_ that demonstrates using "
+"an ORM with Falcon."
+msgstr ""
+
+#: ../../user/faq.rst:711
+msgid ""
+"You can also create a middleware component to automatically check out "
+"database connections for each request, but this can make it harder to "
+"track down errors, or to tune for the needs of individual requests."
+msgstr ""
+
+#: ../../user/faq.rst:715
+msgid ""
+"If you need to transparently handle reconnecting after an error, or for "
+"other use cases that may not be supported by your client library, simply "
+"encapsulate the client library within a management class that handles all"
+" the tricky bits, and pass that around instead."
+msgstr ""
+
+#: ../../user/faq.rst:721
+msgid ""
+"What is the recommended approach for making configuration variables "
+"available to multiple resource classes?"
+msgstr ""
+
+#: ../../user/faq.rst:723
+msgid ""
+"People usually fall into two camps when it comes to this question. The "
+"first camp likes to instantiate a config object and pass that around to "
+"the initializers of the resource classes so the data sharing is explicit."
+" The second camp likes to create a config module and import that wherever"
+" it’s needed."
+msgstr ""
+
+#: ../../user/faq.rst:728
+msgid ""
+"With the latter approach, to control when the config is actually loaded, "
+"it’s best not to instantiate it at the top level of the config module’s "
+"namespace. This avoids any problematic side-effects that may be caused by"
+" loading the config whenever Python happens to process the first import "
+"of the config module. Instead, consider implementing a function in the "
+"module that returns a new or cached config object on demand."
+msgstr ""
+
+#: ../../user/faq.rst:736
+msgid ""
+"Other than that, it’s pretty much up to you if you want to use the "
+"standard library config library or something like ``aumbry`` as "
+"demonstrated by this `falcon example app <https://github.com/jmvrbanac"
+"/falcon-example/tree/master/example>`_"
+msgstr ""
+
+#: ../../user/faq.rst:740
+msgid ""
+"(See also the **Configuration** section of our `Complementary Packages "
+"wiki page <https://github.com/falconry/falcon/wiki/Complementary-"
+"Packages>`_. You may also wish to search PyPI for other options)."
+msgstr ""
+
+#: ../../user/faq.rst:745
+msgid "How do I test my Falcon app? Can I use pytest?"
+msgstr ""
+
+#: ../../user/faq.rst:747
+msgid ""
+"Falcon's testing framework supports both ``unittest`` and ``pytest``. In "
+"fact, the tutorial in the docs provides an excellent introduction to "
+"`testing Falcon apps with pytest "
+"<http://falcon.readthedocs.io/en/stable/user/tutorial.html#testing-your-"
+"application>`_."
+msgstr ""
+
+#: ../../user/faq.rst:751
+msgid ""
+"(See also: `Testing "
+"<http://falcon.readthedocs.io/en/stable/api/testing.html>`_)"
+msgstr ""
+

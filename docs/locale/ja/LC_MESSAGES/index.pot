@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:7
+msgid "The Falcon Web Framework"
+msgstr ""
+
+#: ../../index.rst:9
+msgid "Release v\\ |version| (:ref:`Installation <install>`)"
+msgstr ""
+
+#: ../../index.rst:11
+msgid "Falcon is a minimalist WSGI library for building speedy web APIs and app backends. We like to think of Falcon as the `Dieter Rams` of web frameworks."
+msgstr ""
+
+#: ../../index.rst:14
+msgid "When it comes to building HTTP APIs, other frameworks weigh you down with tons of dependencies and unnecessary abstractions. Falcon cuts to the chase with a clean design that embraces HTTP and the REST architectural style."
+msgstr ""
+
+#: ../../index.rst:32
+msgid "What People are Saying"
+msgstr ""
+
+#: ../../index.rst:34
+msgid "\"We have been using Falcon as a replacement for [framework] and we simply love the performance (three times faster) and code base size (easily half of our original [framework] code).\""
+msgstr ""
+
+#: ../../index.rst:36
+msgid "\"Falcon looks great so far. I hacked together a quick test for a tiny server of mine and was ~40% faster with only 20 minutes of work.\""
+msgstr ""
+
+#: ../../index.rst:40
+msgid "\"Falcon is rock solid and it's fast.\""
+msgstr ""
+
+#: ../../index.rst:42
+msgid "\"I'm loving #falconframework! Super clean and simple, I finally have the speed and flexibility I need!\""
+msgstr ""
+
+#: ../../index.rst:45
+msgid "\"I feel like I'm just talking HTTP at last, with nothing in the middle. Falcon seems like the requests of backend.\""
+msgstr ""
+
+#: ../../index.rst:48
+msgid "\"The source code for Falcon is so good, I almost prefer it to documentation. It basically can't be wrong.\""
+msgstr ""
+
+#: ../../index.rst:51
+msgid "\"What other framework has integrated support for 786 TRY IT NOW ?\""
+msgstr ""
+
+#: ../../index.rst:54
+msgid "Quick Links"
+msgstr ""
+
+#: ../../index.rst:56
+msgid "`Read the docs <https://falcon.readthedocs.io/en/stable>`_"
+msgstr ""
+
+#: ../../index.rst:57
+msgid "`Falcon add-ons and complementary packages <https://github.com/falconry/falcon/wiki>`_"
+msgstr ""
+
+#: ../../index.rst:58
+msgid "`Falcon talks, podcasts, and blog posts <https://github.com/falconry/falcon/wiki/Talks-and-Podcasts>`_"
+msgstr ""
+
+#: ../../index.rst:59
+msgid "`falconry/user for Falcon users <https://gitter.im/falconry/user>`_ @ Gitter"
+msgstr ""
+
+#: ../../index.rst:60
+msgid "`falconry/dev for Falcon contributors <https://gitter.im/falconry/dev>`_ @ Gitter"
+msgstr ""
+
+#: ../../index.rst:63
+msgid "Features"
+msgstr ""
+
+#: ../../index.rst:65
+msgid "Falcon tries to do as little as possible while remaining highly effective."
+msgstr ""
+
+#: ../../index.rst:67
+msgid "Routes based on URI templates RFC"
+msgstr ""
+
+#: ../../index.rst:68
+msgid "REST-inspired mapping of URIs to resources"
+msgstr ""
+
+#: ../../index.rst:69
+msgid "Global, resource, and method hooks"
+msgstr ""
+
+#: ../../index.rst:70
+msgid "Idiomatic HTTP error responses"
+msgstr ""
+
+#: ../../index.rst:71
+msgid "Full Unicode support"
+msgstr ""
+
+#: ../../index.rst:72
+msgid "Intuitive request and response objects"
+msgstr ""
+
+#: ../../index.rst:73
+msgid "Works great with async libraries like gevent"
+msgstr ""
+
+#: ../../index.rst:74
+msgid "Minimal attack surface for writing secure APIs"
+msgstr ""
+
+#: ../../index.rst:75
+msgid "100% code coverage with a comprehensive test suite"
+msgstr ""
+
+#: ../../index.rst:76
+msgid "Only depends on six and mimeparse"
+msgstr ""
+
+#: ../../index.rst:77
+msgid "Supports Python 2.7, 3.4+"
+msgstr ""
+
+#: ../../index.rst:78
+msgid "Compatible with PyPy"
+msgstr ""
+
+#: ../../index.rst:81
+msgid "Who's Using Falcon?"
+msgstr ""
+
+#: ../../index.rst:83
+msgid "Falcon is used around the world by a growing number of organizations, including:"
+msgstr ""
+
+#: ../../index.rst:86
+msgid "7ideas"
+msgstr ""
+
+#: ../../index.rst:87
+msgid "Cronitor"
+msgstr ""
+
+#: ../../index.rst:88
+msgid "EMC"
+msgstr ""
+
+#: ../../index.rst:89
+msgid "Hurricane Electric"
+msgstr ""
+
+#: ../../index.rst:90
+msgid "Leadpages"
+msgstr ""
+
+#: ../../index.rst:91
+msgid "OpenStack"
+msgstr ""
+
+#: ../../index.rst:92
+msgid "Rackspace"
+msgstr ""
+
+#: ../../index.rst:93
+msgid "Shiftgig"
+msgstr ""
+
+#: ../../index.rst:94
+msgid "tempfil.es"
+msgstr ""
+
+#: ../../index.rst:95
+msgid "Opera Software"
+msgstr ""
+
+#: ../../index.rst:97
+msgid "If you are using the Falcon framework for a community or commercial project, please consider adding your information to our wiki under `Who's Using Falcon? <https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F>`_"
+msgstr ""
+
+#: ../../index.rst:101
+msgid "You might also like to view our `Add-on Catalog <https://github.com/falconry/falcon/wiki/Add-on-Catalog>`_, where you can find a list of add-ons maintained by the community."
+msgstr ""
+
+#: ../../index.rst:106
+msgid "Documentation"
+msgstr ""
+

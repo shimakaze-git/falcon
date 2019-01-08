@@ -1,0 +1,579 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019 Falcon Contributors
+# This file is distributed under the same license as the Falcon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Falcon 1.4dev1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 01:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/testing.rst:4
+msgid "Testing"
+msgstr ""
+
+#: ../../api/testing.rst:7
+msgid "Reference"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing:1
+msgid "Functional testing framework for Falcon apps and Falcon itself."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing:3
+msgid "Falcon's testing module contains various test classes and utility functions to support functional testing for both Falcon-based apps and the Falcon framework itself."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing:7
+msgid "The testing framework supports both unittest and pytest::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:1
+msgid "Encapsulates the result of a simulated WSGI request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.rand_string:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:3
+msgid "An iterable that yields zero or more bytestrings, per PEP-3333"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:6
+msgid "An HTTP status string, including status code and reason string"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:9
+msgid "A list of (header_name, header_value) tuples, per PEP-3333"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:15
+msgid "*str* -- HTTP status string given in the response"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:19
+msgid "*int* -- The code portion of the HTTP status string"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:23
+msgid "*CaseInsensitiveDict* -- A case-insensitive dictionary containing all the headers in the response, except for cookies, which may be accessed via the `cookies` attribute."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:30
+msgid "Multiple instances of a header in the response are currently not supported; it is unspecified which value will \"win\" and be represented in `headers`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:36
+msgid "*dict* -- A dictionary of :py:class:`falcon.testing.Cookie` values parsed from the response, by name."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:42
+msgid "*str* -- Text encoding of the response body, or ``None`` if the encoding can not be determined."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:47
+msgid "*bytes* -- Raw response body, or ``bytes`` if the response body was empty."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:52
+msgid "*str* -- Decoded response body of type ``unicode`` under Python 2.6 and 2.7, and of type ``str`` otherwise. If the content type does not specify an encoding, UTF-8 is assumed."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Result:59
+msgid "*dict* -- Deserialized JSON body. Raises an error if the body is empty or not JSON."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:1
+msgid "Represents a cookie returned by a simulated request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:3
+msgid "A ``Morsel`` object from which to derive the cookie data."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:8
+msgid "*str* -- The cookie's name."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:12
+msgid "*str* -- The value of the cookie."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:16
+msgid "*datetime.datetime* -- Expiration timestamp for the cookie, or ``None`` if not specified."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:21
+msgid "*str* -- The path prefix to which this cookie is restricted, or ``None`` if not specified."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:26
+msgid "*str* -- The domain to which this cookie is restricted, or ``None`` if not specified."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:31
+msgid "*int* -- The lifetime of the cookie in seconds, or ``None`` if not specified."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:36
+msgid "*bool* -- Whether or not the cookie may only only be transmitted from the client via HTTPS."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.Cookie:41
+msgid "*bool* -- Whether or not the cookie may only be included in unscripted requests from the client."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_request:1
+msgid "Simulates a request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:3
+msgid "Performs a request against a WSGI application. Uses :any:`wsgiref.validate` to ensure the response is valid WSGI."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:0
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:0
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:7
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:7
+msgid "The WSGI application to call"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:9
+msgid "An HTTP method to use in the request (default: 'GET')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:12
+msgid "The URL path to request (default: '/')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:14
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:32
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:38
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:28
+msgid "The protocol to use for the URL scheme (default: 'http')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:16
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:12
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:12
+msgid "A dictionary of query string parameters, where each key is a parameter name, and each value is either a ``str`` or something that can be converted into a ``str``, or a list of such values. If a ``list``, the value will be converted to a comma-delimited string of values (e.g., 'thing=1,2,3')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:23
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:19
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:19
+msgid "Set to ``False`` to encode list values in query string params by specifying multiple instances of the parameter (e.g., 'thing=1&thing=2&thing=3'). Otherwise, parameters will be encoded as comma-separated values (e.g., 'thing=1,2,3'). Defaults to ``True``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:25
+msgid "A raw query string to include in the request (default: ``None``). If specified, overrides `params`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:29
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:25
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:25
+msgid "Additional headers to include in the request (default: ``None``)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:36
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:28
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:28
+msgid "A string to send as the body of the request. Accepts both byte strings and Unicode strings (default: ``None``). If a Unicode string is provided, it will be encoded as UTF-8 in the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:41
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:33
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:33
+msgid "A JSON document to serialize as the body of the request (default: ``None``). If specified, overrides `body` and the Content-Type header in `headers`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:46
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:32
+msgid "Callable that returns an iterable, to be used as the value for *wsgi.file_wrapper* in the environ (default: ``None``). This can be used to test high-performance file transmission when `resp.stream` is set to a file-like object."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:52
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:35
+msgid "The stream to use as *wsgierrors* (default ``sys.stderr``)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:56
+msgid "The result of the request"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_request:57
+msgid ":py:class:`~.Result`"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_get:1
+msgid "Simulates a GET request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:3
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:3
+msgid "Equivalent to::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_get:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:9
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:9
+msgid "The URL path to request"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_head:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_head:1
+msgid "Simulates a HEAD request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_post:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_post:1
+msgid "Simulates a POST request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_put:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_put:1
+msgid "Simulates a PUT request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_options:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_options:1
+msgid "Simulates an OPTIONS request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_patch:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_patch:1
+msgid "Simulates a PATCH request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.simulate_delete:1
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_delete:1
+msgid "Simulates a DELETE request to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:1
+msgid "Simulates requests to a WSGI application."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:3
+msgid "This class provides a contextual wrapper for Falcon's `simulate_*` test functions. It lets you replace this::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:9
+msgid "with this::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:17
+msgid "The methods all call ``self.simulate_request()`` for convenient overriding of request preparation by child classes."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:20
+msgid "A WSGI application to target when simulating requests"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient:24
+msgid "Default headers to set on every request (default ``None``). These defaults may be overridden by passing values for the same headers to one of the `simulate_*()` methods."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_delete:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_delete`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_get:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_get`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_head:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_head`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_options:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_options`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_patch:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_patch`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_post:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_post`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_put:3
+msgid "(See also: :py:meth:`falcon.testing.simulate_put`)"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/client.py:docstring of falcon.testing.TestClient.simulate_request:3
+msgid "Wraps :py:meth:`falcon.testing.simulate_request` to perform a WSGI request directly against ``self.app``. Equivalent to::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:1
+msgid "Extends :py:mod:`unittest` to support WSGI functional testing."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:5
+msgid "If available, uses :py:mod:`testtools` in lieu of :py:mod:`unittest`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:8
+msgid "This base class provides some extra plumbing for unittest-style test cases, to help simulate WSGI calls without having to spin up an actual web server. Various simulation methods are derived from :py:class:`falcon.testing.TestClient`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:13
+msgid "Simply inherit from this class in your test case classes instead of :py:class:`unittest.TestCase` or :py:class:`testtools.TestCase`."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:18
+msgid "*object* -- A WSGI application to target when simulating requests (default: ``falcon.API()``). When testing your application, you will need to set this to your own instance of ``falcon.API``. For example::"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:46
+msgid "*object* -- Deprecated alias for ``app``"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase:50
+msgid "*callable* -- Deprecated class variable; will be removed in a future release."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/test_case.py:docstring of falcon.testing.TestCase.setUp:1
+msgid "Hook method for setting up the test fixture before exercising it."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:1
+msgid "Mock resource for functional testing of framework components."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:3
+msgid "This class implements a simple test resource that can be extended as needed to test middleware, hooks, and the Falcon framework itself."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:7
+msgid "Only noop ``on_get()`` and ``on_post()`` responders are implemented; when overriding these, or adding additional responders in child classes, they can be decorated with the :py:meth:`falcon.testing.capture_responder_args` hook in order to capture the *req*, *resp*, and *params* arguments that are passed to the responder. Responders may also be decorated with the :py:meth:`falcon.testing.set_resp_defaults` hook in order to set *resp* properties to default *status*, *body*, and *header* values."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:17
+msgid "Default status string to use in responses"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:19
+msgid "Default body string to use in responses"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:21
+msgid "Default JSON document to use in responses. Will be serialized to a string and encoded as UTF-8. Either *json* or *body* may be specified, but not both."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:25
+msgid "Default set of additional headers to include in responses"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:31
+msgid "*bool* -- Whether or not a req/resp was captured."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:35
+msgid "*falcon.Request* -- The last Request object passed into any one of the responder methods."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:40
+msgid "*falcon.Response* -- The last Response object passed into any one of the responder methods."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/resource.py:docstring of falcon.testing.SimpleTestResource:45
+msgid "*dict* -- The last dictionary of kwargs, beyond ``req`` and ``resp``, that were passed into any one of the responder methods."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/srmock.py:docstring of falcon.testing.StartResponseMock:1
+msgid "Mock object representing a WSGI `start_response` callable."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/srmock.py:docstring of falcon.testing.StartResponseMock:5
+msgid "*int* -- Number of times `start_response` was called."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/srmock.py:docstring of falcon.testing.StartResponseMock:9
+msgid "*str* -- HTTP status line, e.g. '785 TPS Cover Sheet not attached'."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/srmock.py:docstring of falcon.testing.StartResponseMock:14
+msgid "*list* -- Raw headers list passed to `start_response`, per PEP-333."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/srmock.py:docstring of falcon.testing.StartResponseMock:19
+msgid "*dict* -- Headers as a case-insensitive ``dict``-like object, instead of a ``list``."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.capture_responder_args:1
+msgid "Before hook for capturing responder arguments."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.capture_responder_args:3
+msgid "Adds the following attributes to the hooked responder's resource class:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.capture_responder_args:6
+msgid "captured_req"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.capture_responder_args:7
+msgid "captured_resp"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.capture_responder_args:8
+msgid "captured_kwargs"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.rand_string:1
+msgid "Returns a randomly-generated string, of a random length."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.rand_string:3
+msgid "Minimum string length to return, inclusive"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.rand_string:5
+msgid "Maximum string length to return, inclusive"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:1
+msgid "Creates a mock PEP-3333 environ ``dict`` for simulating WSGI requests."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:3
+msgid "The path for the request (default '/')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:5
+msgid "The query string to simulate, without a leading '?' (default '')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:8
+msgid "The HTTP protocol to simulate (default 'HTTP/1.1'). If set to 'HTTP/1.0', the Host header will not be added to the environment."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:12
+msgid "URL scheme, either 'http' or 'https' (default 'http')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:14
+msgid "Hostname for the request (default 'falconframework.org')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:16
+msgid "The TCP port to simulate. Defaults to the standard port used by the given scheme (i.e., 80 for 'http' and 443 for 'https')."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:20
+msgid "Headers as a ``dict`` or an iterable yielding (*key*, *value*) ``tuple``'s"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:23
+msgid "Value for the ``SCRIPT_NAME`` environ variable, described in PEP-333: 'The initial portion of the request URL's \"path\" that corresponds to the application object, so that the application knows its virtual \"location\". This may be an empty string, if the application corresponds to the \"root\" of the server.' (default '')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:29
+msgid "The body of the request (default ''). Accepts both byte strings and Unicode strings. Unicode strings are encoded as UTF-8 in the request."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:33
+msgid "The HTTP method to use (default 'GET')"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.create_environ:38
+msgid "Callable that returns an iterable, to be used as the value for *wsgi.file_wrapper* in the environ."
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.redirected:1
+msgid "A context manager to temporarily redirect stdout or stderr"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.redirected:3
+msgid "e.g.:"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.redirected:5
+msgid "with redirected(stderr=os.devnull):"
+msgstr ""
+
+#: ../../../../../anaconda3/lib/python3.7/site-packages/falcon/testing/__init__.py:docstring of falcon.testing.redirected:6
+msgid "..."
+msgstr ""
+
