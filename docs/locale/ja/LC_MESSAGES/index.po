@@ -78,18 +78,24 @@ msgid ""
 "\"I'm loving #falconframework! Super clean and simple, I finally have the"
 " speed and flexibility I need!\""
 msgstr ""
+"\"私はクリーンでシンプルな#falconframework!を愛していて、"
+"ようやくフレームワークに必要な速度と柔軟性を手に入れました。\""
 
 #: ../../index.rst:45
 msgid ""
 "\"I feel like I'm just talking HTTP at last, with nothing in the middle. "
 "Falcon seems like the requests of backend.\""
 msgstr ""
+"\"私は遂にHTTPを話しているだけで、途中で何もしていないように感じます。"
+"Falconはバックエンドの要求のようです。\""
 
 #: ../../index.rst:48
 msgid ""
 "\"The source code for Falcon is so good, I almost prefer it to "
 "documentation. It basically can't be wrong.\""
 msgstr ""
+"\"Falconのソースコードはとても良く、私はドキュメントはコードを好みます。"
+"それは基本的には間違ってはいけません。\""
 
 #: ../../index.rst:51
 msgid "\"What other framework has integrated support for 786 TRY IT NOW ?\""
@@ -97,17 +103,19 @@ msgstr ""
 
 #: ../../index.rst:54
 msgid "Quick Links"
-msgstr ""
+msgstr "リンク"
 
 #: ../../index.rst:56
 msgid "`Read the docs <https://falcon.readthedocs.io/en/stable>`_"
-msgstr ""
+msgstr "`ドキュメント <https://falcon.readthedocs.io/en/stable>`_"
 
 #: ../../index.rst:57
 msgid ""
 "`Falcon add-ons and complementary packages "
 "<https://github.com/falconry/falcon/wiki>`_"
 msgstr ""
+"`Falconアドオンと補助パッケージ"
+" <https://github.com/falconry/falcon/wiki>`_"
 
 #: ../../index.rst:58
 msgid ""
@@ -129,7 +137,7 @@ msgstr ""
 
 #: ../../index.rst:63
 msgid "Features"
-msgstr "Falconの主な機能"
+msgstr "Falconの特徴"
 
 #: ../../index.rst:65
 msgid "Falcon tries to do as little as possible while remaining highly effective."
@@ -170,29 +178,30 @@ msgstr "安全なAPIを書くための最小の攻撃面"
 #: ../../index.rst:75
 #, python-format
 msgid "100% code coverage with a comprehensive test suite"
-msgstr ""
+msgstr "包括的なテストスイートによる100％のコードカバレッジ"
 
 #: ../../index.rst:76
 msgid "Only depends on six and mimeparse"
-msgstr ""
+msgstr "sixとmimeparseだけに依存"
 
 #: ../../index.rst:77
 msgid "Supports Python 2.7, 3.4+"
-msgstr ""
+msgstr "Python 2.7,3.4,3.6をサポート"
 
 #: ../../index.rst:78
 msgid "Compatible with PyPy"
-msgstr ""
+msgstr "PyPyに対応"
 
 #: ../../index.rst:81
 msgid "Who's Using Falcon?"
-msgstr ""
+msgstr "誰がFalconを使っているか"
 
 #: ../../index.rst:83
 msgid ""
 "Falcon is used around the world by a growing number of organizations, "
 "including:"
 msgstr ""
+"Falconは世界中で多くの組織によって使用されています。"
 
 #: ../../index.rst:86
 msgid "7ideas"
@@ -242,6 +251,9 @@ msgid ""
 " Using Falcon? <https://github.com/falconry/falcon/wiki/Who's-using-"
 "Falcon%3F>`_"
 msgstr ""
+"Falconフレームワークをコミュニティまたは商用プロジェクトに使用している場合は、"
+"`Who's Using Falcon? <https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F>`_ の下の"
+"wikiにあなたの情報を追加することを考えてみてください。"
 
 #: ../../index.rst:101
 msgid ""
@@ -249,8 +261,10 @@ msgid ""
 "<https://github.com/falconry/falcon/wiki/Add-on-Catalog>`_, where you can"
 " find a list of add-ons maintained by the community."
 msgstr ""
+"コミュニティで管理されているアドオンのリストが掲載されている"
+" `アドオンカタログ <https://github.com/falconry/falcon/wiki/Add-on-Catalog>`_ もご覧ください。"
 
 #: ../../index.rst:106
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメント"
 
